@@ -1,0 +1,23 @@
+; put "@:scroll-buffer"
+;
+;
+;
+;
+srolbf
+;
+;
+;
+;
+.byte ' written by the sixteen division of '
+.byte 'micro projects ltd  look out for the'
+.byte ' petals of doom also from gremlin   '
+.byte '  thanks to '
+.byte 'matthew for the graphics and his help'
+.byte ' and ant for his invaluable help '
+.byte '  hello to vicki kath chris john mark'
+.byte ' jason sandra alison et all '
+.byte $ff
+;
+;
+;
+.end

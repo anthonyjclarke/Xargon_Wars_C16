@@ -1,0 +1,36 @@
+;put "@:macros"
+;
+;******************************
+;   all the fab macros !!!!!
+;******************************
+;
+;
+.mac save
+;
+;*save all the registers
+;
+pha
+txa
+pha
+tya
+pha
+;
+.mnd
+;
+;
+.mac load
+;
+;*restore all the registers
+;
+pla
+tay
+pla
+tax
+pla
+;
+.mnd
+;
+;
+;
+;
+.end macros

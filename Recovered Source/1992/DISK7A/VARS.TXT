@@ -1,0 +1,193 @@
+; put "@:vars"
+;
+;
+;
+;
+*=$02
+;
+sl     .byte 0        ;* screen-lo
+sh     .byte 0        ;* screen-hi
+cl     .byte 0        ;* colour-lo
+ch     .byte 0        ;* colour-hi
+rnd    .byte 0,0,0,0  ;* random #
+il     .byte 0        ;* irq sc-lo
+ih     .byte 0        ;* irq sc-hi
+ship   .byte 0,0      ;* shiplo,hi
+bullet .byte 0,0      ;* bulletpos
+gl     .byte 0        ;* gauge lo
+gh     .byte 0        ;* gauge hi
+mvedal .byte 0        ;* move datl
+mvedah .byte 0        ;* move dath
+chardl .byte 0        ;* char datl
+chardh .byte 0        ;* char dath
+altbl  .byte 0        ;* ali tbll
+altbh  .byte 0        ;* ali tblh
+sclo   .byte 0        ;* screen lo
+schi   .byte 0        ;* screen hi
+coll   .byte 0        ;*
+colh   .byte 0        ;*
+jleft  .byte 0        ;*
+jright .byte 0        ;*
+jup    .byte 0        ;*
+jdown  .byte 0        ;*
+jfire  .byte 0        ;*
+jmove  .byte 0        ;*
+tx     .byte 0        ;*
+ty     .byte 0        ;*
+ta     .byte 0        ;*
+temp   .byte 0        ;*
+speed  .byte 0        ;*
+clal   .byte 0        ;*
+pral   .byte 0        ;*
+clbo   .byte 0        ;*
+prbo   .byte 0        ;*
+altem  .byte 0        ;*
+shipcl .byte 0        ;*
+gorge  .byte 0        ;*
+;
+;
+*=$033c
+;
+numb   .byte 0 ;* all loop counts
+onnum  .byte 0 ;*
+point  .byte 0 ;* routine.
+change .byte 0 ;* irq link var
+mvup   .byte 0 ;* star up to top
+itype  .byte 0 ;* irq type
+xt     .byte 0 ;* xtemp
+yt     .byte 0 ;* ytemp
+fire   .byte 0 ;* fire flag
+cship  .byte 0 ;* cls ship flag
+newx   .byte 0 ;* new x pos ship
+bon    .byte 0 ;* print bullet ?
+boff   .byte 0 ;* delete bullet ?
+bulx   .byte 0 ;* bullet x
+buly   .byte 0 ;* bullet y
+newby  .byte 0 ;* new bullet y
+hcount .byte 0 ;* count for laser
+nfire  .byte 0 ;* no fire flag
+gcol   .byte 0 ;* gauge colour
+xs     .byte 0 ;* for nice cls
+ys     .byte 0 ;* for nice cls
+xe     .byte 0 ;* for nice cls
+ye     .byte 0 ;* for nice cls
+attr   .byte 0 ;* colour for ^
+mvelen .byte 0 ;* movement length
+anispd .byte 0 ;* animation speed
+frespd .byte 0 ;* firing speed
+mvespd .byte 0 ;* movement speed
+numali .byte 0 ;* number of aliens
+anicnt .byte 0 ;* animation count
+frame  .byte 0 ;* char frame
+hitflg .byte 0 ;* hit alien  ?
+hitx   .byte 0 ;* hit x pos
+hity   .byte 0 ;* hit y pos
+under  .byte 0 ;* char under bul.
+numhit .byte 0 ;* # of aliens hit
+clexpl .byte 0 ;* clear explos. ?
+excont .byte 0 ;* explosion count
+attcol .byte 0 ;* attribute col.
+btcx   .byte 0 ;* bomb temp x
+btcy   .byte 0 ;* bomb temp y
+bombno .byte 0 ;* no of bombs
+tries  .byte 0 ;* temp count
+bermb  .byte 0 ;* bomb count
+movect .byte 0 ;* move count
+death  .byte 0 ;*
+dcount .byte 0 ;*
+tdead  .byte 0 ;*
+andoff .byte 0 ;*
+glives .byte 0 ;*
+finito .byte 0 ;*
+clrsht .byte 0 ;*
+scradd .byte 0 ;*
+decsht .byte 0 ;* decimal sheet
+bomspd .byte 0 ;* bomb speed
+clot   .byte 0 ;* tem bomb speed
+heat   .byte 0 ;*
+c1     .byte 0 ;*
+c2     .byte 0 ;*
+c3     .byte 0 ;*
+alxps  .byte 0 ;*
+alyps  .byte 0 ;*
+sheena .byte 0 ;*
+simon  .byte 0 ;*
+menatw .byte 0 ;*
+wall   .byte 0 ;*
+hispnt .byte 0 ;*
+xblob  .byte 0 ;*
+letter .byte 0 ;*
+incnt  .byte 0 ;*
+positn .byte 0 ;*
+demlen .byte 0 ;*
+demmve .byte 0 ;*
+polly  .byte 0 ;*
+nobbo  .byte 0 ;*
+rushx  .byte 0 ;*
+rushy  .byte 0 ;*
+rushz  .byte 0 ;*
+asp    .byte 0 ;*
+char   .byte 0 ;*
+temcnt .byte 0 ;*
+ybox   .byte 0 ;*
+dunno  .byte 0 ;*
+plink  .byte 0 ;*
+quo    .byte 0 ;*
+status .byte 0 ;*
+tcol1  .byte 0 ;*
+tcol2  .byte 0 ;*
+tcol3  .byte 0 ;*
+oldfir .byte 0 ;*
+bulspd .byte 0 ;*
+dead   .byte 0 ;*
+loscrl .byte 0 ;*
+hiscrl .byte 0 ;*
+sostat .byte 0 ;*
+tt2    .byte 0 ;*
+tempo2 .byte 0 ;*
+so1len .byte 0 ;*
+so2len .byte 0 ;*
+whsnd  .byte 0 ;*
+sohi   .byte 0 ;*
+solz   .byte 0 ;*
+shitso .byte 0 ;*
+bomcnt .byte 0 ;*
+bmtmp  .byte 0 ;*
+bomex  .byte 0 ;*
+bomey  .byte 0 ;*
+tnote  .byte 0 ;*
+nottem .byte 0 ;*
+notlen .byte 0 ;*
+playtu .byte 0 ;*
+level  .byte 0 ;*
+colour .byte 0 ;*
+tuntem .byte 0 ;*
+playin .byte 0 ;*
+rnkcol .byte 0 ;*
+dntfir .byte 0 ;*
+xtrob  .byte 0 ;*
+curcol .byte 0 ;*
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;********************************
+;            constants
+;********************************
+;
+ted   = $ff00
+ouchar= $ffd2
+;
+multi1 = ted+$16
+multi2 = ted+$17
+;
+backgr = ted+$15
+border = ted+$19
+;
+;
+.end vars

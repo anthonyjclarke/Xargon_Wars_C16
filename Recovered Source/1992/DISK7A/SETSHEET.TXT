@@ -1,0 +1,493 @@
+; put "@:setsheet"
+;
+;
+;*******************************
+;
+; the intialiser for each sheet
+;
+;*******************************
+;
+clspos=$e0f-80
+shescr=$c00+280+36
+;
+initsr
+;
+jsr flltbl
+;
+ldx sheetn
+;
+lda consht,x   ;* conversion
+;
+asl a
+asl a
+asl a
+asl a
+;
+; *16 into shtabl
+;
+tax
+;
+lda shtabl,x
+sta mvelen   ;* movement length
+;
+lda shtabl+1,x
+sta mvedal
+lda shtabl+2,x
+sta mvedah   ;* data location
+;
+lda shtabl+3,x
+sta anispd   ;* animation speed
+;
+lda shtabl+4,x
+sta frespd   ;* firing speed
+;
+lda shtabl+5,x ;* multi - col 1
+sta multi1
+lda shtabl+6,x ;* multi - col 2
+sta multi2
+lda shtabl+7,x ;* attrib. col 3
+sta attcol
+;
+lda shtabl+8,x ;* movement speed
+sta mvespd
+;
+lda shtabl+9,x  ;* character data l
+sta chardl
+lda shtabl+10,x ;* character data h
+sta chardh
+;
+lda shtabl+11,x ;* alien data l
+sta altbl
+lda shtabl+12,x ;* alien data h
+sta altbh
+;
+lda shtabl+13,x ;* no. of aliens
+sta numali
+;
+lda shtabl+14,x ;* bomb speed
+sta bomspd
+;
+;
+; the other one byte  is spare
+;
+;
+jsr levinc ;* level increase
+;
+;
+;
+jsr gtalxy ;* set up alien table
+;
+;
+rts
+;
+;*****************************
+;
+consht
+;
+;
+.byte 0,12,9,3,2,13,6,8,4
+.byte 5,10,1,14,7,11,15
+;
+;
+;*****************************
+;
+; alien table x,y,movement no
+;
+;*****************************
+;
+; max no ( so far ) = 32
+;
+; aliens table has gone to extra
+; memory
+;
+; table size = 96 bytes
+;
+;
+;
+gtalxy
+;
+;******************************
+;
+; transfer aliens x,y,move# to
+; the main playing table.
+;
+;******************************
+;
+;
+ldy #0
+lda numali
+asl a
+clc
+adc numali
+sta altem  ;* length of data
+;
+alxyl
+;
+;
+lda (altbl),y
+;
+; points to initial x,y & should
+; have been set up by the routine
+; above - setscr
+;
+sta aliens,y
+;
+iny
+cpy altem
+bne alxyl
+;
+rts
+;
+;
+;********************************
+;
+shtovr
+;
+; cleared sheet
+;
+;
+ldx #1
+stx dntfir
+;
+dex
+;
+stx clal
+stx pral
+stx clbo
+stx prbo
+;
+; don't print the bombs again
+;
+tripe
+;
+lda shitso  ;* alien explosion
+bne tripe
+;
+waidth
+;
+lda dead
+bne waidth
+;
+; wait incase he has been hit
+; by the last alien !!!!!!!
+;
+sei
+;
+jsr clrdis  ;* cls display area
+;
+cli
+;
+lda #$ff
+sta tnote   ;* little jingle
+;
+jsr intune
+;
+lda #200
+sta altem
+;
+cldt2
+;
+ldx #18
+;
+cldt1
+;
+lda altem
+cmp #1
+bne ntyed
+;
+lda #32
+bne hurtin
+;
+ntyed
+;
+lda clrmes,x
+;
+hurtin
+;
+and #$3f
+sta clspos,x
+;
+;
+lda ted
+and #%01110111
+sta clspos-$400,x
+;
+dex
+bpl cldt1
+;
+ldx #$04
+jsr delay+2
+;
+;
+dec altem
+bne cldt2
+;
+;
+lda #0
+sta clrsht ;* end of sheet flag
+sta numhit ;* number hit
+;
+;
+sed
+;
+lda decsht ;* decimal count+1
+clc
+adc #1
+sta decsht
+;
+cld
+;
+inc sheetn
+lda sheetn
+;
+cmp #16
+bne nonxlv
+;
+jsr nxlevl    ;* next level
+;
+nonxlv
+;
+lda decsht
+;
+pha
+;
+lsr a
+lsr a
+lsr a
+lsr a
+;
+ora #$30
+;
+sta clrmes+7  ;* msb
+sta shescr    ;* msb
+;
+pla
+;
+and #%00001111
+;
+ora #$30
+sta clrmes+8  ;* lsb
+sta shescr+1  ;* lsb
+;
+; set up ascii sheet cleared for
+; next sheet clearance.
+;
+;
+jsr initsr ;* init new screen
+;
+lda #0
+sta dntfir
+;
+;
+;
+;
+;
+rts
+;
+;*****************************
+;
+clrmes
+;
+.byte 'xargon 01 destroyed'
+;
+;
+;
+;****************************
+;
+;
+; fill tables that need to be
+; cleared at the start of a new
+; sheet
+;
+; ie bombtb
+;    bombpr
+;    bombcl
+;
+;    aliens
+;    aliprt
+;    alicls
+;
+flltbl
+;
+ldx #31
+lda #$ff
+;
+fll1
+;
+sta bombtb,x
+sta bombpr,x
+sta bombcl,x
+;
+sta aliens,x
+sta aliens+32,x
+sta aliens+64,x
+;
+sta aliprt,x
+sta aliprt+32,x
+sta alicls,x
+sta alicls+32,x
+;
+dex
+bpl fll1
+;
+lda #0
+sta movect
+sta bermb
+sta clot
+sta anicnt
+;
+rts
+;
+;
+;*************************
+;
+;
+nxlevl
+;
+;
+;
+lda #0
+sta sheetn
+;
+;
+; the gonk has cleared all 16
+; sheets so now lets give him
+; some extra points & may be
+; some more lives ,tell him
+; he has cleared this level &
+; then go back and start the
+; sheets all over again.
+;
+; some factors that can be
+; changed are :-
+;
+;
+; frespd - firing freq.
+; mvespd - alien move speed
+; bomspd - bombs move speed
+;
+; ***************************
+; * note that none of these *
+; * variables must ever go  *
+; ***************************
+;
+lda #$09
+sta tnote   ;* long tune
+;
+jsr intune
+;
+inc level
+;
+ldy #255
+;
+lev1
+;
+ldx #$7f
+;
+lev2
+;
+stx border
+;
+dex
+bpl lev2
+;
+dey
+bne lev1
+;
+lda #2         ;* bonus score
+tay            ;* of
+;              ;* 200
+jsr addscr+2   ;* points
+;
+jsr addlif     ;* 1 extra life
+;
+tuwat
+;
+lda playtu
+bne tuwat
+;
+; wait for tune to finish
+;
+rts
+;
+;
+;
+;*********************
+;
+;
+; level increase
+;
+;
+levinc
+;
+lda level
+cmp frespd
+;
+bcc trog1
+;
+lda #1
+sta frespd
+;
+bne noinc1
+;
+trog1
+;
+lda frespd
+sec
+sbc level
+sta frespd
+;
+noinc1
+;
+lda level
+cmp mvespd
+;
+bcc trog2
+;
+lda #1
+sta mvespd
+;
+bne noinc2
+;
+trog2
+;
+lda mvespd
+sec
+sbc level
+sta mvespd
+;
+noinc2
+;
+lda level
+cmp bomspd
+;
+bcc trog3
+;
+lda #1
+sta bomspd
+;
+bne noinc3
+;
+trog3
+;
+lda bomspd
+sec
+sbc level
+sta bomspd
+;
+noinc3
+;
+rts
+;
+; the whole routine subtracts
+; the level from the value
+; and ensures that no number
+; less than 1 will ever be
+; produced
+;
+;
+;
+;
+;
+;
+.end

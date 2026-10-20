@@ -1,0 +1,284 @@
+; put "@:game-over"
+;
+;
+;
+;
+kath
+;
+lda #0
+sta demo
+sta playin ;* not in game
+;
+waip
+;
+lda ted
+and #7
+beq waip
+ora #$30
+;
+sta curcol
+sta border
+;
+jsr norirq
+;
+jsr colcls
+;
+jsr gamcls
+;
+lda #200
+sta altem
+;
+kt2
+;
+ldx #$04
+jsr delay+2
+;
+inc border
+;
+jsr potbel
+;
+dec altem
+bne kt2
+;
+;
+;
+;
+jmp bloggs
+;
+;
+;
+;
+;
+delay
+;
+ldx #$00
+;
+ldy #$00
+;
+dlpo
+;
+;
+nop
+nop
+nop
+;
+;
+dey
+bne dlpo
+;
+dex
+bne dlpo
+;
+rts
+;
+;**********
+;
+clrdis
+;
+lda #30
+sta xs
+lda #22
+sta ys
+lda #32
+sta char
+ldx #1
+ldy #1
+;
+jsr box ;* clear game play area
+;
+rts
+;
+;
+;
+;*****************************
+;
+;
+gamcls
+;
+; clear screen at game over
+;
+;
+lda #32
+sta xs
+;
+lda #24
+sta ys
+;
+;
+;
+ldy #0
+;
+;
+;
+gaml1
+;
+sty hity
+lda #0
+sta hitx
+;
+jsr prbox
+;
+;
+tya
+pha
+;
+;
+jsr curtan
+;
+ldx #$40
+jsr delay+2
+;
+pla
+tay
+;
+dec ys
+dec ys
+;
+iny
+;
+cpy #11
+bne gaml1
+;
+inc hity
+;
+jsr curtan
+;
+jsr potbel
+;
+ldy #11
+;
+gaml2
+;
+sty hity
+lda #0
+sta hitx
+;
+jsr prbox
+;
+tya
+pha
+;
+ldx #$40
+jsr delay+2
+;
+pla
+tay
+;
+jsr rubbox
+;
+inc ys
+inc ys
+;
+dey
+bpl gaml2
+;
+dec ys
+dec ys
+;
+iny
+;
+jsr prbox
+;
+rts
+;
+;
+;***********
+;
+potbel
+;
+ldx #31
+;
+pty
+;
+lda gammes,x
+and #$3f
+sta $0de0,x
+;
+lda $0de0-$400,x
+;
+adc #1
+and #$77
+;
+sta $0de0-$400,x
+;
+dex
+bne pty
+;
+rts
+;
+;
+;
+gammes
+;
+.byte '            game over           '
+;
+;
+;
+;
+;
+colcls
+;
+lda #30
+sta xs
+lda #22
+sta ys
+lda #$ff
+sta char
+ldx #1
+ldy #1
+lda #$71
+jsr box ;* clear game play area
+;
+rts
+;
+;**********************
+;
+curtan
+;
+cpy #0
+bne junkie
+;
+rts
+;
+junkie
+;
+dey
+;
+ldx #0
+;
+jsr xy
+;
+jsr cloth
+;
+lda ys
+clc
+adc hity
+adc #1
+tay
+;
+ldx #0
+;
+jsr xy
+;
+cloth
+;
+jsr sync
+;
+ldy #32
+;
+junk1
+;
+lda #79
+sta (sl),y
+;
+lda curcol
+sta (cl),y
+;
+dey
+bpl junk1
+;
+;
+rts
+;
+;
+.end

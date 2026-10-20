@@ -1,0 +1,318 @@
+; put "@:bombs"
+;
+;******************************
+;
+; all the aliens bombing stuff
+;
+;******************************
+;
+;
+;
+;
+;
+newbmb
+;
+ldx #0
+;
+huntps
+;
+lda bombtb,x
+cmp #$ff
+bne nottr
+;
+lda bombtb+1,x
+cmp #$ff
+beq wehvit
+;
+;
+nottr
+;
+inx
+inx
+;
+cpx #32
+;
+bne huntps
+;
+rts
+;
+; no room for any bombs
+;
+;
+;*******************************
+;
+wehvit
+;
+stx bomcnt ;* pointer for new one
+;
+; set up a new bomb
+;
+lda #ntries
+sta tries
+;
+tirano
+;
+jsr random
+;
+lda rnd+1
+and #$1f   ;* strip off to bits
+cmp numali
+bcs tirano
+;
+sta bmtmp
+asl a
+clc
+adc bmtmp
+;
+tax          ;* points to an alien
+;
+lda aliens+1,x ;* check if it's ok
+bpl grunt      ;* it's a o.k. !!
+;
+; if it gets here it means the
+; alien was either dead or in
+; an explosion.
+;
+dec tries
+;
+bne tirano
+;
+rts
+;
+grunt ;* we've got an alien
+;
+ldy bomcnt
+;
+lda aliens,x      ;* xpos
+and #%00011111
+clc
+adc #1
+sta bombtb,y      ;* = xpos + 1
+;
+lda aliens+1,x
+and #$1f
+sta bombtb+1,y    ;* = ypos + 1
+;
+; it's got an x & y pos now
+;
+;
+;
+;
+rts
+;
+;
+;*******************************
+;
+;
+mvebmb ;* move the bombs down
+;
+lda #0
+sta prbo
+sta clbo
+;
+ldx #31
+;
+disk
+;
+lda bombpr,x
+sta bombcl,x
+;
+lda #$ff
+sta bombpr,x
+;
+dex
+bpl disk
+;
+; copy print table to cls table
+;
+ldx #0
+;
+;
+tony
+;
+lda bombtb,x    ;* x pos
+sta bomex
+lda bombtb+1,x  ;* y pos
+sta bomey
+;
+cmp #$ff        ;* not there !
+beq drunk
+;
+tay
+;
+iny
+cpy #24 ;* bottom of screen
+;
+bne queen
+;
+; lets kill this bullet
+;
+lda #$ff
+;
+sta bombtb,x      ;* bye x,y tbl
+sta bombtb+1,x
+;
+jmp drunk
+;
+queen
+;
+txa
+pha
+;
+sty bomey
+ldx bomex
+;
+jsr rustic ;* x,y to screen
+;
+pla
+tax
+;
+lda sclo
+sta bombpr,x
+lda schi
+sta bombpr+1,x
+;
+; put address in bomb print table
+;
+lda bomey
+sta bombtb+1,x
+;
+; put new y pos into table
+;
+;
+;
+drunk
+;
+;
+inx
+inx
+;
+cpx #32
+;
+bne tony
+;
+lda #1
+sta prbo
+sta clbo ;* go for it !
+;
+rts
+;
+;*****************************
+;
+clbomb
+;
+lda clbo
+beq venus ;* ? what
+;
+ldx #0
+;
+boston
+;
+lda bombcl,x
+sta il
+lda bombcl+1,x
+sta ih
+cmp #$ff
+beq bozo
+;
+ldy #0
+lda #32
+sta (il),y
+;
+bozo
+;
+inx
+inx
+;
+cpx #32
+;
+bne boston
+;
+lda #0
+sta clbo
+;
+venus
+;
+rts
+;
+;
+;
+prbomb
+;
+;
+lda prbo
+beq venus ;* crafty eh !
+;
+ldx #0
+;
+cross
+;
+;
+lda bombpr,x
+sta il
+sta cl
+lda bombpr+1,x
+sta ih
+cmp #$ff
+beq night
+;
+sec
+sbc #4 ;* colour
+;
+sta ch
+;
+ldy #0
+;
+lda (il),y
+;
+cmp #101
+bcc prbit
+;
+cmp #108
+bcs prbit
+;
+jmp night
+;
+; if not alien then print it
+;
+prbit
+;
+cmp #80     ;* base bottom char
+bcc prvot
+;
+cmp #91     ;* base top char
+bcs prvot
+;
+lda #1
+sta dead
+;
+prvot
+;
+lda #104
+;
+sta (il),y
+;
+upyrt
+;
+lda ted
+and #$07
+beq upyrt
+;
+ora #$70
+;
+sta (cl),y
+;
+night
+;
+inx
+inx
+;
+cpx #32
+bne cross
+;
+;
+rts
+;
+;
+;
+.end bombs

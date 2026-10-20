@@ -1,0 +1,72 @@
+; put "@:main-vars"
+;
+;
+;  main variables that affect
+; the appearance or performance
+; of the game.
+;
+;
+shipst = $0f57
+;
+; ship screen start position
+;
+;
+ntries = 24
+;
+; alien bomb frequency (number
+; of attempts at starting a new
+; bomb.)
+;
+;
+bspeed = 3
+;
+; speed of your bullet
+;
+bcolor = $76
+;
+; bullet colour
+;
+;
+tundat=$1c00
+;
+; tune data for both tunes
+;
+;
+stchar = 117
+;
+; star first char
+;
+stcol
+;
+.byte $7b,$7d,$7e,$7f
+;
+; colour for the 4 speed stars
+;
+sppix
+;
+.byte 4,2,2,1
+;
+; pixel speed for 4 speed stars
+;
+stop
+;
+.byte 1,1,1,1
+;
+; stop flag for stars
+;
+maxnos = 16
+;
+; max number of stars
+;
+;
+shtabl = $1010
+;
+;
+maxliv = 4
+;
+; max number of lives
+;
+;
+;
+;
+.end

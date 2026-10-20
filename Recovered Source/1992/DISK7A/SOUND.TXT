@@ -1,0 +1,327 @@
+; put "@:sound"
+;
+;********************************
+;
+;hopefully this sound will be an
+;improvement over d***'s whoopee
+;sound routines & will work !!!!
+;
+;********************************
+;
+alexpf=14 ;* alien explosion freq
+;
+;
+;
+;
+sound
+;
+; called under interrupt
+;
+lda cflag
+bne sdiu
+;
+rts
+;
+sdiu
+;
+lda nfire   ;* 1=no shooting
+beq onj
+;
+jsr uphtso  ;* laser ov/heated
+;
+jmp onl
+;
+onj
+;
+jsr uplzso  ;* laser firing
+;
+onl
+;
+lda dead
+bne shided
+;
+jsr upshit  ;* alien hit sound
+;
+shided
+;
+rts
+;
+;********************************
+;
+vol    = $ff11
+sou1lo = $ff0e
+sou1hi = $ff12
+sou2lo = $ff0f
+sou2hi = $ff10
+;
+;
+;
+;********************
+;
+; laser firing sound
+;
+;********************
+;
+;
+fireso      ;* start sound
+;
+lda cflag   ;* sound on/off
+bne souon
+;
+rts
+;
+souon
+;
+lda #3
+sta sohi
+ora sou1hi
+sta sou1hi
+;
+lda #1
+sta sou1lo
+;
+lda #40
+sta so1len
+;
+lda #1
+sta whsnd   ;* laser snd on
+;
+lda #%00010111
+ora vol
+sta vol ;* chan#1 & vol 7
+;
+rts
+;
+;****************
+;
+uplzso
+;
+lda whsnd
+beq luter
+;
+dec so1len  ;* length
+bne ntfin1  ;* not ended
+;
+lda #0
+sta whsnd
+;
+luter
+;
+lda #%11101111
+and vol
+sta vol     ;* chan 1 off
+;
+rts
+;
+;
+ntfin1
+;
+;
+lda sou1lo
+sec
+sbc #$04
+sta sou1lo
+;
+bcs nothi
+;
+dec sohi
+lda sohi
+and #3
+sta sohi
+ora sou1hi
+sta sou1hi
+;
+nothi
+;
+rts
+;
+;*******************************
+;
+heatso
+;
+; init over heat sound
+;
+lda cflag
+bne forest
+;
+rts
+;
+forest
+;
+lda #3
+ora sou1hi
+sta sou1hi
+;
+lda #1
+sta sou1lo
+sta solz     ;* sound on
+;
+lda #%00010111
+ora vol
+sta vol ;* on
+;
+lda #0
+sta whsnd    ; no laser snd
+;
+rts
+;
+;
+;
+uphtso
+;
+;
+;
+;
+;
+lda sostat
+pha
+;
+plp
+;
+rol sou1lo
+;
+php
+pla
+;
+sta sostat ;* status reg
+;
+ift
+;
+rts
+;
+;
+;
+;****************************
+;
+;
+setexp
+;
+; start explosion sound
+;
+lda cflag
+bne estr
+;
+rts
+;
+estr
+;
+lda #$ff
+sta sou2lo
+sta sou2hi
+;
+lda #%01001101 ;*vol & ch#2 noise
+sta vol
+;
+lda #1
+sta so2len
+;
+rts
+;
+;
+;
+dyevol
+;
+; volume decay
+;
+dec so2len
+beq shaun
+;
+rts
+;
+shaun
+;
+lda #5
+sta so2len
+;
+lda vol
+;
+pha
+;
+and #$f0
+sta tt2
+;
+pla
+;
+and #15
+sec
+sbc #1
+and #15
+;
+ora tt2
+sta vol
+;
+rts
+;
+;***********************
+;
+;
+;  alien hit sound
+;
+hitsnd
+;
+lda cflag
+bne hitsok
+;
+rts
+;
+hitsok
+;
+lda dead
+beq fluck
+;
+rts
+;
+fluck
+;
+; sound on & he's not dead !
+;
+lda #$03
+sta sou2hi
+lda #$ff
+sta sou2lo
+;
+lda vol
+ora #%01001111 ;* noise 2
+sta vol
+;
+lda #1
+sta shitso
+;
+rts
+;
+;
+upshit
+;
+lda shitso
+bne soon
+;
+rts
+;
+soon
+;
+lda sou2lo
+sec
+sbc #alexpf
+sta sou2lo
+;
+bcc flower ;* power its over
+;
+rts
+;
+flower
+;
+lda vol
+and #%10011111
+sta vol
+;
+; turn off anything on ch#2
+;
+lda #0
+sta shitso
+;
+;
+rts
+;
+;
+;
+.end

@@ -1,0 +1,223 @@
+; put "@:death-march"
+;
+;
+; death of ship stuff
+;
+;
+;
+;
+updead
+;
+lda dead
+bne upsok
+;
+ipsok
+;
+rts
+;
+upsok
+;
+lda finito
+bne ipsok
+;
+;
+; just print game over
+;
+lda death
+bne doingt
+;
+; we are here for the first
+; time to start off the fading
+; away
+;
+lda #1
+sta death
+;
+lda #66
+sta dcount
+;
+lda #1
+sta tdead
+;
+ldx #55
+;
+ants
+;
+lda $3e80,x
+sta savech,x
+;
+dex
+bpl ants
+;
+;
+jsr setexp ;* set explosion snd
+;
+;
+rts
+;
+doingt
+;
+inc shipcl
+lda shipcl
+;
+and #$7f
+sta shipcl
+;
+dec tdead
+beq dodt
+;
+rts
+;
+dodt
+;
+lda #5
+sta tdead
+;
+dec dcount
+bne dodot
+;
+jmp deadri ;*nger for love
+;
+dodot
+;
+jsr dyevol
+;
+lda dcount
+cmp #20
+bcs dtflsh
+;
+ldx #55
+;
+ants2
+;
+lda $3e80,x
+and ted
+sta $3e80,x
+;
+dex
+bpl ants2
+;
+nodesn
+;
+rts
+;
+dtflsh
+;
+ldx #55
+;
+dtl1
+;
+lda $3e80,x
+eor ted
+and savech,x
+sta $3e80,x
+;
+dex
+bpl dtl1
+;
+rts
+;
+;
+deadri
+;
+; finished all the dying stuff
+;
+lda #0
+sta vol
+sta sou1lo
+sta sou1hi
+sta sou2lo
+sta sou2hi
+sta dead
+sta death
+sta heat
+;
+; all sound off
+;
+jsr clsgag    ;* clear gauge
+;
+ldx #55
+;
+ants3
+;
+lda savech,x
+sta $3e80,x
+;
+dex
+bpl ants3
+;
+lda sheetn
+and #3
+adc #1
+ora #$70
+sta shipcl
+;
+; comes here when ship has been
+; hit
+;
+dec $0c00+200+36
+dec glives ;* game lives
+;
+; 0 means on last life
+;
+bne carry  ;* more to go yet !
+;
+ldx #4
+;
+getscr
+;
+lda demo
+beq normd
+;
+lda #'0
+bne nort
+;
+normd
+;
+lda $0c00+80+34,x
+and #$3f
+;
+nort
+;
+sta scrbuf,x
+;
+dex
+bpl getscr
+;
+; thats the wallies score for
+; high stuff
+;
+;
+; now tell the normal loop
+; that its all over
+;
+;
+lda #1
+sta finito
+;
+rts
+;
+carry
+;
+; more lives yet
+;
+;
+;
+;
+;
+;
+lda #0
+sta finito
+;
+;
+; go back and carry on
+;
+;
+rts
+;
+;
+;
+;
+;
+;
+.end

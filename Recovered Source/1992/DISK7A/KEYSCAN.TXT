@@ -1,0 +1,74 @@
+; put "@:key-scan"
+;
+; this will be called from the
+; joystick read routine if it
+; finds there is no joystick
+; movement,
+; it will then clear or set the
+; appropriate variables if keys
+; are pressed
+;
+; note it will set or clear
+; jmove as appropriate
+;
+;
+;
+key
+;
+lda #0
+sta jmove
+;
+ldx #4
+;
+scan1
+;
+lda btd,x
+ldy rwd,x
+;
+jsr keyit
+;
+ror jleft,x
+;
+dex
+bpl scan1
+;
+rts
+;
+; left  = 'esc'
+; right = '1'
+; up    = 'f3'
+; down  = 'help'
+; fire  = 'f1'
+;
+keyit
+;
+sty $fd30
+sty $ff08
+and $ff08
+;
+bne rtty
+;
+lda #$01
+sta jmove
+sec
+;
+rts
+;
+rtty
+;
+clc
+;
+rts
+;
+;
+btd
+;
+;      l   r   u   d   f
+;
+.byte $10,$01,$40,$08,$10
+;
+rwd
+;
+.byte $bf,$7f,$fe,$fe,$fe
+;
+.end

@@ -1,0 +1,17 @@
+{
+  "load_address": "$1010",
+  "entry_address": "$1C80",
+  "end_address": "$3FFF",
+  "sheet_bytes": 2802,
+  "code_bytes": 7782,
+  "output_bytes": 12274,
+  "sha256": "6b766dcd2c6abbcd47e29ed005d72c0f1c28dc1f95aa1186c11ffe972a1e5daf",
+  "object_listing_bytes": 10747,
+  "object_listing_initialised_bytes": 10584,
+  "object_listing_low_memory_bytes": 163,
+  "object_listing_differences": 0,
+  "first_object_differences": [],
+  "object_listing_range_matches": true,
+  "reference_sha256": "835d26e3b92c91f720b0bf3444c0127f9e66e896608d72ef32cf2b186fb69cec",
+  "reference_comparison": "run scripts/compare_reference.py"
+}

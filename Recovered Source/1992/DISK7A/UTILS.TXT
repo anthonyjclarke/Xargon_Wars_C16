@@ -1,0 +1,117 @@
+; cput "@:utils"
+;
+;**************************
+;
+;        utilities
+;
+;**************************
+;
+;
+;
+;
+xy
+;
+;
+;
+;coverts x,y (regs) to screen
+;
+;results in sl,sh point to screen
+;           cl,ch point to colour
+;
+;
+;
+;
+tya
+asl a
+tay
+lda scrptr,y
+sta sl
+lda scrptr+1,y
+sta sh
+;
+txa
+clc
+adc sl
+sta sl
+sta cl
+;
+lda sh
+adc #0
+sta sh
+;
+sec
+sbc #$4 ;* calc colour addr.
+sta ch
+;
+;
+;
+rts
+;
+;
+;
+random
+;
+;
+; random number at rnd - rnd+3
+;
+;
+;
+clc
+ldy #$29
+ldx #$fc
+;
+loop
+;
+tya
+ldy rnd+4,x
+adc rnd+4,x
+sta rnd+4,x
+inx
+bne loop
+;
+;
+rts
+;
+;
+;*************
+;
+sync
+;
+lda ted+28
+and #1
+bne sync
+;
+sync1
+;
+lda ted+28
+and #1
+beq sync1
+;
+rts
+;
+;*************
+;
+clpag3
+;
+ldx #$3c
+lda #0
+;
+clz3
+;
+sta $0300,x
+inx
+bne clz3
+;
+; now clear page 0
+;
+ldx #$40
+;
+clpz1
+;
+sta $02,x
+dex
+bpl clpz1
+;
+rts
+;
+.end

@@ -1,0 +1,111 @@
+; put "@:jo/ke selection"
+;
+;
+;
+;
+;
+;
+prsel
+;
+ldx #0
+;
+lda #$f5
+sta sl
+;
+lda #$0d
+sta sh
+;
+sutram
+;
+lda #32
+;
+ldy joysel
+bne rat1
+;
+lda kst,x
+;
+rat1
+;
+ldy #0
+and #$3f
+sta (sl),y
+;
+lda #32
+;
+ldy joysel
+beq rat2
+;
+lda jst,x
+;
+rat2
+;
+ldy #17
+and #$3f
+sta (sl),y
+;
+lda sl
+clc
+adc #40
+sta sl
+;
+lda sh
+adc #0
+sta sh
+;
+inx
+cpx #8
+;
+bne sutram
+;
+rts
+;
+;
+;
+;
+chsel
+;
+;
+lda #$04
+ldx #$ef
+;
+jsr keyit
+;
+bcc noj
+;
+; selected joystick
+;
+lda #1
+sta joysel
+;
+;
+noj
+;
+lda #$20
+ldx #$ef
+;
+jsr keyit
+;
+bcc nok
+;
+; selected keyboard
+;
+lda #0
+sta joysel
+;
+;
+nok
+;
+jsr prsel
+;
+rts
+;
+;***********
+;
+kst .byte 'keyboard'
+jst .byte 'joystick'
+;
+;
+;
+;
+;
+.end

@@ -1,0 +1,92 @@
+; put "@:hak/screen"
+;
+; choose any screen you like
+;
+; press 0 - f
+;
+;
+haker
+;
+;
+ldx #0
+;
+skan1
+;
+lda bitty,x
+ldy rowdy,x
+;
+jsr keyig
+;
+bcc frnxt
+;
+stx hack
+;
+; screen selected
+;
+frnxt
+;
+inx
+cpx #16
+bne skan1
+;
+lda hack
+cmp #10
+bcc dfuf
+;
+adc #$36
+and #$3f
+sta $fd4
+bne gfuf
+;
+dfuf
+;
+ora #$30
+sta $fd4
+;
+gfuf
+;
+rts
+;
+;
+;
+;
+;
+;
+;
+keyig
+;
+sty $fd30
+sty $ff08
+and $ff08
+;
+bne rgty
+;
+sec
+;
+rts
+;
+rgty
+;
+clc
+;
+rts
+;
+;
+bitty
+;
+;
+.byte $08
+.byte $01,$08,$01,$08
+.byte $01,$08,$01,$08
+.byte $01,$04,$10,$10
+.byte $04,$40,$20
+;
+rowdy
+;
+.byte $ef
+.byte $7f,$7f,$fd,$fd
+.byte $fb,$fb,$f7,$f7
+.byte $ef,$fd,$f7,$fb
+.byte $fb,$fd,$fb
+;
+.end

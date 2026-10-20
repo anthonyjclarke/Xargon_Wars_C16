@@ -1,0 +1,61 @@
+; put "@:rank-master"
+;
+;
+rankno=$c9e
+;
+;
+;
+;
+ranker  ;* !!!!
+;
+;
+;
+ldx #4
+;
+ran1
+;
+lda scrpos,x
+and #$3f
+sta scrbuf,x
+;
+dex
+bpl ran1
+;
+jsr high
+;
+lda positn
+clc
+adc #1
+;
+ora #$30
+cmp #$37
+;
+bcc ranin
+;
+lda #$2a
+;
+ranin
+;
+sta rankno
+;
+and #7
+ora #$70
+;
+sta rankno-$400-4
+sta rankno-$400-3
+sta rankno-$400-2
+sta rankno-$400-1
+;
+;
+;
+;
+;
+;
+rts
+;
+;
+;
+;
+;
+;
+.end

@@ -1,0 +1,181 @@
+; put "@:smooth-scroll"
+;
+;*****************************
+;
+; smooth message scroll stuff
+;
+;*****************************
+;
+chars=$3e80  ;* char 128 start
+charx=$3f10  ;* last char
+;
+;
+;
+;
+scroll
+;
+; scroll hi-code
+;
+;
+lda loscrl
+cmp #8
+bne monkey
+;
+; need to put new char in
+;
+lda #0
+sta loscrl
+;
+;
+paris
+;
+ldx hiscrl
+lda srolbf,x  ;* scroll buffer
+cmp #$ff
+bne reject
+;
+ldx #0
+stx hiscrl
+stx loscrl
+;
+beq paris
+;
+reject
+;
+inc hiscrl
+;
+cmp #$20
+bne krth
+;
+ldy #7
+lda #0
+;
+klm
+;
+sta charx,y
+;
+dey
+bpl klm
+;
+jmp monkey
+;
+krth
+;
+; got next char
+;
+asl a
+asl a
+asl a
+;
+tax
+;
+ldy #0
+;
+bisto
+;
+lda $3c00,x  ;* character set
+sta charx,y
+;
+inx
+iny
+cpy #8
+;
+bne bisto
+;
+; next char in at charx
+;
+;
+;
+monkey
+;
+inc loscrl  ;* lo count
+;
+ldx #0
+;
+cream
+;
+;
+;
+;
+;
+;
+asl chars+144,x
+;
+;
+rol chars+136,x
+rol chars+128,x
+rol chars+120,x
+rol chars+112,x
+rol chars+104,x
+rol chars+96,x
+rol chars+88,x
+rol chars+80,x
+rol chars+72,x
+rol chars+64,x
+rol chars+56,x
+rol chars+48,x
+rol chars+40,x
+rol chars+32,x
+rol chars+24,x
+rol chars+16,x
+rol chars+8,x
+rol chars,x
+;
+inx
+cpx #8
+;
+bne cream
+;
+rts
+;
+;
+;
+;*************************
+;
+;
+smooth
+;
+; set up above
+;
+ldx #0
+;
+sm1
+;
+lda chars,x
+sta savech,x
+;
+lda #0
+sta chars,x
+;
+inx
+cpx #$a0
+bne sm1
+;
+lda #0
+sta loscrl
+sta hiscrl
+;
+ldx #80  ;* start char
+ldy #0
+;
+sm2
+;
+txa
+sta $f85,y
+;
+lda #$66
+sta $b85,y
+;
+inx
+iny
+cpy #18
+bne sm2
+;
+; on the screen now
+;
+rts
+;
+;
+;
+;
+.end

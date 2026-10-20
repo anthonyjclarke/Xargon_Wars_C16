@@ -1,0 +1,177 @@
+; put "@:saver"
+;
+;
+; this will save the auto-run
+; loader
+;
+;*******************
+;
+load   = $ffd5
+save   = $ffd8
+setlfs = $ffba
+scnkey = $ff9f
+setmsg = $ff90
+setnam = $ffbd
+temp   = $04
+;
+mesvec = $0324
+start  = mesvec
+end    = $0326  ;* start + 2
+;
+;
+length = $50
+;
+;
+;
+*=$3000
+;
+lda #$00
+jsr setmsg
+;
+jsr wait
+;
+lda mesvec
+sta temp
+lda #$50
+sta mesvec
+;
+lda mesvec+1
+sta temp+1
+lda #$03
+sta mesvec+1
+;
+lda #1         ;* cassette
+ldy #3         ;* only do 'load'
+jsr setlfs
+;
+lda #length    ;* filename +
+ldx #<filenm   ;* loader which
+ldy #>filenm   ;* sits at $0350
+jsr setnam
+;
+lda #<start
+sta $02
+;
+lda #>start
+sta $03
+;
+lda #$02
+;
+ldx #<end
+ldy #>end
+;
+jsr save
+;
+lda temp
+sta mesvec
+;
+lda temp+1
+sta mesvec+1
+;
+brk
+;
+;***************
+;
+wait
+;
+ldx #$20
+ldy #0
+;
+lp1
+;
+dey
+bne lp1
+;
+dex
+bne lp1
+;
+;
+ldx #0
+;
+wa1
+;
+lda pre,x
+;
+jsr $ffd2
+;
+beq wak
+;
+inx
+bne wa1
+;
+wak
+;
+jsr scnkey
+;
+beq wak
+;
+rts
+;
+;****************
+;
+pre
+;
+.byte 13,10,'press a key',13,10,13,10,0
+;
+;
+;****************
+;
+; pc = $0337
+;
+filenm .byte 'xargon-wars'
+;
+.byte 0,0,0,0,0
+.byte 0,0,0,0,0
+.byte 0,0,0,0
+;
+;
+;
+; this will be at $0350
+;
+prog
+;
+; this is the loader
+;
+;
+;
+inc $ff19
+bne prog
+beq prog
+;
+lda #1    ;* cassette
+ldx #$ff
+ldy #$ff
+;
+jsr setlfs
+;
+lda #0
+jsr setnam  ;* no name
+;
+lda #0      ;* load
+ldx #$ff
+ldy #$ff
+;
+jsr load
+;
+inc $ff19
+;
+lda #0
+ldx #$ff
+ldy #$ff
+;
+jsr load
+;
+;
+nop
+nop
+nop
+nop
+nop
+nop
+;
+;
+frak
+;
+;
+;
+.end

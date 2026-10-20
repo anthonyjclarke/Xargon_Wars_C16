@@ -1,0 +1,52 @@
+; put "@:setup"
+;
+;*****************************
+;
+; initialise all pointers etc.
+;
+;*****************************
+;
+setup
+;
+lda #$08
+jsr ouchar     ;* disable shft/comm
+;
+lda #$93
+jsr ouchar     ;* cls screen
+;
+;lda ted+7
+;ora #%1001000  ;* disable reverse
+;sta ted+7
+;
+lda #$00
+sta backgr     ;* black screen
+sta border     ;* black border
+;
+;lda #$00
+;sta ted+17     ;* clear sound
+;
+lda ted+18
+and #%11111011 ;* chars from ram
+sta ted+18
+;
+lda #$3c
+sta ted+19     ;* chars at $3800
+;
+lda #%00010000
+ora ted+7      ;* multi colour
+sta ted+7
+;
+ldx #3
+rnl
+lda rascom  ;* timers as rnd #
+sta rnd,x
+dex
+bpl rnl
+;
+;*seed
+;
+rts
+;
+;
+;
+.end setup

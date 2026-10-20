@@ -1,0 +1,114 @@
+; put "@:ultra"
+;
+;  *   * *    ***** ****    *
+;  *   * *      *   *   *  * *
+;  *   * *      *   *   * *   *
+;  *   * *      *   *   * *   *
+;  *   * *      *   ****  *****
+;  *   * *      *   *   * *   *
+;   ***  ****   *   *   * *   *
+;
+;
+; with kind permission from
+;
+; john b marshall
+;
+; and written by a.j.clarke
+;
+; (c) micro-projects ltd. 1985
+;
+;
+;.opt nol
+;
+.lib   vars*   ;* variables
+.lib   extra*  ;* tables in xtra-m
+;
+*=$1010
+;
+.lib   shtable*
+;
+.lib   sheet1
+.lib   sheet2
+.lib   sheet3
+.lib   sheet4
+.lib   sheet5
+.lib   sheet6
+.lib   sheet7
+.lib   sheet8
+.lib   sheet9
+.lib   sheeta
+.lib   sheetb
+.lib   sheetc
+.lib   sheetd
+.lib   sheete
+.lib   sheetf
+.lib   sheetg
+;
+*=$1c80
+;
+lda #0
+sta demo
+;
+lda #3
+sta lives
+;
+lda #1
+sta cflag
+;
+jmp bloggs
+;
+lives  .byte 0 ;*
+cflag  .byte 0 ;*
+demo   .byte 0 ;*
+sheetn .byte 0 ;*
+joysel .byte 0 ;*
+;
+.lib   macros* ;* vunderbar macros
+;
+.lib   main-va*;* main variables
+;
+.lib   scrol*  ;* message
+.lib   rank*   ;* rank maker
+.lib   starte* ;* start bits
+.lib   game-o* ;* game over stuff
+.lib   score*  ;* scoring routines
+.lib   tables* ;* tables
+.lib   utils*  ;* utilities
+.lib   setup*  ;* init thingies
+.lib   screen* ;* set up screen
+.lib   stars*  ;* star routines
+.lib   play-g* ;* play game
+.lib   irq*    ;* irq routines
+.lib   ship*   ;* ship move
+.lib   gauge*  ;* temp gauge
+.lib   sound*  ;* all sound
+.lib   setshee*;* set sheet
+.lib   aliens* ;* alien stuff
+.lib   animat* ;* animations !
+.lib   killer* ;* kill routines
+.lib   bombs*  ;* bombs !!-wow-!!
+.lib   joysti* ;* read joy-dick !
+.lib   magnif* ;* title page - wow
+.lib   title-w*;* title core subs
+.lib   high-s* ;* high score stuff
+;.lib   hexer*  ;* hex convertor
+.lib   death*  ;* death !
+.lib   smooth* ;* scroll stuff
+.lib   tune*   ;* tune playing
+.lib   key-sc* ;* key scan
+.lib   jo/ke*  ;* k/j selection
+;.lib   hak/scr*;* screen hack
+;
+;.lib   muff*  ;* ship chars
+;
+; chars for the ship ($3e80)
+; now only 7 chars in size
+;
+;.lib   chars*  ;* chars set
+;
+; must be at end
+;
+; just load on 'frak!' on the c16
+; it has all the graphics
+;
+.end ultra

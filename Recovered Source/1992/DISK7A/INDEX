@@ -1,0 +1,80 @@
+0 "PEUGEOT 205 GTI " 85 2A
+19   "ALIENS"           SEQ         ALIENS   TXT     5234   7-10-92  17:26
+4    "ANIMATE"          SEQ         ANIMATE  TXT      983   7-10-92  17:26
+106  "OBJ"              SEQ         OBJ      TXT    27344   7-10-92  17:27
+1    "ASSEM-SHEETS"     SEQ         ASSEMSHE TXT      280   7-10-92  17:27
+11   "BOMBS"            SEQ         BOMBS    TXT     2922   7-10-92  17:27
+8    "CHARS"            SEQ         CHARS    TXT     1904   7-10-92  17:27
+7    "DEATH-MARCH"      SEQ         DEATHMAR TXT     1821   7-10-92  17:27
+3    "EXTRA-MEMORY"     SEQ         EXTRAMEM TXT      611   7-10-92  17:27
+7    "GAME-OVER"        SEQ         GAMEOVER TXT     1918   7-10-92  17:27
+4    "GAUGE"            SEQ         GAUGE    TXT     1150   7-10-92  17:27
+3    "HAK/SCREEN"       SEQ         HAKSCREE TXT      721   7-10-92  17:27
+1    "HEXER"            SEQ         HEXER    TXT      236   7-10-92  17:28
+17   "HIGH-STUFF"       SEQ         HIGHSTUF TXT     4801   7-10-92  17:28
+9    "IRQ"              SEQ         IRQ      TXT     2448   7-10-92  17:28
+3    "JO/KE SELECTION"  SEQ         JOKESELE TXT      745   7-10-92  17:28
+4    "JOYSTIK"          SEQ         JOYSTIK  TXT     1143   7-10-92  17:28
+3    "KEY-SCAN"         SEQ         KEYSCAN  TXT      728   7-10-92  17:28
+10   "KILLER"           SEQ         KILLER   TXT     2621   7-10-92  17:28
+2    "MACROS"           SEQ         MACROS   TXT      310   7-10-92  17:28
+5    "MAGNIFICENT"      SEQ         MAGNIFIC TXT     1156   7-10-92  17:28
+3    "MAIN-VARS"        SEQ         MAINVARS TXT      748   7-10-92  17:28
+2    "MUFF"             SEQ         MUFF     TXT      286   7-10-92  17:28
+8    "PLAY-GAME"        SEQ         PLAYGAME TXT     2080   7-10-92  17:28
+2    "RANK-MASTER"      SEQ         RANKMAST TXT      419   7-10-92  17:28
+6    "SAVER"            SEQ         SAVER    TXT     1590   7-10-92  17:28
+5    "SCORE-ROUTINES"   SEQ         SCOREROU TXT     1169   7-10-92  17:28
+9    "SCREEN"           SEQ         SCREEN   TXT     2312   7-10-92  17:29
+2    "SCROLL-BUFFER"    SEQ         SCROLLBU TXT      418   7-10-92  17:29
+3    "SETUP"            SEQ         SETUP    TXT      694   7-10-92  17:29
+3    "SHEET1"           SEQ         SHEET1   TXT      814   7-10-92  17:29
+7    "SHEET2"           SEQ         SHEET2   TXT     1896   7-10-92  17:29
+4    "SHEET3"           SEQ         SHEET3   TXT     1063   7-10-92  17:29
+7    "SHEET4"           SEQ         SHEET4   TXT     1820   7-10-92  17:29
+4    "SHEET5"           SEQ         SHEET5   TXT      922   7-10-92  17:29
+7    "SHEET6"           SEQ         SHEET6   TXT     1873   7-10-92  17:29
+7    "SHEET7"           SEQ         SHEET7   TXT     1907   7-10-92  17:29
+7    "SHEET8"           SEQ         SHEET8   TXT     1829   7-10-92  17:29
+7    "SHEET9"           SEQ         SHEET9   TXT     1852   7-10-92  17:29
+7    "SHEETA"           SEQ         SHEETA   TXT     1876   7-10-92  17:29
+8    "SHEETB"           SEQ         SHEETB   TXT     1991   7-10-92  17:30
+4    "SHEETC"           SEQ         SHEETC   TXT      960   7-10-92  17:30
+4    "SHEETD"           SEQ         SHEETD   TXT      913   7-10-92  17:30
+8    "SHEETE"           SEQ         SHEETE   TXT     2145   7-10-92  17:30
+7    "SHEETF"           SEQ         SHEETF   TXT     1897   7-10-92  17:30
+4    "SHEETG"           SEQ         SHEETG   TXT      976   7-10-92  17:30
+14   "SHIP"             SEQ         SHIP     TXT     3918   7-10-92  17:30
+32   "SHTABLE"          SEQ         SHTABLE  TXT     8297   7-10-92  17:30
+6    "SMOOTH-SCROLL"    SEQ         SMOOTHSC TXT     1578   7-10-92  17:30
+10   "SOUND"            SEQ         SOUND    TXT     2858   7-10-92  17:31
+11   "STARS"            SEQ         STARS    TXT     3124   7-10-92  17:31
+4    "STARTER"          SEQ         STARTER  TXT     1062   7-10-92  17:31
+9    "TABLES"           SEQ         TABLES   TXT     2353   7-10-92  17:31
+5    "TUNE"             SEQ         TUNE     TXT     1144   7-10-92  17:31
+9    "ULTRA"            SEQ         ULTRA    TXT     2209   7-10-92  17:31
+4    "UTILS"            SEQ         UTILS    TXT      904   7-10-92  17:31
+9    "LISTER"           SEQ         LISTER   TXT     2210   7-10-92  17:31
+2    "OBJ.ANT"          SEQ         OBJANT   TXT      501   7-10-92  17:31
+7    "@"                PRG         NONAME   BIN     1538   7-10-92  17:31
+1    "BOOT ALL"         PRG         BOOTALL  BAS      259   7-10-92  17:31
+5    "CAMEL (CHARS)"    PRG         CAMELCHA BIN     1026   7-10-92  17:31
+4    "DOS5.2"           PRG         DOS52    BIN      866   7-10-92  17:31
+7    "EDITOR"           PRG         EDITOR   BIN     1626   7-10-92  17:32
+5    "FRAK!"            PRG         FRAK     BIN     1026   7-10-92  17:32
+1    "GLOPPY (MUSIC)"   PRG         GLOPPYMU BIN      130   7-10-92  17:32
+6    "HYPRA-LOAD OBJ"   PRG         HYPRALOA BAS     6429   7-10-92  17:32
+2    "JINGLE1"          PRG         JINGLE1  BAS      459   7-10-92  17:32
+4    "JINGLE2"          PRG         JINGLE2  BAS     1179   7-10-92  17:32
+5    "MEGA-SUPER"       PRG         MEGASUPE BIN     1026   7-10-92  17:32
+5    "MUSIC-MAKER"      PRG         MUSICMAK BAS     1562   7-10-92  17:32
+1    "MUSIC/CODE"       PRG         MUSICCOD BIN      130   7-10-92  17:32
+4    "SUPER-LOAD"       PRG         SUPERLOA BIN      946   7-10-92  17:32
+2    "TEST-B"           PRG         TESTB    BIN      258   7-10-92  17:32
+5    "WASAL"            PRG         WASAL    BAS     1612   7-10-92  17:32
+41   "ASM.C64"          PRG         ASMC64   BAS    44844   7-10-92  17:33
+20   "SETSHEET"         SEQ         SETSHEET TXT     5354   7-10-92  17:33
+29   "TITLE-WORKS"      SEQ         TITLEWOR TXT     8134   7-10-92  17:33
+17   "VARS"             SEQ         VARS     TXT     4372   7-10-92  17:33
+11 BLOCKS FREE.                            80 File(s)
+             

@@ -1,0 +1,99 @@
+; put "@:animate"
+;
+;********************
+;
+; animation routines
+;
+;********************
+;
+alchar=$3f28
+exchar=$3f48
+albulc=$3f40
+laxchr=$3ee0
+;
+;
+;
+anichr
+;
+;******************************
+;
+; animate the alien characters
+;
+;******************************
+;
+inc anicnt ;* anicount
+lda anicnt
+cmp anispd ;* animation speed
+;
+bne sodoff ;* !!!!
+;
+lda #0
+sta anicnt
+;
+ldx frame
+inx
+cpx #4
+bne fok
+;
+ldx #0
+;
+fok
+;
+stx frame
+;
+ldy time24,x
+;
+ldx #0
+;
+chrlp
+;
+lda (chardl),y
+sta alchar,x   ;* alien animation
+;
+lda explan,y
+sta exchar,x   ;* explosion ani.
+;
+iny
+inx
+cpx #24
+bne chrlp
+;
+;
+lda frame
+and #1
+asl a
+asl a
+asl a
+tax
+ldy #0
+anlp
+;
+lda fichar,x
+sta albulc,y
+;
+lda lachar,x
+sta laxchr,y
+;
+inx
+iny
+cpy #8
+bne anlp
+;
+sodoff
+;
+rts
+;
+;
+;
+;
+;********************************
+;
+time24 ;* times 24 data table !!
+;
+.byte 0,24,48,24
+;
+;********************************
+;
+;
+;
+.end animate

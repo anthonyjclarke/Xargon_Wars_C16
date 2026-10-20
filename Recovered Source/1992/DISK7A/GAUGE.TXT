@@ -1,0 +1,153 @@
+; put "@:gauge"
+;
+;
+;*****************************
+;
+; all the heat gauge routines
+;
+;*****************************
+;
+;
+prgage
+;
+;
+;
+lda #$44
+sta gl
+lda #$0f
+sta gh
+;
+lda heat
+;
+cmp #8
+bcc phil ;* no full chars
+;
+and #%11111000
+lsr a
+lsr a
+lsr a
+;
+; no. of full chars
+;
+tax
+;
+;
+;
+ldy #0
+;
+glp
+;
+lda #100
+;
+sta (gl),y
+;
+lda gl
+sec
+sbc #40
+sta gl
+;
+lda gh
+sbc #0
+sta gh
+;
+dex
+bne glp
+;
+phil
+;
+lda heat
+and #7
+;
+bne normal
+;
+lda #32
+bne notnor
+;
+;
+normal
+;
+clc
+adc #92
+;
+notnor
+;
+; top char (variable)
+;
+ldy #0
+sta (gl),y
+;
+;
+lda gl
+sec
+sbc #40
+sta gl
+;
+;
+lda gh
+sbc #0
+sta gh
+;
+lda gl
+cmp #$64
+beq topbit
+;
+lda #32
+sta (gl),y ;* clear top bit
+;
+topbit
+;
+lda gcol ;* gauge colour
+;
+lda nfire
+bne shit
+;
+lda #$71
+bne pooh
+;
+shit
+;
+inc nfire
+lda nfire
+and #%00001111
+ora #%01010000
+sta nfire
+;
+pooh
+;
+ldx #6
+;
+ga1
+;
+ldy ycol,x
+sta $09b4-40,y
+sta $0a54,y
+dex
+bpl ga1
+;
+rts
+;
+;
+;*************
+;
+clsgag
+;
+ldx #6
+;
+gaz1
+;
+lda #32
+ldy ycol,x
+;
+sta $0db4-40,y
+sta $0e54,y
+;
+dex
+bpl gaz1
+;
+rts
+;
+;
+;
+;
+;
+.end

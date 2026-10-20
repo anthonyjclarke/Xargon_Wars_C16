@@ -1,0 +1,116 @@
+; put "@:magnificent"
+;
+;*****************************
+;
+; do all the nice title stuff
+;
+;*****************************
+;
+;
+;
+;
+;
+bloggs
+;
+ldx #$fe
+txs
+;
+;
+lda #0
+sta vol    ;* no sound at all
+;
+;
+jsr clpag3 ;* clear page 3
+;
+;
+;
+; set up title page
+;
+;
+;
+jsr sesoun ;* set sound in tbl
+jsr selive ;* set lives in tbl
+;
+jsr setup
+;
+lda $ff07
+and #%11101111  ;* hires
+sta $ff07
+;
+lda #0
+sta ybox
+;
+lda #39
+sta xs
+lda #24
+sta ys
+ldx #0
+ldy #0
+lda #32
+sta char
+;
+lda #$71   ;* colour
+;
+jsr box    ;* fill whole screen
+;
+jsr prhisc ;* print hi-scores
+;
+;
+jsr prmenu ;* print menu
+;
+jsr chsel  ;* k/j selection
+;
+jsr boxes  ;* lots of boxes
+;
+;
+ldx #$01
+stx delay+1
+;
+;
+jsr funkit ;* title on for high
+;
+jsr high   ;* any high-score?
+;
+jsr smooth ;* nice bit
+;
+jsr nicirq ;* irq's for box move
+;
+party
+;
+jsr funkit ;* print title
+;
+ldx #$00
+jsr delay+2
+;
+jsr clbox
+;
+; rub  out  title
+;
+jsr boxes
+;
+lda ted
+and #$0f
+adc #3
+sta delay+1
+;
+jmp party
+;
+norirq
+;
+sei
+;
+lda #$0e
+sta $314
+;
+lda #$ce
+sta $315
+;
+lda #$a2
+sta irqmsk
+;
+cli
+;
+rts
+;
+;
+.end

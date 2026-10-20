@@ -1,0 +1,226 @@
+; put "@:irq"
+;
+;*********************
+;
+; all the irq routines
+;
+;*********************
+;
+irqmsk=ted+10
+rascom=ted+11
+irqreg=ted+9
+lo2tmr=ted+2
+hi2tmr=ted+3
+;
+;
+;
+tim2=$3800
+;
+rasval=210 ;* bottom of screen
+variab=16  ;* heat rate decrement
+overht=$57 ;* over heat value
+coolht=$31 ;* cool heat value
+;
+setirq
+;
+sei
+;
+lda #<serv
+sta $0314
+lda #>serv
+sta $0315
+;
+lda #%00010010
+sta irqmsk
+;
+; enable irq's from :-
+;
+; raster
+; timer 2
+;
+;
+lda #rasval
+sta rascom
+;
+;set raster compare
+;
+lda #<tim2
+ldx #>tim2
+sta lo2tmr
+stx hi2tmr
+;
+;
+cli
+;
+rts
+;
+;
+;
+;
+serv
+;
+;************************
+;
+;irq comes here - wow !!!
+;
+;************************
+;
+;
+lda irqreg
+sta itype
+sta irqreg ;* reset bits
+;
+and #%00010000
+;
+; was it timer 2 ?
+;
+bne timer2
+;
+;
+;
+;*************************
+;
+; raster service routine
+;
+;*************************
+;
+;
+jsr prstar ;* print stars
+jsr clalin ;* clear aliens
+jsr clbomb ;* clear bombs
+jsr sound  ;* update sounds
+jsr pralin ;* print aliens   
+jsr prbomb ;* print bombs
+jsr prblet ;* print bullet
+jsr prgage ;* print gauge
+jsr prship ;* print ship
+;
+nop
+nop
+nop
+;
+jsr updead ;* do dead stuff
+;
+jmp irqend
+;
+;       ****** note ******
+;
+; in the raster irq it is possible
+; that in the complete version
+; that the jsr mvstar is called
+; and is removed from the timer
+;
+;*************************
+;
+; timer 2 service routine
+;
+;*************************
+;
+timer2
+;
+jsr mvstar ;* move stars
+jsr gatuff ;* gauge stuff
+jsr anichr ;* animate aliens !
+jsr redjos ;* read joystick
+jsr mvebul ;* move bullet up
+jsr mvship ;* move ship
+jsr hemogl ;* colours on side !!
+;
+jsr tuneup ;* update tune if necc.
+;
+;
+lda #<tim2
+ldx #>tim2
+sta lo2tmr
+stx hi2tmr
+;
+;set timer2 count
+;
+;
+jmp irqend
+;
+;
+;
+;************
+;
+;  irq exit
+;
+;************
+;
+irqend
+;
+pla
+tay
+pla
+tax
+pla
+rti
+;
+;
+;
+;
+;
+gatuff
+;
+;*************
+;
+; gauge stuff
+;
+;*************
+;
+inc hcount
+lda hcount
+cmp #variab
+bne notyet
+;
+lda #0
+sta hcount
+;
+dec heat
+lda heat
+;
+bpl notyet
+;
+lda #0
+sta heat
+;
+; laser temp -1
+;
+notyet
+;
+lda nfire
+beq notove
+;
+lda heat
+;
+cmp #coolht
+bcs notyar
+;
+lda #0
+sta nfire
+;
+;
+;
+notyar
+;
+;
+rts
+;
+notove
+;
+lda heat
+cmp #overht
+;
+bcc notyar
+;
+lda #1
+sta nfire
+;
+jsr heatso ;* over heat sound
+;
+rts
+;
+;
+;
+;
+.end irq

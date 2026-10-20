@@ -1,0 +1,345 @@
+; put "@:shtable"
+;
+;
+;
+;
+;
+shtabl
+;
+; each sheet table takes up 16
+; bytes
+;
+;
+;
+;*********************************
+;
+;          sheet 1
+;
+;*********************************
+;
+.byte pat1le ;* movement length
+.word mov1da ;* movement data
+.byte 8      ;* animation speed
+.byte 8      ;* firing speed
+.byte $67    ;* multi colour1
+.byte $12    ;* multi colour2
+.byte $7e    ;* multi colour3
+.byte 4      ;* movement speed
+.word chard1 ;* character data
+.word alxy1  ;* initial positions
+.byte numa1  ;* number of aliens
+.byte 4      ;* bomb speed
+.byte 0      ;*
+;
+;
+;*********************************
+;
+;          sheet 2
+;
+;*********************************
+;
+.byte pat2le ;* movement length
+.word mov2da ;* movement data
+.byte 14     ;* animation speed
+.byte 4      ;* firing speed
+.byte $41    ;* multi colour1
+.byte $75    ;* multi colour2
+.byte $59    ;* multi colour3
+.byte 4      ;* movement speed
+.word chard2 ;* character data
+.word alxy2  ;* initial positions
+.byte numa2  ;* number of aliens
+.byte 2      ;* bomb speed
+.byte 0      ;*
+;
+;*********************************
+;
+;          sheet 3
+;
+;*********************************
+;
+.byte pat3le ;* movement length
+.word mov3da ;* movement data
+.byte 4      ;* animation speed
+.byte 4      ;* firing speed
+.byte $79    ;* multi colour1
+.byte $7a    ;* multi colour2
+.byte $4e    ;* multi colour3
+.byte 4      ;* movement speed
+.word chard3 ;* character data
+.word alxy3  ;* initial positions
+.byte numa3  ;* number of aliens
+.byte 3      ;* bomb speed
+.byte 0      ;*
+;
+;*********************************
+;
+;          sheet 4
+;
+;*********************************
+;
+.byte pat4le ;* movement length
+.word mov4da ;* movement data
+.byte 4      ;* animation speed
+.byte 8      ;* firing speed
+.byte $71    ;* multi colour1
+.byte $72    ;* multi colour2
+.byte $42    ;* multi colour3
+.byte 4      ;* movement speed
+.word chard4 ;* character data
+.word alxy4  ;* initial positions
+.byte numa4  ;* number of aliens
+.byte 4      ;* bomb speed
+.byte 0      ;*
+;
+;*********************************
+;
+;          sheet 5
+;
+;*********************************
+;
+.byte pat5le ;* movement length
+.word mov5da ;* movement data
+.byte 10     ;* animation speed
+.byte 4      ;* firing speed
+.byte $12    ;* multi colour1
+.byte $67    ;* multi colour2
+.byte $3e    ;* multi colour3
+.byte 4      ;* movement speed
+.word chard5 ;* character data
+.word alxy5  ;* initial positions
+.byte numa5  ;* number of aliens
+.byte 4      ;* bomb speed
+.byte 0      ;*
+;
+;*********************************
+;
+;          sheet 6
+;
+;*********************************
+;
+.byte pat6le ;* movement length
+.word mov6da ;* movement data
+.byte 10     ;* animation speed
+.byte 4      ;* firing speed
+.byte $74    ;* multi colour1
+.byte $47    ;* multi colour2
+.byte $4a    ;* multi colour3
+.byte 4      ;* movement speed
+.word chard6 ;* character data
+.word alxy6  ;* initial positions
+.byte numa6  ;* number of aliens
+.byte 4      ;* bomb speed
+.byte 0      ;* bomb speed
+;
+;*********************************
+;
+;          sheet 7
+;
+;*********************************
+;
+.byte pat7le ;* movement length
+.word mov7da ;* movement data
+.byte 4      ;* animation speed
+.byte 4      ;* firing speed
+.byte $41    ;* multi colour1
+.byte $22    ;* multi colour2
+.byte $2d    ;* multi colour3
+.byte 8      ;* movement speed
+.word chard7 ;* character data
+.word alxy7  ;* initial positions
+.byte numa7  ;* number of aliens
+.byte 4      ;* bomb speed
+.byte 0      ;*
+;
+;*********************************
+;
+;          sheet 8
+;
+;*********************************
+;
+.byte pat8le ;* movement length
+.word mov8da ;* movement data
+.byte 10     ;* animation speed
+.byte 4      ;* firing speed
+.byte $71    ;* multi colour1
+.byte $72    ;* multi colour2
+.byte $24    ;* multi colour3
+.byte 8      ;* movement speed
+.word chard8 ;* character data
+.word alxy8  ;* initial positions
+.byte numa8  ;* number of aliens
+.byte 4      ;* bomb speed
+.byte 0      ;*
+;
+;*********************************
+;
+;          sheet 9
+;
+;*********************************
+;
+.byte pat9le ;* movement length
+.word mov9da ;* movement data
+.byte 8      ;* animation speed
+.byte 4      ;* firing speed
+.byte $4b    ;* multi colour1
+.byte $71    ;* multi colour2
+.byte $4c    ;* multi colour3
+.byte 8      ;* movement speed
+.word chard9 ;* character data
+.word alxy9  ;* initial positions
+.byte numa9  ;* number of aliens
+.byte 4      ;* bomb speed
+.byte 0      ;*
+;
+;*********************************
+;
+;          sheet 10
+;
+;*********************************
+;
+.byte patale ;* movement length
+.word movada ;* movement data
+.byte 8      ;* animation speed
+.byte 4      ;* firing speed
+.byte $4b    ;* multi colour1
+.byte $71    ;* multi colour2
+.byte $4c    ;* multi colour3
+.byte 8      ;* movement speed
+.word charda ;* character data
+.word alxya  ;* initial positions
+.byte numaa  ;* number of aliens
+.byte 4      ;* bomb speed
+.byte 0      ;*
+;
+;*********************************
+;
+;          sheet 11
+;
+;*********************************
+;
+.byte patble ;* movement length
+.word movbda ;* movement data
+.byte 15     ;* animation speed
+.byte 4      ;* firing speed
+.byte $11    ;* multi colour1
+.byte $41    ;* multi colour2
+.byte $79    ;* multi colour3
+.byte 6      ;* movement speed
+.word chardb ;* character data
+.word alxyb  ;* initial positions
+.byte numab  ;* number of aliens
+.byte 4      ;* bomb speed
+.byte 0      ;*
+;
+;*********************************
+;
+;          sheet 12
+;
+;*********************************
+;
+.byte patcle ;* movement length
+.word movcda ;* movement data
+.byte 8      ;* animation speed
+.byte 4      ;* firing speed
+.byte $55    ;* multi colour1
+.byte $51    ;* multi colour2
+.byte $5c    ;* multi colour3
+.byte 6      ;* movement speed
+.word chardc ;* character data
+.word alxyc  ;* initial positions
+.byte numac  ;* number of aliens
+.byte 4      ;* bomb speed
+.byte 0      ;*
+;
+;*********************************
+;
+;          sheet 13
+;
+;*********************************
+;
+.byte patdle ;* movement length
+.word movdda ;* movement data
+.byte 12     ;* animation speed
+.byte 4      ;* firing speed
+.byte $71    ;* multi colour1
+.byte $72    ;* multi colour2
+.byte $77    ;* multi colour3
+.byte 3      ;* movement speed
+.word chardd ;* character data
+.word alxyd  ;* initial positions
+.byte numad  ;* number of aliens
+.byte 2      ;* bomb speed
+.byte 0      ;*
+;
+;*********************************
+;
+;          sheet 14
+;
+;*********************************
+;
+.byte patele ;* movement length
+.word moveda ;* movement data
+.byte 4      ;* animation speed
+.byte 4      ;* firing speed
+.byte $12    ;* multi colour1
+.byte $67    ;* multi colour2
+.byte $3e    ;* multi colour3
+.byte 8      ;* movement speed
+.word charde ;* character data
+.word alxye  ;* initial positions
+.byte numae  ;* number of aliens
+.byte 4      ;* bomb speed
+.byte 0      ;*
+;
+;*********************************
+;
+;          sheet 15
+;
+;*********************************
+;
+.byte patfle ;* movement length
+.word movfda ;* movement data
+.byte 16     ;* animation speed
+.byte 4      ;* firing speed
+.byte $71    ;* multi colour1
+.byte $72    ;* multi colour2
+.byte $56    ;* multi colour3
+.byte 3      ;* movement speed
+.word chardf ;* character data
+.word alxyf  ;* initial positions
+.byte numaf  ;* number of aliens
+.byte 4      ;* bomb speed
+.byte 0      ;*
+;
+;*********************************
+;
+;          sheet 16
+;
+;*********************************
+;
+.byte patgle ;* movement length
+.word movgda ;* movement data
+.byte 10     ;* animation speed
+.byte 2      ;* firing speed
+.byte $12    ;* multi colour1
+.byte $67    ;* multi colour2
+.byte $3e    ;* multi colour3
+.byte 3      ;* movement speed
+.word chardg ;* character data
+.word alxyg  ;* initial positions
+.byte numag  ;* number of aliens
+.byte 2      ;* bomb speed
+.byte 0      ;*
+;
+;*********************************
+;
+;
+.byte $ff,$ff,$ff,$ff
+.byte $ff,$ff,$ff,$ff
+.byte $ff,$ff,$ff,$ff
+.byte $ff,$ff,$ff,$ff
+;
+;
+;
+.end

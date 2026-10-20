@@ -1,0 +1,463 @@
+; >s:aliens
+; put "aliens"
+;
+;
+;********************************
+;
+; all the alien related routines
+;
+;********************************
+;
+;
+; allowing for a max. of 40
+; aliens the tables below are set
+;
+;
+; alien cls out table
+;
+;
+; alien print out table
+;
+;
+;  both tables at 'extra-memory'
+;
+pralin
+;
+; print the aliens - the aliout
+; table must have already been
+; set up.
+;
+;
+lda pral ;* print aliens flag ?
+beq noway
+;
+; chars are set up al 'alilop'
+;
+ldx #<aliprt
+stx slfmd1+1
+inx
+stx slfmd2+1
+;
+lda #>aliprt
+sta slfmd1+2
+sta slfmd2+2
+;
+jsr alilop
+;
+; the print flag is not reset here
+; beceause the aliens must still
+; be printed otherwise they get
+; rubbed out by the stars  !!!!
+;
+noway
+;
+rts
+;
+;
+clalin
+;
+; clear the aliens - the aliout
+; table must have already been
+; set up.
+;
+lda clal ;* clear aliens flag ?
+beq nocls
+;
+ldx #32
+stx c1
+stx c2
+stx c3  ;* chars
+;
+ldx #<alicls
+stx slfmd1+1
+inx
+stx slfmd2+1
+;
+lda #>alicls
+sta slfmd1+2
+sta slfmd2+2
+;
+jsr alilop
+;
+lda #0
+sta clal ;* reset clear flag
+;
+nocls
+;
+rts
+;
+;
+;
+;
+alilop
+;
+lda #0
+sta temp
+;
+przx
+;
+lda temp
+asl a
+tax
+;
+slfmd1 lda $ffff,x
+sta il
+slfmd2 lda $ffff,x
+sta ih
+;
+cmp #$ff
+beq rock ;* yeah !
+;
+lda clal
+bne gido
+;
+; don't do this if clal is set
+; beceause it means that this
+; routine is being called by cls
+;
+lda ih
+bpl back ;* put back to alien chr.
+;
+and #$7f
+sta ih
+;
+ldx #105
+stx c1
+inx
+stx c2
+inx
+stx c3
+bne gido
+;
+; changed char to explosion
+;       nice eh !!!!!
+;
+back
+;
+ldx #101
+stx c1
+inx
+stx c2
+inx
+stx c3
+;
+; set chars back to alien
+;
+gido
+;
+; screen address set
+;
+lda ih
+and #$f    ;* 0 - 15
+sta ih
+;
+ldy #2
+;
+onlp
+;
+lda c1,y
+sta (il),y  ;* chars on
+dey
+;
+bpl onlp
+;
+;
+lda clal ;* are we clearing ?
+bne peel ;* yes
+;
+; there's no need to do the cols.
+;
+lda ih
+sec
+sbc #4
+sta ih
+;
+lda attcol  ;* colour
+;
+; y hold num of chars to put on
+;
+ldy #2
+;
+colp
+;
+sta (il),y
+dey
+bpl colp
+;
+peel
+;
+inc temp
+;
+bne przx
+;
+rock
+;
+rts
+;
+;
+exchr .byte 105,108,111
+;
+;
+mveall
+;
+;****************************
+;
+; do all the moving of the
+; aliens abd leave the tables
+; 'alicls' & 'aliprt' set up
+; with the aliens that need
+; printing & clearing.
+;
+;****************************
+;
+lda #0
+sta nobbo
+sta clal ;* clear alien flag
+sta pral ;* print alien flag
+sta simon
+;
+ldx #0
+;
+bump
+;
+lda aliprt,x
+sta alicls,x
+;
+lda aliprt+1,x
+and #$0f
+sta alicls+1,x
+;
+inx
+cpx #62
+bne bump
+;
+;
+; copy the last printed aliens
+; from the aliprt table to the
+; alicls table as they now need
+; to be cleared from the screen
+;
+;
+;
+call
+;
+lda nobbo
+asl a
+clc
+adc nobbo
+tax
+;
+;
+lda aliens,x   ;* x pos
+cmp #$ff
+bne donald
+;
+jmp missed  ;* its dead
+;
+donald
+;
+and #%00011111 ;* might be explos.
+sta alxps
+;
+lda aliens+1,x ;* y pos
+and #$7f       ;* ignore explosion
+sta alyps
+;
+txa
+pha ;* save pointer into aliens
+;
+;
+ldy aliens+2,x
+;
+; offset into movement data
+;
+iny ;* next one
+;
+cpy mvelen ;* end of movement ?
+bne ntend
+;
+ldy #0  ;* reset to start
+;
+ntend
+;
+tya
+;
+sta aliens+2,x ;* save pointer
+;
+lda (mvedal),y ;* next move dir.
+;
+tay
+;
+lda alxps
+clc
+adc xtbl,y
+tax
+;
+lda alyps
+clc
+adc ytbl,y
+tay
+;
+;*************************
+;
+cpx #0  ;* off left ?
+bne ok1
+;
+ldx #29 ;* start at right
+;
+ok1
+;
+cpx #30 ;* off right ?
+bcc outx
+;
+ldx #1  ;* move to left
+;
+outx
+;
+;****************************
+;
+cpy #0     ;* off top ?
+bne ok2
+;
+ldy #23    ;* move to bottom
+;
+ok2
+;
+cpy #24    ;* off bottom ?
+bcc outy
+;
+ldy #1     ;* move to top
+;
+outy
+;
+;****************************
+;
+stx alxps
+sty alyps
+;
+;
+pla ;* pointer into aliens table
+pha
+tax
+;
+;
+lda aliens,x
+and #%11100000 ;* ex. count
+ora alxps      ;* new x pos
+sta aliens,x
+;
+lda aliens+1,x ;* new y pos
+and #$80
+ora alyps      ;* copy top bit
+sta aliens+1,x ;* there that's it
+;
+;
+ldx alxps
+ldy alyps
+;
+jsr rustic  ;* con. to screen add.
+;
+lda simon
+asl a
+tax         ;* x=altem*2
+pla
+tay         ;* y=altem*3
+;
+lda sclo
+sta aliprt,x   ;*aliens into print
+;       
+lda aliens+1,y ;* hi-bit
+and #$80
+ora schi
+;
+; copy the top bit of aliens
+; y pos which would be set if it
+; has been deaded .
+;
+inc simon
+;
+sta aliprt+1,x ;*table.
+;
+;
+missed ;* ?????
+;
+inc nobbo
+lda nobbo
+cmp numali
+;
+beq haya
+;
+jmp call
+;
+haya
+;
+;
+;
+lda simon
+asl a
+tay
+;
+lda #$ff
+sta aliprt,y
+sta aliprt+1,y
+;
+ldx #1
+stx pral
+stx clal
+;
+;
+rts
+;
+;
+;********************************
+;
+; y movement table
+;
+ytbl
+;
+.byte $ff,$ff,0,1,1,1,0,$ff,0
+;
+;
+;********************************
+;
+; x movement table
+;
+xtbl
+;
+.byte 0,1,1,1,0,$ff,$ff,$ff,0
+;
+;
+;********************************
+;
+; another x,y converter as it is
+; unknown as to whether the 'xy'
+; routine will be being used in
+; the irq or timer routines !!!!
+;
+;********************************
+;
+rustic
+;
+tya
+asl a
+tay
+lda scrptr,y
+sta sclo
+lda scrptr+1,y
+sta schi
+;
+txa
+;
+clc
+adc sclo
+sta sclo
+;
+lda schi
+adc #0
+sta schi
+;
+rts
+;
+;
+;
+.end aliens

@@ -1,0 +1,419 @@
+; put "@:ship"
+;
+;*****************************
+;
+;all the ship related routines
+;
+;*****************************
+;
+;
+;
+;
+prship
+;
+lda cship ;* need to update ???
+beq doit
+;
+;
+jsr clsit
+;
+lda newx
+sta ship ;* new position
+;
+doit
+;
+;
+lda #80
+sta temp
+;
+ldx #0
+;
+sh1
+;
+ldy shday,x
+;
+lda (ship),y
+;
+cmp #101
+bcc shipok
+;
+cmp #108
+bcs shipok
+;
+lda #1
+sta dead
+;
+shipok
+;
+lda temp
+sta (ship),y
+;
+lda ship
+sta il
+lda ship+1
+sec
+sbc #4
+sta ih
+lda shipcl
+sta (il),y ;* colour
+;
+inc temp
+inx
+cpx #7
+bne sh1
+;
+lda #0
+sta cship ;* reset flag
+;
+rts
+;
+clsit
+;
+ldx #6
+;
+sh2
+;
+ldy shday,x
+lda #32
+sta (ship),y
+;
+dex
+bpl sh2
+;
+rts
+;
+shday
+;
+.byte $01
+.byte $28,$29,$2a 
+.byte $50,$51,$52
+;
+;
+;        *80*
+;     *81*82*83*
+;     *84*85*86*
+;
+;    ship construction
+;
+;
+;***********
+;
+; ship move
+;
+;***********
+;
+;
+mvship
+;
+;
+;
+;
+bit jleft
+bpl nleft
+;
+;
+;******************
+;
+; wants to go left
+;
+;******************
+;
+;
+;
+;
+lda ship
+cmp #$49 ;* extreme left
+beq nright
+;
+lda #1
+sta cship ;* clear ship
+ldx ship
+dex
+stx newx ;* save new x pos
+;
+bne nright
+;
+nleft
+;
+bit jright
+bpl nright
+;
+;
+;*******************
+;
+; wants to go right
+;
+;*******************
+;
+lda ship
+cmp #$65
+beq nright ;* extreme right
+;
+lda #1
+sta cship ;* cls ship
+ldx ship
+inx
+stx newx ;* new x pos
+;
+;
+;
+nright
+;
+;*******************
+;
+; want to fire ????
+;
+;*******************
+;
+bit jfire
+bmi humm
+;
+return
+;
+rts
+;
+humm
+;
+lda jfire
+cmp oldfir
+;
+beq return
+;
+sta oldfir
+;
+lda dntfir
+bne return
+;
+lda fire
+bne sado  ;* already firing
+;
+lda nfire
+bne sado ;* too hot to fire
+;
+lda #bspeed-1
+sta bulspd
+;
+lda heat
+clc
+adc #8
+sta heat
+;
+jsr fireso ;* laser fire init
+;
+lda #0
+sta bon   ;* not ready to print
+sta boff  ;* dont rub it
+;
+lda #1
+sta fire  ;* bullet on
+;
+lda ship
+sec
+sbc #$47
+sta bulx  ;* xpos
+;
+lda #20
+sta buly  ;* ypos
+;
+ldx bulx
+ldy buly
+;
+jsr xy
+;
+lda sl
+sta bullet
+lda sh
+sta bullet+1
+;
+lda #1
+sta bon
+;
+; tell irq to print it
+;
+sado
+;
+rts
+;
+;
+mvebul
+;
+lda fire
+bne pleb
+;
+rts
+;
+pleb
+;
+inc bulspd
+lda bulspd
+;
+cmp #bspeed
+;
+beq mveyah
+;
+rts
+;
+;
+mveyah
+;
+lda #0
+sta bulspd
+;
+ldy buly
+dey
+sty newby
+beq rsetbu ;* reached top
+;
+lda #1
+sta boff ;* cls & set new y pos
+sta bon  ;* print new bullet
+;
+rts
+;
+rsetbu
+;
+; reset bullet
+;
+ldy #0
+sty fire
+;
+sta boff
+sta bon
+;
+lda #32       ;* rub out bullet
+sta (bullet),y
+;
+rts
+;
+;
+;
+prblet
+;
+lda boff
+beq norub
+;
+hoho
+;
+; used to rub out bullet here
+;
+ldx bulx
+ldy newby
+sty buly
+jsr xy
+;
+lda sl
+sta bullet
+lda sh
+sta bullet+1 ;* new pos
+;
+;
+norub
+;
+lda bon
+beq silly
+;
+;             ;*******************
+lda clal      ;* make sure alien *
+bne uphrs     ;* not being cls   *
+;             ;*******************
+;
+;             ;*******************
+lda pral      ;* wait for aliens *
+bne upyrs     ;* to be on screen *
+;             ;*******************
+;
+uphrs
+;
+rts
+;
+upyrs
+;
+ldy #40
+lda (bullet),y
+;
+pha
+;
+lda boff
+beq nrunt
+;
+lda #0
+sta boff
+;
+lda #32
+sta (bullet),y
+;
+nrunt
+;
+pla
+;
+jsr chkbul
+bcs eleph
+;
+ldy #0
+lda (bullet),y
+;
+jsr chkbul
+bcc nofag      ;* ok
+;
+eleph
+;
+sta under      ;* save char under
+;
+lda #1
+sta hitflg
+;
+lda bulx       ;* pass x pos
+sta hitx
+lda buly       ;* and y pos.
+sta hity
+;
+jsr alihit     ;* ?!?!?!?
+;
+rts            ;* don't print bul.
+;
+nofag
+;
+lda #92
+sta (bullet),y   ;* char
+;
+lda bullet+1
+pha
+sec
+sbc #4
+sta bullet+1
+;
+lda #bcolor
+sta (bullet),y   ;* colour
+;
+pla
+sta bullet+1
+;
+silly
+;
+rts
+;
+;
+;
+chkbul      ;* chek undr bullet
+;
+cmp #101
+bcc chkok   ;* no
+;
+cmp #104
+bcs chkok   ;* no
+;
+; yes
+;
+sec
+;
+rts
+;
+chkok
+;
+clc
+;
+rts
+;
+.end ship
+;
+rts

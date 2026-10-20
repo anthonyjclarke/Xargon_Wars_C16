@@ -1,0 +1,188 @@
+{
+  "emulator": "VICE xplus4 3.10",
+  "model": "c16pal",
+  "ram_kib": 16,
+  "sound": "off",
+  "title_loop_reached": "$3112 PARTY",
+  "menu_test_address": "$334F (LDA JMOVE after JSR REDJOS in MVEBOX)",
+  "scripted_input": "YBOX=0 (PLAY GAME), then JMOVE=1, JUP=JDOWN=0, JFIRE=$80 at the menu test",
+  "gameplay_loop_reached": "$25D6 START, then 100 further passes",
+  "gameplay_state": {
+    "PLAYIN": 1,
+    "DEMO": 0,
+    "LIVES": 3,
+    "GLIVES": 3,
+    "SHEETN": 0,
+    "DEAD": 0,
+    "FINITO": 0,
+    "YBOX": 0
+  },
+  "screenshots": [
+    "restored-title.png",
+    "restored-gameplay-start.png",
+    "restored-gameplay.png"
+  ],
+  "not_verified": [
+    "manual keyboard and joystick play",
+    "sound",
+    "scoring over a full game",
+    "sheet transitions",
+    "death and game over",
+    "high-score entry",
+    "full play-through",
+    "real C16 or Plus/4 hardware"
+  ],
+  "reference_start": "VICE -autostart (LOAD and RUN from a virtual disk; BASIC SYS 7296)",
+  "reference_title_loop_reached": "$310C",
+  "reference_runtime_state_recreated_at_title": [
+    {
+      "address": "$1C92",
+      "symbol": "LIVES",
+      "snapshot": "$03",
+      "at_title": "$03",
+      "recreated": true
+    },
+    {
+      "address": "$1C93",
+      "symbol": "CFLAG",
+      "snapshot": "$01",
+      "at_title": "$01",
+      "recreated": true
+    },
+    {
+      "address": "$1EA2",
+      "symbol": "DELAY+1",
+      "snapshot": "$0C",
+      "at_title": "$01",
+      "recreated": false
+    },
+    {
+      "address": "$232A",
+      "symbol": "PXL+1",
+      "snapshot": "$17",
+      "at_title": "$17",
+      "recreated": true
+    },
+    {
+      "address": "$232B",
+      "symbol": "PXL+2",
+      "snapshot": "$32",
+      "at_title": "$32",
+      "recreated": true
+    },
+    {
+      "address": "$2335",
+      "symbol": "PXL1+1",
+      "snapshot": "$17",
+      "at_title": "$17",
+      "recreated": true
+    },
+    {
+      "address": "$2336",
+      "symbol": "PXL1+2",
+      "snapshot": "$32",
+      "at_title": "$32",
+      "recreated": true
+    },
+    {
+      "address": "$2351",
+      "symbol": "PXLL+1",
+      "snapshot": "$17",
+      "at_title": "$17",
+      "recreated": true
+    },
+    {
+      "address": "$2352",
+      "symbol": "PXLL+2",
+      "snapshot": "$32",
+      "at_title": "$32",
+      "recreated": true
+    },
+    {
+      "address": "$3139",
+      "symbol": "TITCOL",
+      "snapshot": "$74",
+      "at_title": "$75",
+      "recreated": false
+    },
+    {
+      "address": "$3250",
+      "symbol": "CSOU+10",
+      "snapshot": "$20",
+      "at_title": "$20",
+      "recreated": true
+    },
+    {
+      "address": "$3251",
+      "symbol": "CSOU+11",
+      "snapshot": "$4F",
+      "at_title": "$4F",
+      "recreated": true
+    },
+    {
+      "address": "$3252",
+      "symbol": "CSOU+12",
+      "snapshot": "$4E",
+      "at_title": "$4E",
+      "recreated": true
+    },
+    {
+      "address": "$329D",
+      "symbol": "CHZ",
+      "snapshot": "$6D",
+      "at_title": "$6D",
+      "recreated": true
+    },
+    {
+      "address": "$329E",
+      "symbol": "CHZ+1",
+      "snapshot": "$6E",
+      "at_title": "$6E",
+      "recreated": true
+    },
+    {
+      "address": "$329F",
+      "symbol": "CHZ+2",
+      "snapshot": "$6F",
+      "at_title": "$6F",
+      "recreated": true
+    },
+    {
+      "address": "$32A0",
+      "symbol": "CHZ+3",
+      "snapshot": "$70",
+      "at_title": "$70",
+      "recreated": true
+    },
+    {
+      "address": "$32A1",
+      "symbol": "CHZ+4",
+      "snapshot": "$71",
+      "at_title": "$71",
+      "recreated": true
+    },
+    {
+      "address": "$32A2",
+      "symbol": "CHZ+5",
+      "snapshot": "$72",
+      "at_title": "$72",
+      "recreated": true
+    },
+    {
+      "address": "$32A3",
+      "symbol": "CHZ+6",
+      "snapshot": "$73",
+      "at_title": "$73",
+      "recreated": true
+    },
+    {
+      "address": "$32A4",
+      "symbol": "CHZ+7",
+      "snapshot": "$74",
+      "at_title": "$74",
+      "recreated": true
+    }
+  ],
+  "reference_runtime_state_recreated_count": "19 of 21",
+  "reference_sha256": "835d26e3b92c91f720b0bf3444c0127f9e66e896608d72ef32cf2b186fb69cec"
+}

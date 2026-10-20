@@ -1,0 +1,1407 @@
+{
+  "image": "Recovered Source/2026/XargonWars-C16-d64copy.d64",
+  "image_sha256": "5d400d859b94f506bfb406fa1153c690f93952d5b3337c951f3805a0155588cd",
+  "disk_files": 77,
+  "source_priority": "2026 D64 only; no fallback required",
+  "files": [
+    {
+      "name": "ALIENS",
+      "kind": "SEQ",
+      "directory_index": 1,
+      "sha256": "cfe799dee8a6d23c23410567bba595b1beb2ac961dfab4ea78a25907572359d8",
+      "bytes": 4771,
+      "blocks": 19,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/001_ALIENS.seq",
+      "load_address": null
+    },
+    {
+      "name": "ANIMATE",
+      "kind": "SEQ",
+      "directory_index": 2,
+      "sha256": "e73c842f450679981ccc1c36914013bc955b018a3b7321e1961a2d5e9e0045c3",
+      "bytes": 884,
+      "blocks": 4,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/002_ANIMATE.seq",
+      "load_address": null
+    },
+    {
+      "name": "OBJ",
+      "kind": "SEQ",
+      "directory_index": 3,
+      "sha256": "309a4f34f24e8e70804fca0739ab660628d0db01fbe726dec823c558f9e4107f",
+      "bytes": 26894,
+      "blocks": 106,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/003_OBJ.seq",
+      "load_address": null
+    },
+    {
+      "name": "ASSEM-SHEETS",
+      "kind": "SEQ",
+      "directory_index": 4,
+      "sha256": "c321e0951310a84ec8da73f412e37dd11cd34e3b3e3c801ea4689f4c5bf731da",
+      "bytes": 254,
+      "blocks": 1,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/004_ASSEM-SHEETS.seq",
+      "load_address": null
+    },
+    {
+      "name": "BOMBS",
+      "kind": "SEQ",
+      "directory_index": 5,
+      "sha256": "cb82691aa9743b9eee5448e9d26e9a81007e7ac1fbff01c0ebb1f122569434a0",
+      "bytes": 2604,
+      "blocks": 11,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/005_BOMBS.seq",
+      "load_address": null
+    },
+    {
+      "name": "CHARS",
+      "kind": "SEQ",
+      "directory_index": 6,
+      "sha256": "93f18e7fba1bfb0564dde67fef671fdb6222667c82a69fa2b4083b4d46bb5d2a",
+      "bytes": 1788,
+      "blocks": 8,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/006_CHARS.seq",
+      "load_address": null
+    },
+    {
+      "name": "DEATH-MARCH",
+      "kind": "SEQ",
+      "directory_index": 7,
+      "sha256": "067414aa4a686809f33a8ad07a7546b16063b595959354dc32f99e250ad4cd70",
+      "bytes": 1598,
+      "blocks": 7,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/007_DEATH-MARCH.seq",
+      "load_address": null
+    },
+    {
+      "name": "EXTRA-MEMORY",
+      "kind": "SEQ",
+      "directory_index": 8,
+      "sha256": "7b3d51315aa2fd429a011f466e40bcd2dc30fe537ebe7e0633a4d4affc7a1907",
+      "bytes": 531,
+      "blocks": 3,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/008_EXTRA-MEMORY.seq",
+      "load_address": null
+    },
+    {
+      "name": "GAME-OVER",
+      "kind": "SEQ",
+      "directory_index": 9,
+      "sha256": "4f869f17680b88c5c552f97791d3e6931d3737afca81919f8cf0cbfb2668eeff",
+      "bytes": 1634,
+      "blocks": 7,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/009_GAME-OVER.seq",
+      "load_address": null
+    },
+    {
+      "name": "GAUGE",
+      "kind": "SEQ",
+      "directory_index": 10,
+      "sha256": "292fe7e3564b514e5a6b522d7709bd12f31bd9b94623ebf6ad4cf12db09597ba",
+      "bytes": 997,
+      "blocks": 4,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/010_GAUGE.seq",
+      "load_address": null
+    },
+    {
+      "name": "HAK/SCREEN",
+      "kind": "SEQ",
+      "directory_index": 11,
+      "sha256": "ad71d3c9b2907b9245b6aaec40c2040db9c564231338856b267879e954db8f58",
+      "bytes": 629,
+      "blocks": 3,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/011_HAK~2FSCREEN.seq",
+      "load_address": null
+    },
+    {
+      "name": "HEXER",
+      "kind": "SEQ",
+      "directory_index": 12,
+      "sha256": "6bd453929e577c68f45557c19bf7546169fd968566f3d90a3fdff239f2511449",
+      "bytes": 195,
+      "blocks": 1,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/012_HEXER.seq",
+      "load_address": null
+    },
+    {
+      "name": "HIGH-STUFF",
+      "kind": "SEQ",
+      "directory_index": 13,
+      "sha256": "73d413f90fa0ec93bf0da41ddb4ea86b1a8b07e8576174ba8a6f7b510640078c",
+      "bytes": 4242,
+      "blocks": 17,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/013_HIGH-STUFF.seq",
+      "load_address": null
+    },
+    {
+      "name": "IRQ",
+      "kind": "SEQ",
+      "directory_index": 14,
+      "sha256": "e6ab969efc6194e9b02c4e0fd685104c07a554a207d5a597a8f94f04819ef45d",
+      "bytes": 2222,
+      "blocks": 9,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/014_IRQ.seq",
+      "load_address": null
+    },
+    {
+      "name": "JO/KE SELECTION",
+      "kind": "SEQ",
+      "directory_index": 15,
+      "sha256": "292d0fd2a12bbb032f9b155913185c99144e5391c3a535bf92fe0dd0c884b674",
+      "bytes": 634,
+      "blocks": 3,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/015_JO~2FKE_SELECTION.seq",
+      "load_address": null
+    },
+    {
+      "name": "JOYSTIK",
+      "kind": "SEQ",
+      "directory_index": 16,
+      "sha256": "98bf0d821884d939cda727f6bd65cd68c8e786b9a191f3ac4236e8d395fc7edb",
+      "bytes": 1007,
+      "blocks": 4,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/016_JOYSTIK.seq",
+      "load_address": null
+    },
+    {
+      "name": "KEY-SCAN",
+      "kind": "SEQ",
+      "directory_index": 17,
+      "sha256": "bcadcb892d80712faa8344c89ee6d1e95cfaf4b9ef40a2b6d395fe2403197783",
+      "bytes": 654,
+      "blocks": 3,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/017_KEY-SCAN.seq",
+      "load_address": null
+    },
+    {
+      "name": "KILLER",
+      "kind": "SEQ",
+      "directory_index": 18,
+      "sha256": "f5a9cbbcb393b10fcf11e11c9ece4f15a7d908c96c303fb489f0d1470e8569b0",
+      "bytes": 2392,
+      "blocks": 10,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/018_KILLER.seq",
+      "load_address": null
+    },
+    {
+      "name": "MACROS",
+      "kind": "SEQ",
+      "directory_index": 19,
+      "sha256": "e4f63399cc608aea899c555ad9b2c4ef89e349c85b8a9c16a1d4ebc7bc6bbb24",
+      "bytes": 274,
+      "blocks": 2,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/019_MACROS.seq",
+      "load_address": null
+    },
+    {
+      "name": "MAGNIFICENT",
+      "kind": "SEQ",
+      "directory_index": 20,
+      "sha256": "3e3be21696cb5f9091ff6d51eb34c120d1e4f4aec817b9a87f90ecbcc78691ce",
+      "bytes": 1040,
+      "blocks": 5,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/020_MAGNIFICENT.seq",
+      "load_address": null
+    },
+    {
+      "name": "MAIN-VARS",
+      "kind": "SEQ",
+      "directory_index": 21,
+      "sha256": "ecd42b7ea28c235e33c3abc809bf84e43ac60cf665eb864a6b04ebdea7164870",
+      "bytes": 676,
+      "blocks": 3,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/021_MAIN-VARS.seq",
+      "load_address": null
+    },
+    {
+      "name": "MUFF",
+      "kind": "SEQ",
+      "directory_index": 22,
+      "sha256": "91e6cafb71bc958116d5f93d16449a0bd580bec111d0d4bedf5d684504bbe76f",
+      "bytes": 270,
+      "blocks": 2,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/022_MUFF.seq",
+      "load_address": null
+    },
+    {
+      "name": "PLAY-GAME",
+      "kind": "SEQ",
+      "directory_index": 23,
+      "sha256": "f2181d1595726d20c8b8b94de21b5cf9b2ba56ac19ae931d9e00d74bd2c693ff",
+      "bytes": 1897,
+      "blocks": 8,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/023_PLAY-GAME.seq",
+      "load_address": null
+    },
+    {
+      "name": "RANK-MASTER",
+      "kind": "SEQ",
+      "directory_index": 24,
+      "sha256": "5625e92248366f8d293345a616fa1319940ce2de772f3941365d83e7196bb50f",
+      "bytes": 358,
+      "blocks": 2,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/024_RANK-MASTER.seq",
+      "load_address": null
+    },
+    {
+      "name": "SAVER",
+      "kind": "SEQ",
+      "directory_index": 25,
+      "sha256": "53badeb7f194dfb28a7d72ebdbdec34215b7e293f2877148e8c0b15f0508b36a",
+      "bytes": 1413,
+      "blocks": 6,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/025_SAVER.seq",
+      "load_address": null
+    },
+    {
+      "name": "SCORE-ROUTINES",
+      "kind": "SEQ",
+      "directory_index": 26,
+      "sha256": "90e8080193dde3f3c4ed849da9bc984cecb9fca2ea537c8b6971e93e9e620de0",
+      "bytes": 1046,
+      "blocks": 5,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/026_SCORE-ROUTINES.seq",
+      "load_address": null
+    },
+    {
+      "name": "SCREEN",
+      "kind": "SEQ",
+      "directory_index": 27,
+      "sha256": "c68ec4d8ff062a5c6adacce6a5e7aa2ebe0d222602fc55f9e0129f477d27bc27",
+      "bytes": 2036,
+      "blocks": 9,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/027_SCREEN.seq",
+      "load_address": null
+    },
+    {
+      "name": "SCROLL-BUFFER",
+      "kind": "SEQ",
+      "directory_index": 28,
+      "sha256": "a2fca1826bef5ee6afd78474f9c86709d365aaa426753ca859756d575140f0d1",
+      "bytes": 395,
+      "blocks": 2,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/028_SCROLL-BUFFER.seq",
+      "load_address": null
+    },
+    {
+      "name": "SETUP",
+      "kind": "SEQ",
+      "directory_index": 29,
+      "sha256": "099def25cc6c28c0546e1bd88dbc69498efb271e37a88a4d12f4b12ecd31861c",
+      "bytes": 642,
+      "blocks": 3,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/029_SETUP.seq",
+      "load_address": null
+    },
+    {
+      "name": "SHEET1",
+      "kind": "SEQ",
+      "directory_index": 30,
+      "sha256": "c1ebf6dc5cf3d8a545efa02e53997251ea63151c698f933641c0e8b58dd1930f",
+      "bytes": 756,
+      "blocks": 3,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/030_SHEET1.seq",
+      "load_address": null
+    },
+    {
+      "name": "SHEET2",
+      "kind": "SEQ",
+      "directory_index": 31,
+      "sha256": "7228a6257463f8c8382cf623d48af8b5820dc545f2cfea0b51cf3892aa4506bc",
+      "bytes": 1757,
+      "blocks": 7,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/031_SHEET2.seq",
+      "load_address": null
+    },
+    {
+      "name": "SHEET3",
+      "kind": "SEQ",
+      "directory_index": 32,
+      "sha256": "bee4347f06d79855d81bf564022becb43e713fcfa42f9a85b0907c7f31de7bca",
+      "bytes": 981,
+      "blocks": 4,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/032_SHEET3.seq",
+      "load_address": null
+    },
+    {
+      "name": "SHEET4",
+      "kind": "SEQ",
+      "directory_index": 33,
+      "sha256": "066d85a45aeb76f3005c2527d9ea6b3097d2754588d5d32efac1d6a1813fff04",
+      "bytes": 1689,
+      "blocks": 7,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/033_SHEET4.seq",
+      "load_address": null
+    },
+    {
+      "name": "SHEET5",
+      "kind": "SEQ",
+      "directory_index": 34,
+      "sha256": "f5b5feffaec81bec11f9dc3f171484437e365b98cad151f40b605fa8f99d81b5",
+      "bytes": 855,
+      "blocks": 4,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/034_SHEET5.seq",
+      "load_address": null
+    },
+    {
+      "name": "SHEET6",
+      "kind": "SEQ",
+      "directory_index": 35,
+      "sha256": "4d035e7cb9a97da70f4eb0fce00f28f3beafe03a1567244dfe99aa97bf985d28",
+      "bytes": 1731,
+      "blocks": 7,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/035_SHEET6.seq",
+      "load_address": null
+    },
+    {
+      "name": "SHEET7",
+      "kind": "SEQ",
+      "directory_index": 36,
+      "sha256": "3f8e92e60beccc30078fcff0064ccf5fae9af04278a00c23bc2a1981df6beaf9",
+      "bytes": 1763,
+      "blocks": 7,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/036_SHEET7.seq",
+      "load_address": null
+    },
+    {
+      "name": "SHEET8",
+      "kind": "SEQ",
+      "directory_index": 37,
+      "sha256": "b185e6a8645d08fcece5059cd35fb0795932cbea685e3936f85b941563a6d374",
+      "bytes": 1689,
+      "blocks": 7,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/037_SHEET8.seq",
+      "load_address": null
+    },
+    {
+      "name": "SHEET9",
+      "kind": "SEQ",
+      "directory_index": 38,
+      "sha256": "901fd5a568f53307af895a2d07d9b38f4375102198a7862e3e53e16946c0a533",
+      "bytes": 1712,
+      "blocks": 7,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/038_SHEET9.seq",
+      "load_address": null
+    },
+    {
+      "name": "SHEETA",
+      "kind": "SEQ",
+      "directory_index": 39,
+      "sha256": "ae63f1eb28f33a7c7e66944e316bc7d65d0a48936f775a67991dd988a2edfe24",
+      "bytes": 1736,
+      "blocks": 7,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/039_SHEETA.seq",
+      "load_address": null
+    },
+    {
+      "name": "SHEETB",
+      "kind": "SEQ",
+      "directory_index": 40,
+      "sha256": "90271da5463a47fec23b19807cf96144d28b90e4bc6e55b9c4c65a1dccf60f94",
+      "bytes": 1848,
+      "blocks": 8,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/040_SHEETB.seq",
+      "load_address": null
+    },
+    {
+      "name": "SHEETC",
+      "kind": "SEQ",
+      "directory_index": 41,
+      "sha256": "486b6ff6edddf647ac2ced86bd0f8d44e35d955626d45130dc4e5b29c070bc8e",
+      "bytes": 890,
+      "blocks": 4,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/041_SHEETC.seq",
+      "load_address": null
+    },
+    {
+      "name": "SHEETD",
+      "kind": "SEQ",
+      "directory_index": 42,
+      "sha256": "53c734e3a580218e2a7f7edf8c1191e6d81bf0e142d280a87a8587e4446fa75a",
+      "bytes": 846,
+      "blocks": 4,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/042_SHEETD.seq",
+      "load_address": null
+    },
+    {
+      "name": "SHEETE",
+      "kind": "SEQ",
+      "directory_index": 43,
+      "sha256": "d97c0be0055636ece4a800070d353b58282782b2ae0305ba529cf9759a60e3ac",
+      "bytes": 1991,
+      "blocks": 8,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/043_SHEETE.seq",
+      "load_address": null
+    },
+    {
+      "name": "SHEETF",
+      "kind": "SEQ",
+      "directory_index": 44,
+      "sha256": "b12d1be93b9704c03d4ae8b6c00060dca01ab483e657499a60e924066ff3b4b5",
+      "bytes": 1756,
+      "blocks": 7,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/044_SHEETF.seq",
+      "load_address": null
+    },
+    {
+      "name": "SHEETG",
+      "kind": "SEQ",
+      "directory_index": 45,
+      "sha256": "4f593d1a51f40dc7ad83f9ae2f1998ade887918a3cceb7a1a85cb320cc3d93bf",
+      "bytes": 903,
+      "blocks": 4,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/045_SHEETG.seq",
+      "load_address": null
+    },
+    {
+      "name": "SHIP",
+      "kind": "SEQ",
+      "directory_index": 46,
+      "sha256": "7989a2225c19c62230e6a65b9c55ea10b72874909ba57e93732639f871360daf",
+      "bytes": 3499,
+      "blocks": 14,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/046_SHIP.seq",
+      "load_address": null
+    },
+    {
+      "name": "SHTABLE",
+      "kind": "SEQ",
+      "directory_index": 47,
+      "sha256": "7284ee76e5700d756f3d6b987dcafbf79a05d22fe2945d4f8f9b78f88c99977e",
+      "bytes": 7952,
+      "blocks": 32,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/047_SHTABLE.seq",
+      "load_address": null
+    },
+    {
+      "name": "SMOOTH-SCROLL",
+      "kind": "SEQ",
+      "directory_index": 48,
+      "sha256": "45f26e87eb8ac0a986bd56b9a280959bcbc4f8cd3bc3c038a6b4c9224611c450",
+      "bytes": 1397,
+      "blocks": 6,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/048_SMOOTH-SCROLL.seq",
+      "load_address": null
+    },
+    {
+      "name": "SOUND",
+      "kind": "SEQ",
+      "directory_index": 49,
+      "sha256": "ddaa2fcc4c37148e29c05686cb2fdd131ad7a76d2133e5197fd9dc0c7ebf3c91",
+      "bytes": 2531,
+      "blocks": 10,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/049_SOUND.seq",
+      "load_address": null
+    },
+    {
+      "name": "STARS",
+      "kind": "SEQ",
+      "directory_index": 50,
+      "sha256": "03a4f7bb00693c6ba09d485d6ceebed9900d79863d27318ba457d59d88615cdf",
+      "bytes": 2791,
+      "blocks": 11,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/050_STARS.seq",
+      "load_address": null
+    },
+    {
+      "name": "STARTER",
+      "kind": "SEQ",
+      "directory_index": 51,
+      "sha256": "8fe83a6c566b6f92cc90071999e6dd7dd2cf26cb2b324a06e3bee1bf2d271992",
+      "bytes": 918,
+      "blocks": 4,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/051_STARTER.seq",
+      "load_address": null
+    },
+    {
+      "name": "TABLES",
+      "kind": "SEQ",
+      "directory_index": 52,
+      "sha256": "1d348bcb90ca15f5539168ebb37d2ac82d478502d9b8978fb6cf71727a053275",
+      "bytes": 2189,
+      "blocks": 9,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/052_TABLES.seq",
+      "load_address": null
+    },
+    {
+      "name": "TUNE",
+      "kind": "SEQ",
+      "directory_index": 53,
+      "sha256": "37f8418d0ad96f3456b3454c6499683dd7edaffcef52c4cae53ffdb74550a70c",
+      "bytes": 1026,
+      "blocks": 5,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/053_TUNE.seq",
+      "load_address": null
+    },
+    {
+      "name": "ULTRA",
+      "kind": "SEQ",
+      "directory_index": 54,
+      "sha256": "0dff9d448a4f88c7e8c0e0a43ff6c564f1f7398189711f1ad0a78ede374614b2",
+      "bytes": 2095,
+      "blocks": 9,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/054_ULTRA.seq",
+      "load_address": null
+    },
+    {
+      "name": "UTILS",
+      "kind": "SEQ",
+      "directory_index": 55,
+      "sha256": "7cd8ebdefe5d84d12f6bd9e5eb4ce1af0be0e989f30309859d2c7680030c5f05",
+      "bytes": 787,
+      "blocks": 4,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/055_UTILS.seq",
+      "load_address": null
+    },
+    {
+      "name": "LISTER",
+      "kind": "SEQ",
+      "directory_index": 56,
+      "sha256": "58dfa9f906c0dd40eb9b244ba6b6c92a5736dc0d16ad99767e2f7049bc50b92d",
+      "bytes": 2096,
+      "blocks": 9,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/056_LISTER.seq",
+      "load_address": null
+    },
+    {
+      "name": "OBJ.ANT",
+      "kind": "SEQ",
+      "directory_index": 57,
+      "sha256": "1187d1b0a89c7fea9fa9e3dfb4df96295d0ae3f2cfa2029004fa92e1334e5847",
+      "bytes": 492,
+      "blocks": 2,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/057_OBJ~2EANT.seq",
+      "load_address": null
+    },
+    {
+      "name": "@",
+      "kind": "PRG",
+      "directory_index": 58,
+      "sha256": "411aee1658bb4ad9bfb6cb1698e2911e7d764f8f835aef5d6d0720730d2a4bc9",
+      "bytes": 1538,
+      "blocks": 7,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/058_~40.prg",
+      "load_address": "$3200"
+    },
+    {
+      "name": "BOOT ALL",
+      "kind": "PRG",
+      "directory_index": 59,
+      "sha256": "a7ca9c127ed883c39a8ef92f61e5ed56c81da4e99cb0098390527527194e80e1",
+      "bytes": 136,
+      "blocks": 1,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/059_BOOT_ALL.prg",
+      "load_address": "$0801"
+    },
+    {
+      "name": "CAMEL (CHARS)",
+      "kind": "PRG",
+      "directory_index": 60,
+      "sha256": "46708fe9acf8a5baf34e4bbc314a15c9ccc0e930ceae052b596cc4d1a5021c34",
+      "bytes": 1026,
+      "blocks": 5,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/060_CAMEL_~28CHARS~29.prg",
+      "load_address": "$3C00"
+    },
+    {
+      "name": "DOS5.2",
+      "kind": "PRG",
+      "directory_index": 61,
+      "sha256": "bc3d8fa6eda201ad7a430585d624f9b309ffc000fac4bfbc93299d03bd7bd27d",
+      "bytes": 866,
+      "blocks": 4,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/061_DOS5~2E2.prg",
+      "load_address": "$CC00"
+    },
+    {
+      "name": "EDITOR",
+      "kind": "PRG",
+      "directory_index": 62,
+      "sha256": "d21aa6fd0553ed87f32ea52c3a8141cdd3555edb8f75117a8652080818091c72",
+      "bytes": 1626,
+      "blocks": 7,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/062_EDITOR.prg",
+      "load_address": "$C000"
+    },
+    {
+      "name": "FRAK!",
+      "kind": "PRG",
+      "directory_index": 63,
+      "sha256": "a96b127f169bcba9afabecb04d267b57605ea20db63736c50236b5cf1de5fdf7",
+      "bytes": 1026,
+      "blocks": 5,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/063_FRAK~21.prg",
+      "load_address": "$3C00"
+    },
+    {
+      "name": "GLOPPY (MUSIC)",
+      "kind": "PRG",
+      "directory_index": 64,
+      "sha256": "2c7ee9c637bc1c8220b3fb16f498dd8db9d6dfca7bd16ae425b6c9820ce87ee2",
+      "bytes": 130,
+      "blocks": 1,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/064_GLOPPY_~28MUSIC~29.prg",
+      "load_address": "$1E80"
+    },
+    {
+      "name": "HYPRA-LOAD OBJ",
+      "kind": "PRG",
+      "directory_index": 65,
+      "sha256": "203969671aaafcf116e0f7422f35adecbbf43558432c9c77fbb75d18c5518185",
+      "bytes": 1460,
+      "blocks": 6,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/065_HYPRA-LOAD_OBJ.prg",
+      "load_address": "$0801"
+    },
+    {
+      "name": "JINGLE1",
+      "kind": "PRG",
+      "directory_index": 66,
+      "sha256": "26b0bfedd865471008f1513695d9ce7c6b6ad427164e13567bfb99d3183f3290",
+      "bytes": 340,
+      "blocks": 2,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/066_JINGLE1.prg",
+      "load_address": "$1001"
+    },
+    {
+      "name": "JINGLE2",
+      "kind": "PRG",
+      "directory_index": 67,
+      "sha256": "d33904e237877b64d91bf4bdaeb3ef9eca8a51235711ab5af576eca976476ba4",
+      "bytes": 866,
+      "blocks": 4,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/067_JINGLE2.prg",
+      "load_address": "$1001"
+    },
+    {
+      "name": "MEGA-SUPER",
+      "kind": "PRG",
+      "directory_index": 68,
+      "sha256": "6115ee51712a0bd86576d14209e97bd05d859bff6f91c47c4b2e0a9032e4ba87",
+      "bytes": 1026,
+      "blocks": 5,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/068_MEGA-SUPER.prg",
+      "load_address": "$3C00"
+    },
+    {
+      "name": "MUSIC-MAKER",
+      "kind": "PRG",
+      "directory_index": 69,
+      "sha256": "f1348a7c792ffdb41645cdd5e9735d874aebc49d8a606a10687d69e6e9324f73",
+      "bytes": 1197,
+      "blocks": 5,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/069_MUSIC-MAKER.prg",
+      "load_address": "$1001"
+    },
+    {
+      "name": "MUSIC/CODE",
+      "kind": "PRG",
+      "directory_index": 70,
+      "sha256": "c97dcdb6c4c9357155fbcefc222cc99c371a46f068bd12893bb00ebf9de3d520",
+      "bytes": 130,
+      "blocks": 1,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/070_MUSIC~2FCODE.prg",
+      "load_address": "$1C00"
+    },
+    {
+      "name": "SUPER-LOAD",
+      "kind": "PRG",
+      "directory_index": 71,
+      "sha256": "8ad18afb13a8216648049c6466a1f41eb003f1e0152d12235880e6318d762d9b",
+      "bytes": 946,
+      "blocks": 4,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/071_SUPER-LOAD.prg",
+      "load_address": "$1800"
+    },
+    {
+      "name": "TEST-B",
+      "kind": "PRG",
+      "directory_index": 72,
+      "sha256": "267288edf518af6f76e4467bd37a42acc9febbb8bc7dcc6205c1e72ee873a030",
+      "bytes": 258,
+      "blocks": 2,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/072_TEST-B.prg",
+      "load_address": "$1F00"
+    },
+    {
+      "name": "WASAL",
+      "kind": "PRG",
+      "directory_index": 73,
+      "sha256": "c96783453f183a400423860744b91e670ca943f9c1d20d1e37623fae455baf40",
+      "bytes": 1235,
+      "blocks": 5,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/073_WASAL.prg",
+      "load_address": "$1001"
+    },
+    {
+      "name": "ASM.C64",
+      "kind": "PRG",
+      "directory_index": 74,
+      "sha256": "becc56940ab3fc21251ac962218f4d15bf74d2e0152a12d65e35c685689f677f",
+      "bytes": 10241,
+      "blocks": 41,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/074_ASM~2EC64.prg",
+      "load_address": "$0801"
+    },
+    {
+      "name": "SETSHEET",
+      "kind": "SEQ",
+      "directory_index": 75,
+      "sha256": "3d235ef68cdb80bad45745bbbb73c0cc52b9a7fc2ede1a6cb2dacd42e56f2f4b",
+      "bytes": 4861,
+      "blocks": 20,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/075_SETSHEET.seq",
+      "load_address": null
+    },
+    {
+      "name": "TITLE-WORKS",
+      "kind": "SEQ",
+      "directory_index": 76,
+      "sha256": "2e99cb40a6f291c0206400022d543736bc4971d69f0c803bbaecb95bc50964d6",
+      "bytes": 7149,
+      "blocks": 29,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/076_TITLE-WORKS.seq",
+      "load_address": null
+    },
+    {
+      "name": "VARS",
+      "kind": "SEQ",
+      "directory_index": 77,
+      "sha256": "9dfa9460470f21c63ee71871c5419c523b9fe2b9cd6f16e30f85fdeccba78eae",
+      "bytes": 4179,
+      "blocks": 17,
+      "closed": true,
+      "extracted_copy": "Recovered Source/2026/XargonWars-C16/077_VARS.seq",
+      "load_address": null
+    }
+  ],
+  "older_export_cross_check": {
+    "index_entries": 77,
+    "zip_matches_folder": true,
+    "zip_comparison": "central-directory CRC-32 and size per member; .DS_Store ignored",
+    "zip_sha256": "433fec06147c352ab60655922b837bd84511ae0e3fb43953d4c6121380aabfde",
+    "files": [
+      {
+        "name": "ALIENS",
+        "export": "ALIENS.TXT",
+        "sha256": "5ea0b2d25e6ba017a4f1b2b9b85c3a3f0727d13490dca91cce031cd81ac48e67",
+        "status": "same text (upper case, CR line ends)"
+      },
+      {
+        "name": "ANIMATE",
+        "export": "ANIMATE.TXT",
+        "sha256": "463d144844dbcf14780066845529f4c76ce8cce663f087eeb326d65e0698e2de",
+        "status": "same text (upper case, CR line ends)"
+      },
+      {
+        "name": "OBJ",
+        "export": "OBJ.TXT",
+        "sha256": "bf8d9a8531ed52fcdfa59151e2798cb20203ae4a8aa13e110dbf6e003a9fd8d9",
+        "status": "same text (upper case, CR line ends)"
+      },
+      {
+        "name": "ASSEM-SHEETS",
+        "export": "ASSEMSHE.TXT",
+        "sha256": "c9bc433b7e800a2144cee8e44b431bdd00b166e56c7fbd60dedaa9ee37141712",
+        "status": "same text (upper case, CR line ends)"
+      },
+      {
+        "name": "BOMBS",
+        "export": "BOMBS.TXT",
+        "sha256": "d7ce2517380219e5f8c1a9fb54cc18a7f41c482967ae5b656af102e0fde2b0fe",
+        "status": "same text (upper case, CR line ends)"
+      },
+      {
+        "name": "CHARS",
+        "export": "CHARS.TXT",
+        "sha256": "4abd3b28ae4dbdc64e88244e7c53e41b8319cc38bf03f1a5ca04d15780ce2ecb",
+        "status": "same text (upper case, CR line ends)"
+      },
+      {
+        "name": "DEATH-MARCH",
+        "export": "DEATHMAR.TXT",
+        "sha256": "9b9195bea0f08661346773e8ebb20950c3c3a9eb778b20c4b854fba3f720758f",
+        "status": "same text (upper case, CR line ends)"
+      },
+      {
+        "name": "EXTRA-MEMORY",
+        "export": "EXTRAMEM.TXT",
+        "sha256": "28000967cc73653db661f2bc85bd610db7eba4a67c8ce0704c165449b081e0c6",
+        "status": "same text (upper case, CR line ends)"
+      },
+      {
+        "name": "GAME-OVER",
+        "export": "GAMEOVER.TXT",
+        "sha256": "4bdbd2075363939edfe80808aa9902db388923fe89ff981d33557592107446ba",
+        "status": "same text (upper case, CR line ends)"
+      },
+      {
+        "name": "GAUGE",
+        "export": "GAUGE.TXT",
+        "sha256": "cc02fcf1709766d8749c13a386333c184427a648a423893570fb084fff75219e",
+        "status": "same text (upper case, CR line ends)"
+      },
+      {
+        "name": "HAK/SCREEN",
+        "export": "HAKSCREE.TXT",
+        "sha256": "b9fd1247ca78fe6332226d3328a92ed391ab1e16725c86c04ce6fb37f5f4f72d",
+        "status": "same text (upper case, CR line ends)"
+      },
+      {
+        "name": "HEXER",
+        "export": "HEXER.TXT",
+        "sha256": "353259c43652af8d781adf435d54f2f3646deeb2e949e7ce566ebfee47cd26f2",
+        "status": "same text (upper case, CR line ends)"
+      },
+      {
+        "name": "HIGH-STUFF",
+        "export": "HIGHSTUF.TXT",
+        "sha256": "8d38c6d3ed1772600fc5d81bc7052bd73cf6034fbcc5e7e36fdfbea5cb30e707",
+        "status": "same text (upper case, CR line ends)"
+      },
+      {
+        "name": "IRQ",
+        "export": "IRQ.TXT",
+        "sha256": "c692e68b66a37170156dccc36801f9017661ca59d8cb638adc08ed1e537a7af4",
+        "status": "same text (upper case, CR line ends)"
+      },
+      {
+        "name": "JO/KE SELECTION",
+        "export": "JOKESELE.TXT",
+        "sha256": "8ee9f1cedfcc147048c708695dfd7e8220fe0db5fa2d55bf410753ce1d179401",
+        "status": "same text (upper case, CR line ends)"
+      },
+      {
+        "name": "JOYSTIK",
+        "export": "JOYSTIK.TXT",
+        "sha256": "458817b0bf2b0d882022a3a826f2109efc455ac6060383fdb106fcda38ba52be",
+        "status": "same text (upper case, CR line ends)"
+      },
+      {
+        "name": "KEY-SCAN",
+        "export": "KEYSCAN.TXT",
+        "sha256": "2db999964bf7f1fa6507aa8a4b9777a0fc1773f04aae351c46049da642b6661d",
+        "status": "same text (upper case, CR line ends)"
+      },
+      {
+        "name": "KILLER",
+        "export": "KILLER.TXT",
+        "sha256": "b6dae9afa6d5652bfe4efae38fa65a0f1a6f1d997430b7571e856b9ce5c5aac9",
+        "status": "same text (upper case, CR line ends)"
+      },
+      {
+        "name": "MACROS",
+        "export": "MACROS.TXT",
+        "sha256": "6edf9d21c1e10223f295f302b26c5531d1a85cc84acd373d30bf2b2a8116aa8c",
+        "status": "same text (upper case, CR line ends)"
+      },
+      {
+        "name": "MAGNIFICENT",
+        "export": "MAGNIFIC.TXT",
+        "sha256": "0ca5574a5f98b5caaa0c2bf06e3ab7518e56d1d124a65cb9b4c852b444681eb7",
+        "status": "same text (upper case, CR line ends)"
+      },
+      {
+        "name": "MAIN-VARS",
+        "export": "MAINVARS.TXT",
+        "sha256": "8da6d0660aa9396e89193d8a3ef57ca65db987d9ed3d60964de4499460d9b92e",
+        "status": "same text (upper case, CR line ends)"
+      },
+      {
+        "name": "MUFF",
+        "export": "MUFF.TXT",
+        "sha256": "073a92e1a0b59608219f27218f0c37373b1634c28c1dd639c514f846734113ec",
+        "status": "same text (upper case, CR line ends)"
+      },
+      {
+        "name": "PLAY-GAME",
+        "export": "PLAYGAME.TXT",
+        "sha256": "ecc229cc7d6cb17d1f82613795093aa08bfd1baf77ab71da96a62b4a03991a44",
+        "status": "same text (upper case, CR line ends)"
+      },
+      {
+        "name": "RANK-MASTER",
+        "export": "RANKMAST.TXT",
+        "sha256": "f521b1343f95e187519ae5c21ad07a4325e1f066b11fab5cee18fc188400388c",
+        "status": "same text (upper case, CR line ends)"
+      },
+      {
+        "name": "SAVER",
+        "export": "SAVER.TXT",
+        "sha256": "4b7b246b78f786f5fcf3701bc455f9997ba6154ebee2c600182affe66348141d",
+        "status": "same text (upper case, CR line ends)"
+      },
+      {
+        "name": "SCORE-ROUTINES",
+        "export": "SCOREROU.TXT",
+        "sha256": "8b127433f899c9a2f76c9612a1f0bfda02e88b7d5e342462e8c3e0a5faa13644",
+        "status": "same text (upper case, CR line ends)"
+      },
+      {
+        "name": "SCREEN",
+        "export": "SCREEN.TXT",
+        "sha256": "5581c8108e6732ad5849ea1fd62ce5b48f70d502a66c7dccab4395fd0e63f70e",
+        "status": "same text (upper case, CR line ends)"
+      },
+      {
+        "name": "SCROLL-BUFFER",
+        "export": "SCROLLBU.TXT",
+        "sha256": "86e8ab39ead85721a8b5aed33850b482f435f677bd061b82eeba536e9d73adf4",
+        "status": "same text (upper case, CR line ends)"
+      },
+      {
+        "name": "SETUP",
+        "export": "SETUP.TXT",
+        "sha256": "4c884df0f567e8e7cd2bdd34f50d168c7d71ff3aae5168a3e5af80dc7b16cd39",
+        "status": "same text (upper case, CR line ends)"
+      },
+      {
+        "name": "SHEET1",
+        "export": "SHEET1.TXT",
+        "sha256": "5c61ce16db6c5744f4026c9ce361b161310017f8010399c63b5be142f78b7496",
+        "status": "same text (upper case, CR line ends)"
+      },
+      {
+        "name": "SHEET2",
+        "export": "SHEET2.TXT",
+        "sha256": "55b8fd29196b9142ef12b97a1900d2e0cddb3f9c06dd627649b5ccee53901b7d",
+        "status": "same text (upper case, CR line ends)"
+      },
+      {
+        "name": "SHEET3",
+        "export": "SHEET3.TXT",
+        "sha256": "b071f6cf7de3954280d7e88454b83a6b9008b4c749a79fdd2ba214aefc6e9dc6",
+        "status": "same text (upper case, CR line ends)"
+      },
+      {
+        "name": "SHEET4",
+        "export": "SHEET4.TXT",
+        "sha256": "24ff167e1e342a0fab638dee99e4fdb6167cc2f689cac4be190c6272ad6f26b6",
+        "status": "same text (upper case, CR line ends)"
+      },
+      {
+        "name": "SHEET5",
+        "export": "SHEET5.TXT",
+        "sha256": "edf1866d7730a87f9a541afa42ff7d1b746b510d11be332e668ab9c6625a598a",
+        "status": "same text (upper case, CR line ends)"
+      },
+      {
+        "name": "SHEET6",
+        "export": "SHEET6.TXT",
+        "sha256": "275e9591e946d2467e2aae4a2f3276f8d258d9b1b670dffbbad3037510c18c6e",
+        "status": "same text (upper case, CR line ends)"
+      },
+      {
+        "name": "SHEET7",
+        "export": "SHEET7.TXT",
+        "sha256": "90537ca5abad48b1906b3b8a794878766f879be6c4e985ef8776fb5c8755eef6",
+        "status": "same text (upper case, CR line ends)"
+      },
+      {
+        "name": "SHEET8",
+        "export": "SHEET8.TXT",
+        "sha256": "712e6a48af6dc2bdbee62e90fd11cec7b3ee399cd121c72c89bd7b90e8515838",
+        "status": "same text (upper case, CR line ends)"
+      },
+      {
+        "name": "SHEET9",
+        "export": "SHEET9.TXT",
+        "sha256": "2b9046532067f75e51eda168dff28bdc17eadff642ccf79d024c96a9e3500fd7",
+        "status": "same text (upper case, CR line ends)"
+      },
+      {
+        "name": "SHEETA",
+        "export": "SHEETA.TXT",
+        "sha256": "8dfbee232707e922c80e2b16047835347ff55209a61348af26fd2fae70157ac4",
+        "status": "same text (upper case, CR line ends)"
+      },
+      {
+        "name": "SHEETB",
+        "export": "SHEETB.TXT",
+        "sha256": "03e456cb2257cc014de7819569d6f65b8743b62821833da033776678db68bff4",
+        "status": "same text (upper case, CR line ends)"
+      },
+      {
+        "name": "SHEETC",
+        "export": "SHEETC.TXT",
+        "sha256": "846decc8a03de2606287755a4b47750d5a1b3cc3e14bd1ca21b7daefb025bb6f",
+        "status": "same text (upper case, CR line ends)"
+      },
+      {
+        "name": "SHEETD",
+        "export": "SHEETD.TXT",
+        "sha256": "c71dbe4e484c6fb185e5ad3f095b5b7591df9a12c420d14d8d2bedd3d0a2655d",
+        "status": "same text (upper case, CR line ends)"
+      },
+      {
+        "name": "SHEETE",
+        "export": "SHEETE.TXT",
+        "sha256": "4c19dcba42f13c2c2b12beeda598767d0bd6e25f67384bfc490aff74d037a2a9",
+        "status": "same text (upper case, CR line ends)"
+      },
+      {
+        "name": "SHEETF",
+        "export": "SHEETF.TXT",
+        "sha256": "d7b64272c1be8deb4fb21185f5548090a759ca7027f8881cfc94ea48541fd4f0",
+        "status": "same text (upper case, CR line ends)"
+      },
+      {
+        "name": "SHEETG",
+        "export": "SHEETG.TXT",
+        "sha256": "a5737a543fc93ef7244e09a53f03d8c82065ae6363e901a4d4a708d5e0cfd9b0",
+        "status": "same text (upper case, CR line ends)"
+      },
+      {
+        "name": "SHIP",
+        "export": "SHIP.TXT",
+        "sha256": "5a8e3e2fa6bdb8d55509f910d3eeb97465ad33180b4da699cc7ea1b17cb28121",
+        "status": "same text (upper case, CR line ends)"
+      },
+      {
+        "name": "SHTABLE",
+        "export": "SHTABLE.TXT",
+        "sha256": "d2e3559d10ff4d42968ccf34c346a842aaf095ec75c5225dc6de4e6eb8d47188",
+        "status": "same text (upper case, CR line ends)"
+      },
+      {
+        "name": "SMOOTH-SCROLL",
+        "export": "SMOOTHSC.TXT",
+        "sha256": "edce3969f0fb3b329597115350fb6a17f3c867682743b603902599aa55b1fbf9",
+        "status": "same text (upper case, CR line ends)"
+      },
+      {
+        "name": "SOUND",
+        "export": "SOUND.TXT",
+        "sha256": "a20c27ce8b4ecfc332b73bae85fb1f55ccd1dd72cc528975b3bc29910114fddd",
+        "status": "same text (upper case, CR line ends)"
+      },
+      {
+        "name": "STARS",
+        "export": "STARS.TXT",
+        "sha256": "c55c808f436c3c871959403fdeb51af966ef0804ee53fc400c243261d48ff3e5",
+        "status": "same text (upper case, CR line ends)"
+      },
+      {
+        "name": "STARTER",
+        "export": "STARTER.TXT",
+        "sha256": "01179af1a4b838726eda7156b702d5bda4adb47d17de8766e18a45945349fbe2",
+        "status": "same text (upper case, CR line ends)"
+      },
+      {
+        "name": "TABLES",
+        "export": "TABLES.TXT",
+        "sha256": "7b202863469db97a95c984cce8a20392c89e3e7145afa0fcf7a837756449b495",
+        "status": "same text (upper case, CR line ends)"
+      },
+      {
+        "name": "TUNE",
+        "export": "TUNE.TXT",
+        "sha256": "ed960d0bbaa90ba9c9f693c0d865b6d4e5f44e54202653fdb18cf23ae94dbb94",
+        "status": "same text (upper case, CR line ends)"
+      },
+      {
+        "name": "ULTRA",
+        "export": "ULTRA.TXT",
+        "sha256": "d206904646620b48c73909c6239fa6cc82f6fed2862a643d0d4d6b4aad6d126c",
+        "status": "same text (upper case, CR line ends)"
+      },
+      {
+        "name": "UTILS",
+        "export": "UTILS.TXT",
+        "sha256": "85dec65f616d98c138ae862877dc0421645b5a94b21e9cd42249fb3717f6210b",
+        "status": "same text (upper case, CR line ends)"
+      },
+      {
+        "name": "LISTER",
+        "export": "LISTER.TXT",
+        "sha256": "c8149308874967d41a767ad992d1a60b34c529a54f11f6e1bafc349972aec990",
+        "status": "same text (upper case, CR line ends)"
+      },
+      {
+        "name": "OBJ.ANT",
+        "export": "OBJANT.TXT",
+        "sha256": "04570727f3f4de4ed66174a1c69a46aafee37129134e8a80904d0f473370af90",
+        "status": "same text (upper case, CR line ends)"
+      },
+      {
+        "name": "@",
+        "export": "NONAME.BIN",
+        "sha256": "411aee1658bb4ad9bfb6cb1698e2911e7d764f8f835aef5d6d0720730d2a4bc9",
+        "status": "identical"
+      },
+      {
+        "name": "BOOT ALL",
+        "export": "BOOTALL.BAS",
+        "sha256": "c18a32da6411094910b9ff47fd5ed6d42ae630f72a31990bab9eaec2fa4a81c8",
+        "status": "detokenized BASIC listing; not byte comparable"
+      },
+      {
+        "name": "CAMEL (CHARS)",
+        "export": "CAMELCHA.BIN",
+        "sha256": "46708fe9acf8a5baf34e4bbc314a15c9ccc0e930ceae052b596cc4d1a5021c34",
+        "status": "identical"
+      },
+      {
+        "name": "DOS5.2",
+        "export": "DOS52.BIN",
+        "sha256": "bc3d8fa6eda201ad7a430585d624f9b309ffc000fac4bfbc93299d03bd7bd27d",
+        "status": "identical"
+      },
+      {
+        "name": "EDITOR",
+        "export": "EDITOR.BIN",
+        "sha256": "d21aa6fd0553ed87f32ea52c3a8141cdd3555edb8f75117a8652080818091c72",
+        "status": "identical"
+      },
+      {
+        "name": "FRAK!",
+        "export": "FRAK.BIN",
+        "sha256": "a96b127f169bcba9afabecb04d267b57605ea20db63736c50236b5cf1de5fdf7",
+        "status": "identical"
+      },
+      {
+        "name": "GLOPPY (MUSIC)",
+        "export": "GLOPPYMU.BIN",
+        "sha256": "2c7ee9c637bc1c8220b3fb16f498dd8db9d6dfca7bd16ae425b6c9820ce87ee2",
+        "status": "identical"
+      },
+      {
+        "name": "HYPRA-LOAD OBJ",
+        "export": "HYPRALOA.BAS",
+        "sha256": "ad2ed53aa28184dde6d4cb0fc0e40e25bf117fe23127aef9bb0f18cf11e88ce7",
+        "status": "detokenized BASIC listing; not byte comparable"
+      },
+      {
+        "name": "JINGLE1",
+        "export": "JINGLE1.BAS",
+        "sha256": "37bdb0976ddfeafe9e97885c80aa0767015d2c9315ef2653129b2f9e536f6847",
+        "status": "detokenized BASIC listing; not byte comparable"
+      },
+      {
+        "name": "JINGLE2",
+        "export": "JINGLE2.BAS",
+        "sha256": "2a198f4897c3c00286f0a62cb290b086c47f3e7f8df7d3676e241c3065728294",
+        "status": "detokenized BASIC listing; not byte comparable"
+      },
+      {
+        "name": "MEGA-SUPER",
+        "export": "MEGASUPE.BIN",
+        "sha256": "6115ee51712a0bd86576d14209e97bd05d859bff6f91c47c4b2e0a9032e4ba87",
+        "status": "identical"
+      },
+      {
+        "name": "MUSIC-MAKER",
+        "export": "MUSICMAK.BAS",
+        "sha256": "09478a69aa22e4815002eceb76ca6fcd6135e65ee78b3245b48e1a200ce0ca6e",
+        "status": "detokenized BASIC listing; not byte comparable"
+      },
+      {
+        "name": "MUSIC/CODE",
+        "export": "MUSICCOD.BIN",
+        "sha256": "c97dcdb6c4c9357155fbcefc222cc99c371a46f068bd12893bb00ebf9de3d520",
+        "status": "identical"
+      },
+      {
+        "name": "SUPER-LOAD",
+        "export": "SUPERLOA.BIN",
+        "sha256": "8ad18afb13a8216648049c6466a1f41eb003f1e0152d12235880e6318d762d9b",
+        "status": "identical"
+      },
+      {
+        "name": "TEST-B",
+        "export": "TESTB.BIN",
+        "sha256": "267288edf518af6f76e4467bd37a42acc9febbb8bc7dcc6205c1e72ee873a030",
+        "status": "identical"
+      },
+      {
+        "name": "WASAL",
+        "export": "WASAL.BAS",
+        "sha256": "2a6bf52f292bc645470aae6968556d34c8b8798f269ed169d1a07cc8a70f68d7",
+        "status": "detokenized BASIC listing; not byte comparable"
+      },
+      {
+        "name": "ASM.C64",
+        "export": "ASMC64.BAS",
+        "sha256": "c739e7ef449013dcebc9fdcfd5a2164d6e1d9dfd79d34d09fbd3962873ece698",
+        "status": "detokenized BASIC listing; not byte comparable"
+      },
+      {
+        "name": "SETSHEET",
+        "export": "SETSHEET.TXT",
+        "sha256": "772b54b38df7b836c8c8eb1e716fa9b0ed540a98a1e23f49dc6444340b878a43",
+        "status": "same text (upper case, CR line ends)"
+      },
+      {
+        "name": "TITLE-WORKS",
+        "export": "TITLEWOR.TXT",
+        "sha256": "10c850455fbd5c201cbc5707733658870e4ce965d4a7c251c960c7a0a003b931",
+        "status": "same text (upper case, CR line ends)"
+      },
+      {
+        "name": "VARS",
+        "export": "VARS.TXT",
+        "sha256": "dca41ec8a9392c5c3695a716bf6d82d742760901517a06b9a221aa40571bfa73",
+        "status": "same text (upper case, CR line ends)"
+      }
+    ]
+  },
+  "used_modules": [
+    "ULTRA",
+    "VARS",
+    "EXTRA-MEMORY",
+    "SHTABLE",
+    "SHEET1",
+    "SHEET2",
+    "SHEET3",
+    "SHEET4",
+    "SHEET5",
+    "SHEET6",
+    "SHEET7",
+    "SHEET8",
+    "SHEET9",
+    "SHEETA",
+    "SHEETB",
+    "SHEETC",
+    "SHEETD",
+    "SHEETE",
+    "SHEETF",
+    "SHEETG",
+    "MACROS",
+    "MAIN-VARS",
+    "SCROLL-BUFFER",
+    "RANK-MASTER",
+    "STARTER",
+    "GAME-OVER",
+    "SCORE-ROUTINES",
+    "TABLES",
+    "UTILS",
+    "SETUP",
+    "SCREEN",
+    "STARS",
+    "PLAY-GAME",
+    "IRQ",
+    "SHIP",
+    "GAUGE",
+    "SOUND",
+    "SETSHEET",
+    "ALIENS",
+    "ANIMATE",
+    "KILLER",
+    "BOMBS",
+    "JOYSTIK",
+    "MAGNIFICENT",
+    "TITLE-WORKS",
+    "HIGH-STUFF",
+    "DEATH-MARCH",
+    "SMOOTH-SCROLL",
+    "TUNE",
+    "KEY-SCAN",
+    "JO/KE SELECTION"
+  ],
+  "unused_sources": [
+    "ASSEM-SHEETS",
+    "CHARS",
+    "HAK/SCREEN",
+    "HEXER",
+    "LISTER",
+    "MUFF",
+    "OBJ",
+    "OBJ.ANT",
+    "SAVER"
+  ],
+  "assets": [
+    {
+      "name": "MUSIC/CODE",
+      "source": "Recovered Source/2026/XargonWars-C16-d64copy.d64",
+      "address": "$1C00",
+      "bytes": 128,
+      "sha256": "c97dcdb6c4c9357155fbcefc222cc99c371a46f068bd12893bb00ebf9de3d520",
+      "purpose": "TUNDAT tune table (TUNE: TUNDAT=$1C00)"
+    },
+    {
+      "name": "FRAK!",
+      "source": "Recovered Source/2026/XargonWars-C16-d64copy.d64",
+      "address": "$3C00",
+      "bytes": 1024,
+      "sha256": "a96b127f169bcba9afabecb04d267b57605ea20db63736c50236b5cf1de5fdf7",
+      "purpose": "character set named by ULTRA"
+    }
+  ]
+}

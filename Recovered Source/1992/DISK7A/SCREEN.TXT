@@ -1,0 +1,276 @@
+; put "@:screen"
+;
+;*******************************
+;
+; set up screen display for play
+;
+;*******************************
+;
+;
+;
+;
+setscr
+;
+lda #39
+sta xs
+lda #24
+sta ys
+lda #$20
+sta char
+lda #$71
+ldx #0
+ldy #0
+;
+jsr box
+;
+lda #6
+sta xs
+lda #24
+sta ys
+lda #33
+sta hitx
+lda #0
+sta hity
+jsr prbox
+;
+lda #32
+sta xs
+lda #0
+sta hitx
+sta hity
+jsr prbox
+;
+;
+;
+lda #<text
+sta pxl+1
+sta pxl1+1
+sta pxll+1
+;
+lda #>text
+sta pxl+2
+sta pxl1+2
+sta pxll+2
+;
+jsr prttxt
+;
+jsr prtgag
+;
+ldx #89   ;*
+stx $fbb  ;* print
+inx       ;*
+stx $fbc  ;* 'temp'
+inx       ;*
+stx $fbd  ;*
+;
+;
+rts
+;
+;************************
+;
+text
+.byte 34,01,'score',00
+.byte 34,02,'00000',00
+;
+.byte 34,03,'rank*',00
+;
+.byte 34,04,'lives',00
+;
+sclves ;* pointer for lives
+;
+.byte 34,05,'  0  ',00
+.byte 34,06,'sheet',00
+.byte 34,07,' 001 ',00
+.byte 34,22,'laser',00
+.byte $ff
+;
+;
+;
+prttxt
+;
+;
+ldx #0
+;
+;
+pxl
+;
+lda text,x
+cmp #$ff
+beq nztt
+sta rushx
+inx
+pxl1
+lda text,x
+sta rushy
+inx
+;
+save
+;
+ldx rushx
+ldy rushy
+;
+jsr rustic
+;
+load
+;
+ldy #0
+;
+pxll
+lda text,x
+beq nzt
+and #$3f
+sta (sclo),y
+iny
+inx
+bne pxll
+;
+nzt
+;
+inx
+bne pxl
+;
+nztt
+;
+rts
+;
+;
+;
+prtgag
+;
+;print temp gauge
+;
+;
+lda #4
+sta xs
+lda #13
+sta ys
+lda #34
+sta hitx
+lda #8
+sta hity
+jsr prbox
+;
+lda #$8b
+sta sl
+;
+lda #$d
+sta sh
+;
+ldx #11
+;
+frak
+;
+lda #87
+ldy #0
+sta (sl),y  ;* col char
+;
+lda #88
+ldy #2
+sta (sl),y
+;
+lda sh
+pha
+;
+sec
+sbc #4
+;
+sta sh
+;
+ldy #0
+lda gacoul,x
+;
+sta (sl),y
+;
+pla
+;
+sta sh
+;
+lda sl
+clc
+adc #40
+sta sl
+;
+lda sh
+adc #0
+sta sh
+;
+dex
+bpl frak
+;
+rts
+;
+;**************
+;
+gacoul
+;
+.byte $45,$45,$45,$45,$45
+.byte $45,$67,$67,$67,$67
+.byte $67,$12
+;
+;
+;
+;
+;*************************
+;
+; flash score & other bits
+;
+;
+;
+hemogl
+;
+dec rushz
+beq globin
+;
+rts
+;
+globin
+;
+lda #8
+sta rushz
+;
+lda ted+2
+and #%01110111
+ora #%00010000
+sta attr
+;
+and #7
+beq globin
+;
+cmp #4
+bcs globin
+;
+ldx #34
+;
+hmglt
+;
+lda attr
+sta $828,x
+;
+adc #1
+sta $828+120,x
+;
+adc #1
+sta $828+120+80,x
+;
+inx
+cpx #39
+bne hmglt
+;
+inc rnkcol
+lda rnkcol
+and #7
+asl a
+asl a
+asl a
+asl a
+ora #$1         ;* white
+sta rankno-$400
+;
+;
+rts
+;
+;
+;
+;
+;
+.end

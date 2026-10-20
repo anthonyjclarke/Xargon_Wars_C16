@@ -1,0 +1,333 @@
+; put "@:stars"
+;
+;**********************
+;
+; all those wonderfull
+;  4 - speed stars
+;
+;
+;*************************
+;
+; init & define star table
+;
+;*************************
+;
+;
+; table format :-
+;
+; byte #
+;
+;   0     x position 1-31
+;   1     y position 8-191
+;
+;
+;
+; table has moved to extra-memory
+;
+;
+;***********************
+;
+instar
+;
+lda #0    ;* star count
+sta temp
+;
+;
+st1
+;
+jsr random
+;
+lda temp
+asl a     ;* pointer * 2
+tax
+;
+lda rnd+1
+and #$1e  ;* x co-ord
+ora #1
+sta startb,x
+;
+lda rnd+2
+and #$3f    ;* y co-ord
+sta rnd+2
+lda rnd
+and #%10000000
+ora #%00001000
+ora rnd+2
+;
+sta startb+1,x
+;
+inc temp
+lda temp
+;
+cmp #maxnos
+;
+;
+bne st1
+;
+;
+rts
+;
+;
+;
+;
+;
+;***************************
+;
+; move stars and calculate
+; actual screen positions
+; for use in the irq routine
+;
+;***************************
+;
+;
+; has moved to extra-memory
+;
+;
+; table for irq on routine
+;
+;
+;
+;
+mvstar
+;
+;
+;
+;
+lda #0
+sta numb
+sta onnum
+lda #0
+sta change
+;
+mve1
+;
+lda numb
+asl a
+sta point ;* pointer into startb
+;
+;
+;
+lda numb
+and #3
+tax
+;
+pha ;* save speed no#
+;
+;
+;
+lda sppix,x ;* pixel speed
+sta speed
+;
+;
+;
+ldx point
+lda startb,x
+sta tx
+lda startb+1,x
+sta ty
+;
+pla
+tay
+;
+lda stop,y
+beq notbot
+;
+; if stop = 0 then don't move
+;
+lda #0
+sta mvup
+;
+lda ty
+sta temp
+clc
+adc speed
+sta ty
+cmp #191
+bcs mop
+and #%00000100      ;* next char down ?
+bne notbot
+beq mvd
+;
+; need to move it down
+;
+;* got to bottom flag
+;
+mop
+;
+lda #1
+sta mvup
+;
+;
+mvd
+;
+ldx tx
+lda temp
+and #%11111000
+lsr a
+lsr a
+lsr a
+tay
+jsr xy
+;
+ldx onnum
+lda sl
+sta ontbl,x
+lda sh
+sta ontbl+1,x
+lda #32
+sta ontbl+2,x
+;
+inc onnum
+inc onnum
+inc onnum
+;
+lda mvup
+beq notbot
+;
+lda #8
+sta ty ;* back to the top
+;
+equz
+;
+lda ted+2 ;* timer - rnd #
+and #$1f  ;* x co-ord
+beq equz
+;
+sta tx    ;* make sure not 0
+;
+;
+notbot
+;
+ldx tx
+lda ty
+and #%11111000
+lsr a
+lsr a
+lsr a
+tay
+jsr xy
+;
+ldx onnum
+lda sl
+sta ontbl,x
+lda sh
+sta ontbl+1,x
+;
+lda ty
+and #7
+clc
+adc #stchar
+;
+sta ontbl+2,x
+;
+inc onnum
+inc onnum
+inc onnum
+;
+ldx point
+lda tx
+sta startb,x
+lda ty
+sta startb+1,x
+;
+;
+;
+;
+inc numb
+lda numb
+cmp #maxnos
+beq mvex
+;
+jmp mve1
+;
+;
+;
+mvex
+;
+ldx onnum
+lda #$ff
+sta ontbl+2,x
+;
+;
+;  end of table marker
+;
+lda #1
+sta change
+;
+;irq can now print them
+;
+rts
+;
+;
+prstar
+;
+;
+; irq routine to be called to
+; print the ontbl
+;
+lda change
+beq prex
+;
+; do we have to update the ontbl?
+;
+lda #0
+sta temp
+;
+prl
+;
+lda temp
+asl a
+clc
+adc temp
+tax
+;
+lda ontbl,x
+sta il
+lda ontbl+1,x
+sta ih
+;
+;
+lda ontbl+2,x ;* character
+cmp #$ff
+beq prex
+;
+;
+ldy #0
+lda (il),y
+cmp #32
+beq taya      ;* print it
+cmp #125
+bcs missit    ;* don't !
+cmp #117
+bcc missit    ;* don't !
+;
+taya
+;
+lda ontbl+2,x
+;
+sta (il),y
+;
+lda ih
+sec
+sbc #4   ;* calc colour memory
+sta ih
+;
+lda temp
+and #3
+tax
+lda stcol,x ;* get colour
+;
+sta (il),y
+;
+missit
+;
+inc temp
+bne prl
+;
+;
+;
+prex
+;
+rts
+;
+.end stars

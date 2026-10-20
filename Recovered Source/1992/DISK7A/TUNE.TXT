@@ -1,0 +1,118 @@
+; put "@:tune"
+;
+;
+; an interrupt tune playing
+; subroutine.remember to call
+; the 'intune' to set up all
+; the tune stuff & the irq must
+; call 'tuneup'.
+;
+;
+intune
+;
+lda cflag ;* sound on ?
+bne tu1   ;* yes
+;
+rts       ;* no
+;
+tu1
+;
+;
+sta notlen ;* note length
+;
+;
+lda #0
+sta sou2lo
+sta sou2hi
+;
+lda #1
+sta playtu ;* now playing
+;
+rts
+;
+;
+;
+;*****************************
+;
+; this bit called by the irq
+;
+tuneup
+;
+lda cflag
+beq tut4
+;
+lda playtu  ;* tune on ?
+bne tut3
+;
+tut4
+;
+rts
+;
+tut3
+;
+dec notlen
+beq tut5
+;
+lda notlen
+cmp #1
+bne tut4
+;
+lda vol
+ora #%10000000
+sta vol
+;
+bmi tut4
+;
+; time for a new note
+;
+tut5
+;
+inc tnote     ;* note pointer
+lda tnote
+;
+;
+asl a
+clc
+adc tnote
+tax
+;
+; *3
+;
+lda tundat,x   ;* note lo
+sta sou2lo
+;
+lda tundat+1,x ;* note hi
+sta sou2hi
+;
+lda tundat+2,x ;* length
+sta notlen
+;
+cmp #$ff
+beq tuti5
+;
+lda vol
+and #%01111111
+ora #%00100101
+sta vol
+;
+rts
+;
+;***********************
+;
+tuti5
+;
+lda #0
+sta playtu
+sta sou2lo
+sta sou2hi
+lda vol
+and #%01011111
+sta vol
+;
+rts
+;
+; end of tune
+;
+;
+;
+.end

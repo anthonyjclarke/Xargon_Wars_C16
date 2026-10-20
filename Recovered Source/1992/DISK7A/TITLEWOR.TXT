@@ -1,0 +1,985 @@
+; put "@:title-works"
+;
+;*****************************
+;
+; do all the nice title stuff
+;
+;*****************************
+;
+titcol .byte $71 ;*
+;
+rusplt
+;
+; rustic 80*50 plot
+;
+; call with x & y & acc=col
+;
+sta gcol ;* colour
+stx plink
+;
+tya
+and #1
+asl a
+sta asp
+;
+txa
+and #1
+ora asp
+tax
+;
+lda ploxel,x
+sta asp
+;
+lda plink
+;
+lsr a ;* x/2
+tax
+tya
+lsr a ;* y/2
+tay
+;
+jsr xy
+;
+;
+ldy #0
+;
+lda (sl),y
+and #$f
+ora asp
+;
+sta (sl),y
+;
+lda gcol
+sta (cl),y
+;
+;
+rts
+;
+;
+ploxel .byte $41,$42,$44,$48
+;
+;
+;
+;
+;********************************
+;
+;
+box
+;
+;
+; box at x,y acc=col
+;
+;*** if char=$ff then will ***
+;***     print colour      ***
+;
+; xsize = xs
+; ysize = ys
+; char  = char
+;
+sta gcol
+tya
+pha
+txa
+pha
+;
+jsr xy
+;
+ldx ys ;* ysize
+;
+welly
+;
+ldy xs ;* xsize
+;
+wally
+;
+lda char
+cmp #$ff
+;
+beq jucol
+;
+sta (sl),y
+;
+jucol
+;
+lda gcol
+sta (cl),y
+;
+dey
+bpl wally
+;
+lda sl
+clc
+adc #40
+sta sl
+sta cl
+;
+bcc willy
+;
+inc sh
+inc ch
+;
+willy
+;
+dex
+bpl welly
+;
+pla
+tax
+pla
+tay
+rts
+;
+;
+;
+;*****************************
+;
+;
+; print title
+;
+funkit
+;
+lda #0
+sta dunno    ;* letter count
+;
+travis
+;
+lda dunno
+asl a
+asl a
+tax
+;
+lda ttb,x    ;* x start
+;
+cmp #$ff
+beq sheep    ;* get out
+;
+sta xs
+;
+lda ttb+1,x  ;* y start
+;
+sta ys
+;
+lda ttb+2,x
+sta gl       ;* data l
+lda ttb+3,x
+sta gh       ;* data h
+;
+;
+;
+; now lets print it
+;
+ldy #0
+;
+dave
+;
+lda (gl),y   ;* x offset
+;
+cmp #$ff
+beq lumpy    ;* end of this char
+clc
+adc xs
+sta xt
+iny
+lda (gl),y   ;* y offset
+clc
+adc ys
+sta yt
+;
+tya
+pha
+;
+sei
+;
+ldx xt
+ldy yt
+lda titcol   ;* colour
+jsr rusplt   ;* plot it
+;
+cli
+;
+;
+jsr delay
+;
+;
+pla
+tay
+;
+iny
+bne dave
+;
+lumpy
+;
+inc dunno
+bne travis
+;
+sheep
+;
+inc titcol
+lda titcol
+;
+and #$0f
+;
+beq sheep  ;* never black !!
+;
+ora #$70
+sta titcol
+;
+rts
+;
+;**************************
+;
+; print all the menu stuff
+;
+;**************************
+;
+mentbl
+;
+;
+.byte 22,9,' ****-menu-**** ',0
+;
+;
+.byte 24,12,'play game ',0
+;
+cliv
+;
+.byte 24,14,'ships    3  ',0
+;
+csou
+;
+.byte 24,16,'sound   on  ',0
+.byte 24,18,'demo mode',0
+.byte 21,24,64,' gremlin graphics',0
+.byte $ff
+;
+prmenu
+;
+lda #<mentbl
+sta pxl+1
+sta pxl1+1
+sta pxll+1
+;
+lda #>mentbl
+sta pxl+2
+sta pxl1+2
+sta pxll+2
+;
+jsr prttxt
+;
+ldy #$70
+ldx #15
+;
+menlw
+;
+tya
+sta $96a+20,x
+;
+iny
+dex
+;
+bpl menlw    ;* menu colour
+;
+rts
+;
+;***************************
+;
+;
+; print border at x,y
+; with xsize = xs
+;      ysize = ys
+;
+;
+chz .byte 0,0,0,0,0,0,0,0
+;
+;
+sheiz
+;
+sei
+;
+save
+;
+stx btcx
+sty btcy
+;
+jsr rustic
+;
+lda sclo
+sta il
+lda schi
+sta ih
+;
+lda btcy
+clc
+adc ys
+;
+tay
+ldx btcx
+;
+jsr rustic
+;
+; now il,ih = top    left
+;   sclo,schi = bottom left
+;
+;
+ldy #0
+lda chz       ;* tl
+sta (il),y
+;
+lda chz+5     ;* bl
+sta (sclo),y
+;
+ldy xs
+lda chz+2
+sta (il),y    ;* tr
+;
+lda chz+7     ;* br
+sta (sclo),y
+;
+;
+dey
+;
+lpiy
+;
+lda chz+1
+sta (il),y   ;* top horizontal
+lda chz+6
+sta (sclo),y   ;* bot.horizontal
+;
+dey
+bne lpiy
+;
+;
+lda il
+clc
+adc #40
+sta il
+;
+lda ih
+adc #0
+sta ih
+;
+ldx ys
+dex
+;
+lpix
+ldy #0
+ldy #0
+lda chz+3
+sta (il),y   ;* left vertical
+;
+ldy xs
+lda chz+4
+sta (il),y   ;* right vertical
+;
+lda il
+clc
+adc #40
+sta il
+;
+lda ih
+adc #0
+sta ih
+;
+dex
+bne lpix
+;
+load
+;
+cli
+;
+rts
+;
+;
+;
+;
+;****************************
+;
+;
+;
+mvebox
+;
+; move the edit box around
+;
+;
+lda #2
+sta ys
+;
+lda #13
+sta xs
+;
+; box xsize & ysize
+;
+;
+;
+lda ybox
+;
+asl a
+clc
+adc #11
+;
+sta hity
+;
+lda #23
+sta hitx
+;
+jsr prbox
+;
+jsr redjos
+;
+lda jmove
+bne drip
+;
+rts
+;
+drip
+;
+bit jdown
+bpl nodown
+;
+; wants to go down
+;
+lda ybox
+cmp #3
+beq nodown   ;* already at bot.
+;
+jsr rubbox
+;
+inc ybox
+;
+jmp boxlop
+;
+nodown
+;
+bit jup
+bpl noup
+;
+lda ybox
+beq noup      ;* already at top
+;
+jsr rubbox
+;
+dec ybox
+;
+jmp boxlop
+;
+;
+noup
+;
+bit jfire
+bpl boxlop  ;* no then exit
+;
+lda ybox
+;
+jsr whjump  ;* sim. jmp (xxxx),x
+;
+jsr prmenu
+;
+;
+boxlop      ;* exit
+;
+lda ybox
+asl a
+clc
+adc #11
+sta hity    ;* new ypos
+;
+jsr prbox
+;
+rts
+;
+;
+prbox
+;
+ldy #109+7
+ldx #7
+;
+prlopa
+;
+tya
+sta chz,x
+dey
+dex
+;
+bpl prlopa
+;
+upther
+;
+ldx hitx
+ldy hity
+;
+jsr sheiz    ;* do box
+;
+rts
+;
+rubbox
+;
+lda #32
+;
+ldx #7
+;
+rulopa
+;
+sta chz,x
+dex
+bpl rulopa
+;
+bmi upther
+;
+;
+;
+;
+;*****************************
+;
+boxes
+;
+;
+; print all the boxes
+;
+;
+lda #0
+sta altem
+;
+bolop
+;
+lda altem
+asl a
+asl a
+;
+tax
+;
+lda boxtbl,x
+;
+cmp #$ff
+beq foff          ;* end of table
+;
+sta hitx          ;* xpos
+lda boxtbl+1,x
+sta hity          ;* ypos
+lda boxtbl+2,x
+sta xs            ;* xsize
+lda boxtbl+3,x
+sta ys            ;* ysize
+;
+jsr prbox
+;
+inc altem
+bne bolop
+;
+foff
+;
+rts
+;
+;
+boxtbl
+;
+.byte 1,8,$11,2
+.byte 1,$b,$11,12
+.byte 0,7,$13,$11
+.byte $15,8,$11,2
+.byte $14,7,$13,13
+.byte $14,21,$13,2
+.byte 0,0,39,6
+.byte $ff
+;
+;
+;
+;***************************
+;
+clives
+;
+; change lives
+;
+lda lives
+cmp #maxliv
+bne stupot
+;
+lda #0
+sta lives
+;
+stupot
+;
+inc lives
+;
+selive
+;
+lda lives
+;
+ora #$30
+;
+sta cliv+11
+;
+;
+rts
+;
+;
+;*************************
+;
+; select demo mode
+;
+cdemo
+;
+lda #1
+sta demo
+;
+sta demlen
+;
+jmp plgame
+;
+;
+;******************************
+;
+; select sound
+;
+csound
+;
+lda cflag   ;* 1 = sound off
+eor #$01    ;* change
+sta cflag
+;
+sesoun
+;
+lda cflag
+;
+asl a
+asl a
+tay
+;
+ldx #0
+;
+piyt
+;
+lda sntb,y
+sta csou+10,x
+;
+iny
+inx
+cpx #3
+bne piyt
+;
+;
+rts
+;
+sntb
+;
+.byte 'off* on'
+;
+;
+;******************************
+;
+;
+whjump
+;
+clc
+adc #1
+sta add+1
+asl a
+clc
+;
+add
+;
+adc #$00
+sbc #$02
+sta bran+1
+;
+bran
+;
+bne bran
+;
+;
+;
+; here are the jumps
+;
+;
+jmp stgme
+jmp clives
+jmp csound
+jmp cdemo
+;
+;
+stgme         
+;
+lda #0
+sta demo
+jmp plgame
+;
+;
+;
+nicirq
+;
+sei
+;
+lda #<slob
+sta $314
+lda #>slob
+sta $315
+;
+cli
+;
+rts
+;
+;
+;
+;
+slob
+;
+lda hitx
+pha
+;
+lda hity
+pha
+;
+lda xs
+pha
+;
+lda ys
+pha
+;
+inc quo
+lda quo
+cmp #8
+bne glut
+;
+lda #0
+sta quo
+;
+jsr mvebox
+;
+glut
+;
+jsr chsel
+;
+jsr flthin
+;
+pla
+sta ys
+;
+pla
+sta xs
+;
+pla
+sta hity
+;
+pla
+sta hitx
+;
+lda #$ff
+sta $ff09
+;
+;
+load
+;
+rti
+;
+;*************************
+;
+; do all the flash things
+;
+;
+;
+;
+flthin
+;
+inc tcol1
+inc tcol2
+;
+inc status
+lda status
+cmp #8
+bne ntyu
+;
+lda #0
+sta status
+;
+inc tcol3
+;
+ldx #15
+;
+flt
+;
+lda tcol3
+and #$7f
+;
+sta $96a,x
+;
+dex
+bpl flt
+;
+jsr flname        ;* flash names
+;
+ldx #17
+;
+invecl
+;
+lda $b85,x
+eor #1
+sta $b85,x
+;
+dex
+bpl invecl
+;
+ntyu
+;
+and #1
+beq ntyp
+;
+ldx #15
+;
+likit
+;
+lda $96a+20,x
+adc #1
+and #$7f
+ora #%00010000
+sta $96a+20,x
+;
+dex
+bpl likit
+;
+;
+; flash xargon heroes
+;
+ntyp
+;
+ldx #4
+ldy #12
+lda #10
+sta ys
+lda #5
+sta xs
+lda #$ff
+sta char
+lda tcol2
+;
+jsr box
+;
+;      
+russnk
+;
+lda $ff1c ;* raster
+;
+and #1
+bne russnk ;* rustik sync
+;
+jsr scroll ;* nice bit !
+;
+rts
+;
+;
+;*****************
+;
+;
+clbox
+;
+lda #0
+sta hitx
+sta hity
+lda #39
+sta xs
+lda #6
+sta ys
+;
+;
+cllop1
+;
+jsr sync
+jsr prbox
+;
+ldx #$10
+stx delay+1
+;
+jsr delay
+;
+jsr rubbox
+;
+dec xs
+dec xs
+inc hitx
+lda hitx
+cmp #18
+bne cllop1
+;
+lda #32
+sta $c28+20
+sta $c28+19
+sta $c28+20+40
+sta $c28+19+40
+sta $c28+20+80
+sta $c28+19+80
+sta $c28+20+80+40
+sta $c28+19+80+40
+sta $c28+20+80+80
+sta $c28+19+80+80
+;
+cllop2
+;
+;
+jsr sync
+jsr prbox
+;
+ldx #$10
+stx delay+1
+;
+jsr delay
+;
+jsr sync
+jsr rubbox
+;
+inc xs
+inc xs
+dec hitx
+bpl cllop2
+;
+rts
+;
+;
+;
+;************
+;
+flname
+;
+lda #$ec
+sta sl
+lda #$09
+sta sh
+;
+ldx #5
+;
+flpol
+;
+ldy #0
+;
+lda (sl),y
+;
+itzero
+;
+adc #1
+and #$7f
+;
+beq itzero
+;
+ldy #5
+;
+flpok
+;
+;
+sta (sl),y
+;
+dey
+bpl flpok
+;
+lda sl
+clc
+adc #80
+sta sl
+;
+lda sh
+adc #0
+sta sh
+;
+dex
+;
+bpl flpol
+;
+rts
+;
+;
+.end

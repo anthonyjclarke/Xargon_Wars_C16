@@ -1,0 +1,48 @@
+name: Reassemble Xargon Wars
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  assemble:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install cc65 and PlatformIO
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y cc65
+          python -m pip install platformio==6.1.19
+      - name: Build from the preserved source disk
+        run: python scripts/restore_c16.py
+      - name: Explain every difference from the running PRG
+        run: python scripts/compare_reference.py
+      - name: Test syntax, provenance, object records and revision analysis
+        run: python -m unittest discover -s test -p 'test_*.py' -v
+      - name: Build both PlatformIO environments
+        run: pio run -e c16 -e c16_debug
+      - name: Check output agreement
+        run: |
+          cmp build/xargon-wars.prg build/platformio/c16/xargon-wars.prg
+          cmp build/xargon-wars.prg build/platformio/c16_debug/xargon-wars.prg
+      - uses: actions/upload-artifact@v4
+        with:
+          name: xargon-wars-c16
+          path: |
+            build/xargon-wars.prg
+            build/comparison.json
+            build/reference-comparison.json
+            build/recovery-manifest.json
+            build/xargon.s
+            build/xargon.lst
+            build/xargon.labels
+            build/xargon.map
+            build/xargon.dbg

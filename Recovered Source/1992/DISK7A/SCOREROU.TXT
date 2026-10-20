@@ -1,0 +1,123 @@
+; put "@:score-routines"
+;
+;
+scrpos=$c00+80+34
+;
+score
+;
+; called under interrupt
+; when an alien has been hit
+;
+jsr xtrali   ;* xtra life ?
+;
+ldx sheetn   ;* 0-15
+inx
+;
+;      scoring proceedure
+;      ******************
+;
+; first 9 sheets hit value=sheetn
+;
+; after that 10 for every alien
+;
+lda level
+bne howe
+;
+; if not level 0 then always
+; add 10
+;
+txa
+cmp #9
+bcs howe
+;
+jsr addscr   ;* add score
+;
+rts
+;
+;****************************
+;
+howe
+;
+; add 10
+;
+lda #1
+ldy #3
+jsr addscr+2
+;
+rts
+;
+;****************************
+;
+;
+addscr
+;
+ldy #4       ;* lsb digit
+;
+; second entry point
+;
+sta scradd
+;
+addlop
+;
+lda scradd
+;
+madona
+;
+clc
+adc scrpos,y
+cmp #$3a
+bmi scorel
+;
+sec
+sbc #$a
+sta scrpos,y
+;
+lda #1
+dey
+bpl madona
+;
+scorel
+;
+sta scrpos,y
+;
+rts
+;
+;
+;*********************
+;
+xtrali
+;
+; add xtra life every thousand
+;
+lda scrpos+1  ;* thousands
+and #15
+;
+cmp xtrob
+;
+bne grump
+;
+rts
+;
+grump
+;
+sta xtrob
+;
+addlif
+;
+; second entry point to add life
+; if possible
+;
+lda glives
+cmp #9
+;
+beq trmy
+;
+inc $0c00+236
+inc glives
+;
+trmy
+;
+rts
+;
+;
+.end

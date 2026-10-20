@@ -1,0 +1,343 @@
+{
+  "format": "both are uncompressed saved-address PRG images; compared as memory",
+  "reference": "Recovered Source/xargon_wars.prg",
+  "reference_sha256": "835d26e3b92c91f720b0bf3444c0127f9e66e896608d72ef32cf2b186fb69cec",
+  "reference_load": "$1001",
+  "reference_end": "$3FFE",
+  "build_load": "$1010",
+  "build_end": "$3FFF",
+  "regions": [
+    {
+      "region": "BASIC stub",
+      "range": "$1001-$100F",
+      "bytes": 15,
+      "differences": null,
+      "stub_hex": "0c1001009e20373239360000000000",
+      "note": "only in the running PRG: line 1 SYS 7296 ($1C80); not in any source file"
+    },
+    {
+      "region": "Sheet tables",
+      "range": "$1010-$1B01",
+      "bytes": 2802,
+      "bytes_in_running_prg": 2802,
+      "differences": 0,
+      "note": "SHTABLE and SHEET1-SHEETG"
+    },
+    {
+      "region": "Gap after sheets",
+      "range": "$1B02-$1BFF",
+      "bytes": 254,
+      "bytes_in_running_prg": 254,
+      "differences": 128,
+      "note": "never assembled; the build leaves zeros, the running PRG has $00 then $FF fill"
+    },
+    {
+      "region": "Tune table",
+      "range": "$1C00-$1C7F",
+      "bytes": 128,
+      "bytes_in_running_prg": 128,
+      "differences": 0,
+      "note": "disk file MUSIC/CODE"
+    },
+    {
+      "region": "Program code",
+      "range": "$1C80-$3AE5",
+      "bytes": 7782,
+      "bytes_in_running_prg": 7782,
+      "differences": 3442,
+      "note": "raw comparison; see revision analysis"
+    },
+    {
+      "region": "After source code",
+      "range": "$3AE6-$3BFF",
+      "bytes": 282,
+      "bytes_in_running_prg": 282,
+      "differences": 260,
+      "note": "build leaves zeros"
+    },
+    {
+      "region": "Character set",
+      "range": "$3C00-$3FFF",
+      "bytes": 1024,
+      "bytes_in_running_prg": 1023,
+      "differences": 8,
+      "note": "disk file FRAK!"
+    }
+  ],
+  "source_code_end": "$3AE5",
+  "running_code_end": "$3ADF",
+  "running_revision_edits": [
+    {
+      "module": "ALIENS",
+      "line": 150,
+      "source": "LDA IH",
+      "running": []
+    },
+    {
+      "module": "ALIENS",
+      "line": 151,
+      "source": "AND #$F    ;* 0 - 15",
+      "running": []
+    },
+    {
+      "module": "ALIENS",
+      "line": 152,
+      "source": "STA IH",
+      "running": []
+    },
+    {
+      "module": "ALIENS",
+      "line": 227,
+      "source": "AND #$0F",
+      "running": [
+        "AND #$7F"
+      ]
+    }
+  ],
+  "running_revision_reproduced": true,
+  "running_revision_method": "assemble source with the edits above; every remaining code difference must be a location the program itself writes",
+  "runtime_state_differences": [
+    {
+      "address": "$1C92",
+      "symbol": "LIVES",
+      "written_by": [
+        "STA LIVES",
+        "STA LIVES",
+        "INC LIVES"
+      ],
+      "source": "$00",
+      "running": "$03"
+    },
+    {
+      "address": "$1C93",
+      "symbol": "CFLAG",
+      "written_by": [
+        "STA CFLAG",
+        "STA CFLAG"
+      ],
+      "source": "$00",
+      "running": "$01"
+    },
+    {
+      "address": "$1EA2",
+      "symbol": "DELAY+1",
+      "written_by": [
+        "STX DELAY+1",
+        "STA DELAY+1",
+        "STX DELAY+1"
+      ],
+      "source": "$00",
+      "running": "$0C"
+    },
+    {
+      "address": "$232A",
+      "symbol": "PXL+1",
+      "written_by": [
+        "STA PXL+1",
+        "STA PXL+1"
+      ],
+      "source": "$E6",
+      "running": "$17"
+    },
+    {
+      "address": "$232B",
+      "symbol": "PXL+2",
+      "written_by": [
+        "STA PXL+2",
+        "STA PXL+2"
+      ],
+      "source": "$22",
+      "running": "$32"
+    },
+    {
+      "address": "$2335",
+      "symbol": "PXL1+1",
+      "written_by": [
+        "STA PXL1+1",
+        "STA PXL1+1"
+      ],
+      "source": "$E6",
+      "running": "$17"
+    },
+    {
+      "address": "$2336",
+      "symbol": "PXL1+2",
+      "written_by": [
+        "STA PXL1+2",
+        "STA PXL1+2"
+      ],
+      "source": "$22",
+      "running": "$32"
+    },
+    {
+      "address": "$2351",
+      "symbol": "PXLL+1",
+      "written_by": [
+        "STA PXLL+1",
+        "STA PXLL+1"
+      ],
+      "source": "$E6",
+      "running": "$17"
+    },
+    {
+      "address": "$2352",
+      "symbol": "PXLL+2",
+      "written_by": [
+        "STA PXLL+2",
+        "STA PXLL+2"
+      ],
+      "source": "$22",
+      "running": "$32"
+    },
+    {
+      "address": "$3139",
+      "symbol": "TITCOL",
+      "written_by": [
+        "INC TITCOL",
+        "STA TITCOL"
+      ],
+      "source": "$71",
+      "running": "$74"
+    },
+    {
+      "address": "$3250",
+      "symbol": "CSOU+10",
+      "written_by": [
+        "STA CSOU+10,X"
+      ],
+      "source": "$4F",
+      "running": "$20"
+    },
+    {
+      "address": "$3251",
+      "symbol": "CSOU+11",
+      "written_by": [
+        "STA CSOU+10,X"
+      ],
+      "source": "$4E",
+      "running": "$4F"
+    },
+    {
+      "address": "$3252",
+      "symbol": "CSOU+12",
+      "written_by": [
+        "STA CSOU+10,X"
+      ],
+      "source": "$20",
+      "running": "$4E"
+    },
+    {
+      "address": "$329D",
+      "symbol": "CHZ",
+      "written_by": [
+        "STA CHZ,X",
+        "STA CHZ,X"
+      ],
+      "source": "$00",
+      "running": "$6D"
+    },
+    {
+      "address": "$329E",
+      "symbol": "CHZ+1",
+      "written_by": [
+        "STA CHZ,X",
+        "STA CHZ,X"
+      ],
+      "source": "$00",
+      "running": "$6E"
+    },
+    {
+      "address": "$329F",
+      "symbol": "CHZ+2",
+      "written_by": [
+        "STA CHZ,X",
+        "STA CHZ,X"
+      ],
+      "source": "$00",
+      "running": "$6F"
+    },
+    {
+      "address": "$32A0",
+      "symbol": "CHZ+3",
+      "written_by": [
+        "STA CHZ,X",
+        "STA CHZ,X"
+      ],
+      "source": "$00",
+      "running": "$70"
+    },
+    {
+      "address": "$32A1",
+      "symbol": "CHZ+4",
+      "written_by": [
+        "STA CHZ,X",
+        "STA CHZ,X"
+      ],
+      "source": "$00",
+      "running": "$71"
+    },
+    {
+      "address": "$32A2",
+      "symbol": "CHZ+5",
+      "written_by": [
+        "STA CHZ,X",
+        "STA CHZ,X"
+      ],
+      "source": "$00",
+      "running": "$72"
+    },
+    {
+      "address": "$32A3",
+      "symbol": "CHZ+6",
+      "written_by": [
+        "STA CHZ,X",
+        "STA CHZ,X"
+      ],
+      "source": "$00",
+      "running": "$73"
+    },
+    {
+      "address": "$32A4",
+      "symbol": "CHZ+7",
+      "written_by": [
+        "STA CHZ,X",
+        "STA CHZ,X"
+      ],
+      "source": "$00",
+      "running": "$74"
+    }
+  ],
+  "unexplained_code_differences": [],
+  "character_set_differences": {
+    "addresses": [
+      "$3FED-$3FF4"
+    ],
+    "disk": "0147313232373705",
+    "running": "40584152474f4e06",
+    "glyphs": [
+      125,
+      126
+    ],
+    "missing_from_running_prg": [
+      "$3FFF"
+    ],
+    "note": "FRAK! glyph bytes that differ from the disk file; see the validation report"
+  },
+  "running_variant_code_sha256": "882d5cde63920b4de1063598806cbc9fb669cf8ac3007941efdc72af8397b0f2",
+  "residue_after_running_code": {
+    "non_fill_bytes": 132,
+    "ranges": [
+      "$3AE0-$3AEC",
+      "$3AEE-$3B07",
+      "$3B09-$3B0A",
+      "$3B0C-$3B12",
+      "$3B14-$3B15",
+      "$3B17-$3B1C",
+      "$3B1E-$3B1F",
+      "$3B21-$3B62",
+      "$3B64-$3B65",
+      "$3B67-$3B6C"
+    ],
+    "note": "inference: left in memory by an earlier, longer assembly (the strings end 12 bytes later and a key-scanning routine follows); not reproduced by the build and not part of either revision"
+  }
+}

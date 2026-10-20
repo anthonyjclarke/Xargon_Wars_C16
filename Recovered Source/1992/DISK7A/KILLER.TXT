@@ -1,0 +1,229 @@
+; put "@:killer"
+;
+;
+;******************************
+;
+;    the killing routines !!
+;
+; and i am dreading doing them
+;
+;******************************
+;
+;
+;
+alihit
+;
+lda hitflg ;* alien hit ????
+bne sich
+;
+rts
+;
+sich ;* yes !
+;
+lda under ;* char under bullet
+;
+and #3
+tax
+dex
+stx gorge
+;
+lda hitx
+sec
+sbc gorge
+sta hitx
+;
+cpy #40
+bne camel1
+;
+inc hity
+;
+camel1
+;
+; now the 'hitx' variable holds
+; the correct x,y co-ord of the
+; alien that will correspond
+; to an alien in the 'aliens'
+; table - i hope !!!!!!!!!
+;
+lda #0
+sta altem
+;
+meat
+;
+lda altem
+asl a
+clc
+adc altem
+tax
+;
+lda aliens,x   ;* x pos
+and #$1f
+cmp hitx
+;
+bne hammer     ;* no try next one
+;
+lda aliens+1,x ;* y pos
+cmp hity
+;
+bne hammer     ;* y's not the same
+;
+;
+;*******************************
+;
+;    *   *  ***  *   *   * *
+;    *   * *   * *   *   * *
+;    * * * *   * * * *   * *
+;    ** ** *   * ** **
+;    *   *  ***  *   *   * *
+;
+;*******************************
+;
+;
+;
+; i think we've found the alien
+; that has been hit
+;
+;
+;
+lda aliens+1,x    ;* y pos
+ora #$80
+sta aliens+1,x
+;
+lda aliens,x
+and #%00011111    ;* set ex count
+sta aliens,x
+;
+inc numhit        ;* number hit
+;
+; set the top bits indicating it
+; is now as dead as a doormouse!
+;
+;
+lda #0
+sta fire
+sta bon
+sta boff
+sta hitflg
+;
+; start timer going
+;
+;
+jsr hitsnd ;* start sound effect
+;
+jsr score
+;
+jmp helpme ;* get out
+;
+hammer ;* to fall !!
+;
+inc altem
+lda altem
+;
+cmp numali ;* last one ?
+;
+bne meat
+;
+helpme
+;
+lda #32
+;
+ldy #0
+sta (bullet),y
+;
+ldy #40
+sta (bullet),y
+;
+;
+lda numhit
+cmp numali
+;
+bne beat
+;
+lda #1
+sta clrsht  ;* cleared sheet
+;
+beat
+;
+rts
+;
+;
+;
+;*******************************
+;
+;
+;
+;
+;
+upexpl
+;
+;
+;
+lda #0
+;
+sta nobbo
+;
+muddy
+;
+lda nobbo
+asl a
+clc
+adc nobbo
+tax
+;
+lda aliens+1,x ;*top bit set = dead
+bpl gumby      ;* !!!
+;
+lda aliens,x    ;* x pos top 3 bits
+and #%01100000 ;* explosion count
+;
+lsr a
+lsr a
+lsr a
+lsr a
+lsr a          ;* shove down count
+;
+clc
+adc #1         ;* next frame
+;
+and #3         ;* make sure 3 bits
+;
+; if the acc holds zero then end
+;
+bne abacab     ;* not finshed
+;
+lda #$ff
+sta aliens,x
+sta aliens+1,x
+sta aliens+2,x ;* it is no longer!
+bne gumby      ;* get oooottt !
+;
+abacab
+;
+asl a
+asl a
+asl a
+asl a
+asl a          ;* bits up again
+;
+pha
+;
+lda aliens,x
+and #%10011111 ;* sod off bits
+;
+pla
+ora aliens,x
+sta aliens,x
+;
+;
+gumby
+;
+inc nobbo
+lda nobbo
+cmp numali
+bne muddy
+;
+;
+;
+rts
+;
+.end killer

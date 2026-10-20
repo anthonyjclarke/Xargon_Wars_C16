@@ -1,0 +1,152 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "PlatformIO: Build",
+            "type": "process",
+            "command": "pio",
+            "args": [
+                "run",
+                "-e",
+                "c16"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "PlatformIO: Debug Build",
+            "type": "process",
+            "command": "pio",
+            "args": [
+                "run",
+                "-e",
+                "c16_debug"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "PlatformIO: Run in VICE",
+            "type": "process",
+            "command": "pio",
+            "args": [
+                "run",
+                "-e",
+                "c16",
+                "-t",
+                "upload"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "PlatformIO: Clean",
+            "type": "process",
+            "command": "pio",
+            "args": [
+                "run",
+                "-e",
+                "c16",
+                "-t",
+                "clean"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Build: Xargon Wars",
+            "type": "process",
+            "command": "python3",
+            "args": [
+                "scripts/restore_c16.py"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Run: Xargon Wars in VICE",
+            "type": "process",
+            "command": "python3",
+            "args": [
+                "scripts/run_vice.py"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [],
+            "dependsOn": "Build: Xargon Wars"
+        },
+        {
+            "label": "Run: Supplied Original",
+            "type": "process",
+            "command": "python3",
+            "args": [
+                "scripts/run_vice.py",
+                "--original"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Test: Restoration",
+            "type": "process",
+            "command": "python3",
+            "args": [
+                "-m",
+                "unittest",
+                "discover",
+                "-s",
+                "test",
+                "-p",
+                "test_*.py",
+                "-v"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Compare: Running PRG",
+            "type": "process",
+            "command": "python3",
+            "args": [
+                "scripts/compare_reference.py"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [],
+            "dependsOn": "Build: Xargon Wars"
+        },
+        {
+            "label": "Verify: VICE Title and Gameplay",
+            "type": "process",
+            "command": "python3",
+            "args": [
+                "scripts/verify_vice.py"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [],
+            "dependsOn": "Compare: Running PRG"
+        }
+    ]
+}

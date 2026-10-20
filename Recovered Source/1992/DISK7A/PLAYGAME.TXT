@@ -1,0 +1,183 @@
+; put "@:play-game"
+;
+;
+;**************************
+;
+;       play stuff
+;
+;**************************
+;
+plgame
+;
+jsr norirq ;* normal irq's
+;
+ldx #0
+;
+fetch1
+;
+lda savech,x
+sta chars,x
+;
+inx
+cpx #$a0
+bne fetch1
+;
+; chars back after scroll
+;
+;           *******************
+ldx #95    ;* length of table *
+lda #$ff   ;*******************
+;
+trs
+;
+sta ontbl,x
+;
+dex
+bpl trs ;* nice computer eh !!
+;
+; fill star table
+;
+;
+jsr clpag3  ;* clear page 3 & 0
+;
+lda #$71
+sta shipcl
+;
+lda #<shipst
+sta ship
+lda #>shipst
+sta ship+1
+;
+lda cliv+11
+sta sclves+4 ;* ascii lives
+;
+ldx lives
+stx glives   ;* game lives
+;
+ldx #$30
+stx clrmes+7 ;* lsb cleared mess
+inx
+stx clrmes+8 ;* msb cleared mess
+;
+lda #1
+sta decsht   ;* decimal sheet cnt
+sta rushz    ;* counter
+;
+;
+lda demo
+beq nodmst
+;
+lda ted+4
+and #7       ;* random sheet 0-7
+;
+nodmst
+;
+sta sheetn
+;
+jsr setup    ;* ted init.
+jsr instar   ;* star positions
+jsr setscr   ;* print screen
+jsr initsr   ;* init sheet no ^
+;
+;*******************************
+;
+ldx #3
+lda #0
+;
+stopst
+;
+sta stop,x
+dex
+;
+bpl stopst   ;* stop all stars
+;
+;*******************************
+;
+lda #1
+sta dntfir ;* no firing
+;
+jsr setirq
+;
+jsr nicstr ;* start stars
+;
+lda #1
+sta playin ;* game in progress
+;
+start
+;
+jsr ranker
+;
+ldx #$14
+ldy #$00
+;
+pup
+;
+dey
+bne pup
+;
+dex
+bne pup
+;
+;
+inc movect
+lda movect
+cmp mvespd
+bne freddy
+;
+lda #0
+sta movect
+;
+jsr mveall ;* update aliens
+jsr upexpl ;* update explosions
+;
+freddy
+;
+inc bermb ;* it's a bermb !
+lda bermb
+cmp frespd
+;
+bne clusea
+;
+lda #0
+sta bermb
+;
+lda dead
+bne clusea ;* he's dead so no more
+;          ;* bombs
+;
+jsr newbmb
+;
+clusea
+;
+inc clot
+lda clot
+cmp bomspd
+bne dntmv
+;
+lda #0
+sta clot
+;
+jsr mvebmb ;* move bombs down
+;
+dntmv
+;
+lda finito ;* game over
+beq noyep  ;* not yet
+;
+jmp kath   ;* finished
+;
+noyep
+;
+lda clrsht ;* finished sheet
+beq inspec
+;
+jsr shtovr ;* set up for next one
+;
+inspec
+;
+jmp start
+;
+;
+;
+;
+.end

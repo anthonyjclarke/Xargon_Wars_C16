@@ -1,0 +1,80 @@
+; put "@:extra-memory"
+;
+; $0400-$0500 is free
+; $0560-$07d8 is also free
+;
+;
+*=$0400
+;
+aliens
+;
+; main alien table
+;
+*=*+96
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+*=$0560
+;
+;
+bombtb
+;
+; aliens bomb table
+;
+*=*+32
+;
+bombpr
+;
+; bomb print table
+;
+*=*+32
+;
+bombcl
+;
+; bomb clear table
+;
+*=*+32
+;
+startb
+;
+; star x,y positions
+;
+*=*+32
+;
+ontbl
+;
+; star char on
+;
+*=*+96
+;
+savech
+;
+; save for smooth scroll chars
+;
+*=*+160
+;
+alicls
+;
+; alien cls table
+;
+*=*+64
+;
+aliprt
+;
+; alien print table
+;
+*=*+64
+;
+; allowing for a maximum of 32
+; aliens
+;
+;
+;
+.end

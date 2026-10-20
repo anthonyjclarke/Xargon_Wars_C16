@@ -1,0 +1,26 @@
+; put "@:assem-sheets"
+;
+*=$1010
+;
+.lib shtable*
+;
+;
+.lib sheet1
+.lib sheet2
+.lib sheet3
+.lib sheet4
+.lib sheet5
+.lib sheet6
+.lib sheet7
+.lib sheet8
+.lib sheet9
+.lib sheeta
+.lib sheetb
+.lib sheetc
+.lib sheetd
+.lib sheete
+.lib sheetf
+.lib sheetg
+;
+;
+.end
