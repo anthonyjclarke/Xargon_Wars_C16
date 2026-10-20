@@ -29,6 +29,13 @@ jobs:
         run: python -m unittest discover -s test -p 'test_*.py' -v
       - name: Build both PlatformIO environments
         run: pio run -e c16 -e c16_debug
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Check the HTML handbook is current
+        run: node scripts/build_docs.mjs --check
+      - name: Test the documentation generator
+        run: node --test test/test_docs.mjs
       - name: Check output agreement
         run: |
           cmp build/xargon-wars.prg build/platformio/c16/xargon-wars.prg

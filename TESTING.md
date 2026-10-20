@@ -75,7 +75,41 @@ The reference check autostarts the supplied PRG. VICE LOADs it from a virtual di
 
 On one run during development, the reference step exited with an error after reaching its breakpoint. A VICE window I'd launched by hand was still closing at the time. The next three runs passed. If it happens to you, close any other VICE windows and run it again.
 
-The screenshot of the first `START` pass still shows "GO FOR IT !". VICE captures the last completed frame, and `NICSTR` clears the message just before the loop begins. The screenshot after 100 more passes shows play in progress. I've checked all the screenshots by eye.
+The screenshot of the first `START` pass still shows "GO FOR IT !". VICE captures the last completed frame, and `NICSTR` clears the message just before the loop begins. The screenshot after 100 more passes shows play in progress. I've checked all the screenshots by eye. The rebuild's captures are the same on every run. The running PRG's title capture isn't: autostart timing varies, so the cycling title colour changes from run to run, and `publish_evidence.py` will show the file as changed even when nothing is wrong.
+
+---
+
+## Rule Probes and Analysis
+
+```sh
+make probes
+python3 scripts/analyze_codebase.py
+```
+
+The probe script uses VICE. It calls original routines from a small caller at `$1B80`, in memory that nothing else uses, with interrupts off and controlled RAM, and saves memory afterwards. It also observes the running game at breakpoints. It covers seven things:
+
+- points per sheet and level;
+- the extra life around 1,000;
+- score overflow;
+- `LEVINC`;
+- the Y register at `CHSEL`'s keyboard test;
+- the raster and timer-2 periods;
+- the main-loop period.
+
+The results go to `build/rule-probes/`. The reviewed copy is [docs/analysis/rule-probes.json](docs/analysis/rule-probes.json). No game instruction is changed. These are focused observations, not a play-through.
+
+The analysis script checks that the listing accounts for every assembled byte before it writes the [generated references](docs/analysis/README.md).
+
+---
+
+## Documentation Tests
+
+```sh
+make docs-check
+make test-docs
+```
+
+These need Node.js 20 or later. They check that the saved [HTML handbook](docs/XARGON_WARS.html) matches its inputs. They also test link rewriting, embedded images and diagrams, failure on broken links, escaping, determinism and watch mode. See [Maintaining the HTML Documentation](docs/HTML_DOCUMENTATION.md).
 
 ---
 

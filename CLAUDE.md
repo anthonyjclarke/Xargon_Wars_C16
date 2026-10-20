@@ -12,6 +12,12 @@ Commodore 16 / Plus/4, PAL, 16 KB RAM, MOS 7501 (6502 instruction set), TED vide
 - PRG loads at `$1010` with no BASIC stub. Entry is `$1C80` (`SYS 7296`). `FRAK!` goes at `$3C00` and `MUSIC/CODE` at `$1C00`, both from the disk.
 - `OBJ` (MOS hex) must match all 10,747 bytes, zero page and page 3 included. The PRG SHA-256 baseline is in `test/test_restoration.py`.
 
+## Documentation
+
+- `docs/XARGON_WARS.html` is generated from Markdown by `scripts/build_docs.mjs`. Never edit it. Run `make docs-html`, then `make docs-check`.
+- `docs/analysis/*` comes from `analyze_codebase.py` and `render_game_graphics.py`. `rule-probes.json` and `ted-palette.json` are reviewed VICE snapshots.
+- Prose is first person (Anthony Clarke). Tables have cells of 45 characters or fewer. Keep `CHANGELOG.md` current.
+
 ## Never
 
 - Modify, re-encode or tidy anything in `Recovered Source/` or `Original Artifacts/`. `.gitattributes` and `.editorconfig` protect them.
@@ -27,3 +33,4 @@ Commodore 16 / Plus/4, PAL, 16 KB RAM, MOS 7501 (6502 instruction set), TED vide
 - `PLGAME` is entered from inside the menu IRQ handler (`SLOB` → `MVEBOX` → `WHJUMP`) and never returns with `RTI`.
 - `CHSEL` passes the keyboard row in `X`, but `KEYIT` reads `Y`.
 - `CFLAG` = 1 means sound ON, even though one source comment says otherwise.
+- VICE probes use a caller at `$1B80`, which is unused memory. Don't place it in `$1C00–$1C7F` (tune) or `$3AE6+` without checking.

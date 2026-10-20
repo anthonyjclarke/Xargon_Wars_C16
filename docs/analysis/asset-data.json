@@ -1,0 +1,3405 @@
+{
+ "note": "Raw bytes from the verified build; addresses are integers. Colours are TED attribute bytes ((luminance << 4) | colour); see graphics/ted-palette.json.",
+ "font": {
+  "source": "FRAK!",
+  "address": 15360,
+  "glyphs": 128,
+  "hex": "7ec39db1b19dc37e007cfec6fefec6c600fcfec6fcc6fefc007efec0c0c0fe7e00f8fccec6cefcf8007cfec0f8c0fe7c007cfec0f8f8c0c0007cfec0dec6fe7c00c6c6c6fefec6c6007e7e1818187e7e003e3e0c0cccfc7800cedcf8f0f8dcce00c0c0c0c0c0fc7c00c6eefefed6c6c600e6e6f6fedecece007cfec6c6c6fe7c007cfec6fefcc0c0007cfec6cefe7c0e007cfec6fcf8dcce007cfec07c06fe7c00fefe383838383800c6c6c6c6c6fe7c00eeeec6c6ee7c3800eeeec6d6feeec600eeee7c387ceeee00eeeeee7c38383800fefe1c3870fefe3c3830303030383c00000000000000003c1c0c0c0c0c1c3c00387cfe38383838002060fefefe60200000000000000000003838383800383800eeeeeeee000000006c6cfe6cfe6c6c00187ee07c06fc1800e6ec183060ce8e0078ec7876ceec7e000e1c3800000000001e38706070381c0070381c0c1c38700000663cfe3c6600003838fefefe38380000000018183870000000fefe0000000000000000001c1c0000060c183060c07cfec6c6c6c6fe7c1838381818183c3cfcfe067efcc0fe7efcfe063e3e06fefc1c3c6cccfefe0c0cfefec0fcfe06fefc7efec0fcfec6fe7cfefe0e1c387060607cfec6fefec6fe7c7cfec6fe7e06060600001818001818000000181800183870001c3060c060301c007e7e007e7e000000e030180c1830e00078fc1c387000700000000000000000f0f0f0f0000000000f0f0f0f00000000ffffffff0000000000000000f0f0f0f0f0f0f0f0f0f0f0f00f0f0f0ff0f0f0f0fffffffff0f0f0f0000000000f0f0f0ff0f0f0f00f0f0f0f0f0f0f0f0f0f0f0fffffffff0f0f0f0f00000000fffffffff0f0f0f0ffffffff0f0f0f0fffffffffffffffffffffffff0000181818183c3c4438101011393b3e7e7effe76b4242ff221c0808889cdc7c3d3d3d7dfdff1100a5a5bdffdba59900bcbcbcbebfff88003c3c3c3c3c3c3c3c3e0038003800380000fc3333333333000000ec0fcc0cec00001edbdbded8d800183434341818181800000000000000ff000000000000ffaa0000000000ffaa5500000000ffaa55aa000000ffaa55aa550000ffaa55aa55aa00ffaa55aa55aa55ffaa55aa55aa55aa000289059902020010938f4f8f8f6318c0303cfccc3f3ffc0c300c182c342c180000030404030000007e810000817e000000c02020c00000aa55aaa01212344500000007081010100000ffff00000000000000e01008080830303030303030300c0c0c0c0c0c0c0c101010080700000000000000ffff000008080810e00000000c00000000000000000800000000000000000400000000000000000c00000000000000000800000000000000000400000000000000000c00000000000000000801010101010147313232373705ff8d3eff4ca4f2f6ff0303"
+ },
+ "tune": {
+  "source": "MUSIC/CODE",
+  "address": 7168,
+  "bytes": 128,
+  "hex": "580208c901029c0102c90102e90110c901183f0210580208ffffff580200c40207580204080204c90108080208830108830108c90108580208c40207580204080204c90108080208830108c90108580210c40207580204080204c90108080208830108830108c90108580208c40207580204080204c90108830108ffffffffff",
+  "layout": "three bytes per note: TED frequency lo, hi, length; $FF length ends"
+ },
+ "sheet_table": {
+  "address": 4112,
+  "entry_bytes": 16,
+  "fields": [
+   "movement_length",
+   "movement_data_lo",
+   "movement_data_hi",
+   "animation_speed",
+   "firing_speed",
+   "multi_colour_1",
+   "multi_colour_2",
+   "alien_attribute",
+   "movement_speed",
+   "glyph_data_lo",
+   "glyph_data_hi",
+   "positions_lo",
+   "positions_hi",
+   "alien_count",
+   "bomb_speed",
+   "spare"
+  ]
+ },
+ "sheets": [
+  {
+   "table_index": 0,
+   "play_order": 1,
+   "fields": {
+    "movement_length": 1,
+    "movement_data_lo": 32,
+    "movement_data_hi": 17,
+    "animation_speed": 8,
+    "firing_speed": 8,
+    "multi_colour_1": 103,
+    "multi_colour_2": 18,
+    "alien_attribute": 126,
+    "movement_speed": 4,
+    "glyph_data_lo": 105,
+    "glyph_data_hi": 17,
+    "positions_lo": 33,
+    "positions_hi": 17,
+    "alien_count": 24,
+    "bomb_speed": 4,
+    "spare": 0
+   },
+   "entry_hex": "012011080867127e0469112111180400",
+   "movement": {
+    "address": 4384,
+    "directions": [
+     2
+    ]
+   },
+   "initial_positions": {
+    "address": 4385,
+    "triples": [
+     [
+      5,
+      2,
+      0
+     ],
+     [
+      10,
+      2,
+      0
+     ],
+     [
+      15,
+      2,
+      0
+     ],
+     [
+      4,
+      4,
+      0
+     ],
+     [
+      9,
+      4,
+      0
+     ],
+     [
+      14,
+      4,
+      0
+     ],
+     [
+      3,
+      6,
+      0
+     ],
+     [
+      8,
+      6,
+      0
+     ],
+     [
+      13,
+      6,
+      0
+     ],
+     [
+      2,
+      8,
+      0
+     ],
+     [
+      7,
+      8,
+      0
+     ],
+     [
+      12,
+      8,
+      0
+     ],
+     [
+      5,
+      10,
+      0
+     ],
+     [
+      10,
+      10,
+      0
+     ],
+     [
+      15,
+      10,
+      0
+     ],
+     [
+      4,
+      12,
+      0
+     ],
+     [
+      9,
+      12,
+      0
+     ],
+     [
+      14,
+      12,
+      0
+     ],
+     [
+      3,
+      14,
+      0
+     ],
+     [
+      8,
+      14,
+      0
+     ],
+     [
+      13,
+      14,
+      0
+     ],
+     [
+      2,
+      16,
+      0
+     ],
+     [
+      7,
+      16,
+      0
+     ],
+     [
+      12,
+      16,
+      0
+     ]
+    ]
+   },
+   "alien_glyphs": {
+    "address": 4457,
+    "bytes": 72,
+    "hex": "00018a056902010010934f8f4f4f9314c030ccfcccf3f3fc000289059902020010938f4f8f8f6318c0303cfccc3f3ffc000106885629010020634f8c4c4c9324c0303cfcfcfffffc"
+   }
+  },
+  {
+   "table_index": 1,
+   "play_order": 12,
+   "fields": {
+    "movement_length": 27,
+    "movement_data_lo": 177,
+    "movement_data_hi": 17,
+    "animation_speed": 14,
+    "firing_speed": 4,
+    "multi_colour_1": 65,
+    "multi_colour_2": 117,
+    "alien_attribute": 89,
+    "movement_speed": 4,
+    "glyph_data_lo": 20,
+    "glyph_data_hi": 18,
+    "positions_lo": 204,
+    "positions_hi": 17,
+    "alien_count": 24,
+    "bomb_speed": 2,
+    "spare": 0
+   },
+   "entry_hex": "1bb1110e04417559041412cc11180200",
+   "movement": {
+    "address": 4529,
+    "directions": [
+     1,
+     1,
+     1,
+     1,
+     2,
+     2,
+     3,
+     3,
+     3,
+     4,
+     4,
+     4,
+     4,
+     4,
+     7,
+     7,
+     7,
+     6,
+     6,
+     5,
+     5,
+     5,
+     4,
+     4,
+     4,
+     4,
+     4
+    ]
+   },
+   "initial_positions": {
+    "address": 4556,
+    "triples": [
+     [
+      1,
+      5,
+      0
+     ],
+     [
+      1,
+      7,
+      0
+     ],
+     [
+      1,
+      9,
+      0
+     ],
+     [
+      1,
+      11,
+      0
+     ],
+     [
+      1,
+      13,
+      0
+     ],
+     [
+      1,
+      15,
+      0
+     ],
+     [
+      7,
+      5,
+      0
+     ],
+     [
+      7,
+      7,
+      0
+     ],
+     [
+      7,
+      9,
+      0
+     ],
+     [
+      7,
+      11,
+      0
+     ],
+     [
+      7,
+      13,
+      0
+     ],
+     [
+      7,
+      15,
+      0
+     ],
+     [
+      13,
+      5,
+      0
+     ],
+     [
+      13,
+      7,
+      0
+     ],
+     [
+      13,
+      9,
+      0
+     ],
+     [
+      13,
+      11,
+      0
+     ],
+     [
+      13,
+      13,
+      0
+     ],
+     [
+      13,
+      15,
+      0
+     ],
+     [
+      19,
+      5,
+      0
+     ],
+     [
+      19,
+      7,
+      0
+     ],
+     [
+      19,
+      9,
+      0
+     ],
+     [
+      19,
+      11,
+      0
+     ],
+     [
+      19,
+      13,
+      0
+     ],
+     [
+      19,
+      15,
+      0
+     ]
+    ]
+   },
+   "alien_glyphs": {
+    "address": 4628,
+    "bytes": 72,
+    "hex": "000000000000ffff00000042e7bdffff000000000000ffff000000030f3df0c042a5ffffff816618000000c0f0bc0f0300000000031ffde00042e7bdffff817e00000000c0f8bf07"
+   }
+  },
+  {
+   "table_index": 2,
+   "play_order": 5,
+   "fields": {
+    "movement_length": 72,
+    "movement_data_lo": 92,
+    "movement_data_hi": 18,
+    "animation_speed": 4,
+    "firing_speed": 4,
+    "multi_colour_1": 121,
+    "multi_colour_2": 122,
+    "alien_attribute": 78,
+    "movement_speed": 4,
+    "glyph_data_lo": 224,
+    "glyph_data_hi": 18,
+    "positions_lo": 164,
+    "positions_hi": 18,
+    "alien_count": 16,
+    "bomb_speed": 3,
+    "spare": 0
+   },
+   "entry_hex": "485c120404797a4e04e012a412100300",
+   "movement": {
+    "address": 4700,
+    "directions": [
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     0,
+     0,
+     0,
+     0,
+     6,
+     6,
+     6,
+     6,
+     6,
+     6,
+     6,
+     6,
+     6,
+     6,
+     6,
+     6,
+     6,
+     6,
+     6,
+     6,
+     6,
+     6,
+     6,
+     6,
+     6,
+     6,
+     6,
+     6,
+     6,
+     6,
+     6,
+     6,
+     4,
+     4,
+     4,
+     4,
+     4,
+     4,
+     4,
+     4,
+     4,
+     4,
+     4,
+     4
+    ]
+   },
+   "initial_positions": {
+    "address": 4772,
+    "triples": [
+     [
+      2,
+      5,
+      0
+     ],
+     [
+      6,
+      5,
+      4
+     ],
+     [
+      10,
+      5,
+      8
+     ],
+     [
+      14,
+      5,
+      12
+     ],
+     [
+      18,
+      5,
+      16
+     ],
+     [
+      22,
+      5,
+      20
+     ],
+     [
+      26,
+      5,
+      24
+     ],
+     [
+      29,
+      4,
+      28
+     ],
+     [
+      28,
+      1,
+      32
+     ],
+     [
+      24,
+      1,
+      36
+     ],
+     [
+      20,
+      1,
+      40
+     ],
+     [
+      24,
+      1,
+      36
+     ],
+     [
+      16,
+      1,
+      44
+     ],
+     [
+      12,
+      1,
+      48
+     ],
+     [
+      8,
+      1,
+      52
+     ],
+     [
+      4,
+      1,
+      56
+     ]
+    ]
+   },
+   "alien_glyphs": {
+    "address": 4832,
+    "bytes": 72,
+    "hex": "0000000f3140800024183cdbff663c42000000f08c020100000000007f8f000024183c5affe73c4200000000fef100008040300f0100000024183c5affe73c4201020cf080000000"
+   }
+  },
+  {
+   "table_index": 3,
+   "play_order": 4,
+   "fields": {
+    "movement_length": 12,
+    "movement_data_lo": 40,
+    "movement_data_hi": 19,
+    "animation_speed": 4,
+    "firing_speed": 8,
+    "multi_colour_1": 113,
+    "multi_colour_2": 114,
+    "alien_attribute": 66,
+    "movement_speed": 4,
+    "glyph_data_lo": 106,
+    "glyph_data_hi": 19,
+    "positions_lo": 52,
+    "positions_hi": 19,
+    "alien_count": 18,
+    "bomb_speed": 4,
+    "spare": 0
+   },
+   "entry_hex": "0c28130408717242046a133413120400",
+   "movement": {
+    "address": 4904,
+    "directions": [
+     2,
+     1,
+     1,
+     1,
+     1,
+     1,
+     2,
+     3,
+     3,
+     3,
+     3,
+     3
+    ]
+   },
+   "initial_positions": {
+    "address": 4916,
+    "triples": [
+     [
+      4,
+      7,
+      0
+     ],
+     [
+      7,
+      5,
+      3
+     ],
+     [
+      10,
+      2,
+      6
+     ],
+     [
+      13,
+      4,
+      9
+     ],
+     [
+      16,
+      7,
+      0
+     ],
+     [
+      19,
+      5,
+      3
+     ],
+     [
+      22,
+      2,
+      6
+     ],
+     [
+      25,
+      4,
+      9
+     ],
+     [
+      28,
+      7,
+      0
+     ],
+     [
+      4,
+      17,
+      0
+     ],
+     [
+      7,
+      15,
+      3
+     ],
+     [
+      10,
+      12,
+      6
+     ],
+     [
+      13,
+      14,
+      9
+     ],
+     [
+      16,
+      17,
+      0
+     ],
+     [
+      19,
+      15,
+      3
+     ],
+     [
+      22,
+      12,
+      6
+     ],
+     [
+      25,
+      14,
+      9
+     ],
+     [
+      28,
+      17,
+      0
+     ]
+    ]
+   },
+   "alien_glyphs": {
+    "address": 4970,
+    "bytes": 72,
+    "hex": "017fff4c803f0066c0e0f8dc1f9d214000009292ff242400017fff1980bf0033c0e0f99d1fbe220000002424ff494900017fff3300bf8019c0e0f81c3fbc008000004949ff929200"
+   }
+  },
+  {
+   "table_index": 4,
+   "play_order": 9,
+   "fields": {
+    "movement_length": 25,
+    "movement_data_lo": 178,
+    "movement_data_hi": 19,
+    "animation_speed": 10,
+    "firing_speed": 4,
+    "multi_colour_1": 18,
+    "multi_colour_2": 103,
+    "alien_attribute": 62,
+    "movement_speed": 4,
+    "glyph_data_lo": 1,
+    "glyph_data_hi": 20,
+    "positions_lo": 203,
+    "positions_hi": 19,
+    "alien_count": 18,
+    "bomb_speed": 4,
+    "spare": 0
+   },
+   "entry_hex": "19b2130a0412673e040114cb13120400",
+   "movement": {
+    "address": 5042,
+    "directions": [
+     2,
+     2,
+     2,
+     4,
+     3,
+     4,
+     3,
+     4,
+     3,
+     4,
+     3,
+     2,
+     2,
+     2,
+     1,
+     0,
+     1,
+     0,
+     1,
+     0,
+     1,
+     0,
+     2,
+     2,
+     2
+    ]
+   },
+   "initial_positions": {
+    "address": 5067,
+    "triples": [
+     [
+      5,
+      4,
+      4
+     ],
+     [
+      7,
+      8,
+      8
+     ],
+     [
+      10,
+      10,
+      12
+     ],
+     [
+      13,
+      7,
+      16
+     ],
+     [
+      15,
+      3,
+      20
+     ],
+     [
+      20,
+      2,
+      2
+     ],
+     [
+      22,
+      6,
+      6
+     ],
+     [
+      24,
+      10,
+      10
+     ],
+     [
+      28,
+      8,
+      15
+     ],
+     [
+      5,
+      12,
+      4
+     ],
+     [
+      7,
+      16,
+      8
+     ],
+     [
+      10,
+      18,
+      12
+     ],
+     [
+      13,
+      15,
+      16
+     ],
+     [
+      15,
+      11,
+      20
+     ],
+     [
+      20,
+      10,
+      2
+     ],
+     [
+      22,
+      14,
+      6
+     ],
+     [
+      24,
+      18,
+      10
+     ],
+     [
+      28,
+      16,
+      15
+     ]
+    ]
+   },
+   "alien_glyphs": {
+    "address": 5121,
+    "bytes": 72,
+    "hex": "aaaa28282828aaaa00555514145555000000ffffffff000000aaaa2828aaaa000000555555550000ffff3c3c3c3cffff0000aaaaaaaa0000555514141414555500ffff3c3cffff00"
+   }
+  },
+  {
+   "table_index": 5,
+   "play_order": 10,
+   "fields": {
+    "movement_length": 6,
+    "movement_data_lo": 73,
+    "movement_data_hi": 20,
+    "animation_speed": 10,
+    "firing_speed": 4,
+    "multi_colour_1": 116,
+    "multi_colour_2": 71,
+    "alien_attribute": 74,
+    "movement_speed": 4,
+    "glyph_data_lo": 133,
+    "glyph_data_hi": 20,
+    "positions_lo": 79,
+    "positions_hi": 20,
+    "alien_count": 18,
+    "bomb_speed": 4,
+    "spare": 0
+   },
+   "entry_hex": "0649140a0474474a0485144f14120400",
+   "movement": {
+    "address": 5193,
+    "directions": [
+     2,
+     2,
+     2,
+     2,
+     3,
+     3
+    ]
+   },
+   "initial_positions": {
+    "address": 5199,
+    "triples": [
+     [
+      1,
+      1,
+      0
+     ],
+     [
+      5,
+      2,
+      4
+     ],
+     [
+      9,
+      3,
+      2
+     ],
+     [
+      13,
+      5,
+      0
+     ],
+     [
+      17,
+      6,
+      4
+     ],
+     [
+      21,
+      7,
+      2
+     ],
+     [
+      25,
+      9,
+      0
+     ],
+     [
+      6,
+      6,
+      3
+     ],
+     [
+      10,
+      8,
+      1
+     ],
+     [
+      14,
+      10,
+      5
+     ],
+     [
+      19,
+      11,
+      4
+     ],
+     [
+      17,
+      1,
+      3
+     ],
+     [
+      21,
+      3,
+      1
+     ],
+     [
+      25,
+      5,
+      5
+     ],
+     [
+      1,
+      10,
+      0
+     ],
+     [
+      5,
+      11,
+      4
+     ],
+     [
+      9,
+      12,
+      2
+     ],
+     [
+      13,
+      14,
+      0
+     ]
+    ]
+   },
+   "alien_glyphs": {
+    "address": 5253,
+    "bytes": 72,
+    "hex": "0002102482280200f0fcfffffffffcf0101c1fffff1f1c100004609208200a00c0f0fcfffffcf0c010181cffff1c18100002082482280200c0c0c0ffffc0c0c0101010ffff101010"
+   }
+  },
+  {
+   "table_index": 6,
+   "play_order": 7,
+   "fields": {
+    "movement_length": 41,
+    "movement_data_lo": 205,
+    "movement_data_hi": 20,
+    "animation_speed": 4,
+    "firing_speed": 4,
+    "multi_colour_1": 65,
+    "multi_colour_2": 34,
+    "alien_attribute": 45,
+    "movement_speed": 8,
+    "glyph_data_lo": 31,
+    "glyph_data_hi": 21,
+    "positions_lo": 245,
+    "positions_hi": 20,
+    "alien_count": 14,
+    "bomb_speed": 4,
+    "spare": 0
+   },
+   "entry_hex": "29cd14040441222d081f15f5140e0400",
+   "movement": {
+    "address": 5325,
+    "directions": [
+     8,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     4,
+     4,
+     4,
+     4,
+     4,
+     4,
+     4,
+     4,
+     4,
+     6,
+     6,
+     6,
+     6,
+     6,
+     6,
+     6,
+     6,
+     6,
+     6,
+     6,
+     6,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     2
+    ]
+   },
+   "initial_positions": {
+    "address": 5365,
+    "triples": [
+     [
+      2,
+      2,
+      0
+     ],
+     [
+      7,
+      2,
+      5
+     ],
+     [
+      12,
+      2,
+      10
+     ],
+     [
+      13,
+      6,
+      15
+     ],
+     [
+      12,
+      11,
+      21
+     ],
+     [
+      7,
+      11,
+      26
+     ],
+     [
+      2,
+      11,
+      31
+     ],
+     [
+      17,
+      2,
+      0
+     ],
+     [
+      22,
+      2,
+      5
+     ],
+     [
+      27,
+      2,
+      10
+     ],
+     [
+      28,
+      6,
+      15
+     ],
+     [
+      27,
+      11,
+      21
+     ],
+     [
+      22,
+      11,
+      26
+     ],
+     [
+      17,
+      11,
+      31
+     ]
+    ]
+   },
+   "alien_glyphs": {
+    "address": 5407,
+    "bytes": 72,
+    "hex": "000000ffff000000e0e7ffffffffe707ffaaaa00005555ff00ffaaaa5555ff00e7e7fff81fffe7e700ffaaaa5555ff00ffaaaa00005555ff07e7ffffffffe7e0000000ffff000000"
+   }
+  },
+  {
+   "table_index": 7,
+   "play_order": 14,
+   "fields": {
+    "movement_length": 24,
+    "movement_data_lo": 103,
+    "movement_data_hi": 21,
+    "animation_speed": 10,
+    "firing_speed": 4,
+    "multi_colour_1": 113,
+    "multi_colour_2": 114,
+    "alien_attribute": 36,
+    "movement_speed": 8,
+    "glyph_data_lo": 163,
+    "glyph_data_hi": 21,
+    "positions_lo": 127,
+    "positions_hi": 21,
+    "alien_count": 12,
+    "bomb_speed": 4,
+    "spare": 0
+   },
+   "entry_hex": "1867150a0471722408a3157f150c0400",
+   "movement": {
+    "address": 5479,
+    "directions": [
+     4,
+     4,
+     4,
+     6,
+     6,
+     6,
+     6,
+     6,
+     6,
+     6,
+     6,
+     6,
+     4,
+     4,
+     4,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2
+    ]
+   },
+   "initial_positions": {
+    "address": 5503,
+    "triples": [
+     [
+      11,
+      2,
+      1
+     ],
+     [
+      2,
+      5,
+      13
+     ],
+     [
+      11,
+      8,
+      1
+     ],
+     [
+      2,
+      11,
+      13
+     ],
+     [
+      11,
+      14,
+      1
+     ],
+     [
+      2,
+      17,
+      13
+     ],
+     [
+      28,
+      2,
+      1
+     ],
+     [
+      19,
+      5,
+      13
+     ],
+     [
+      28,
+      8,
+      1
+     ],
+     [
+      19,
+      11,
+      13
+     ],
+     [
+      28,
+      14,
+      1
+     ],
+     [
+      19,
+      17,
+      13
+     ]
+    ]
+   },
+   "alien_glyphs": {
+    "address": 5539,
+    "bytes": 72,
+    "hex": "7f80bc8991bd807fff00ce29ee2900fffe017941597901fe00003dffff3d00000000efffffef0000000078ffff7800007f80bd9189bc807fff0029ee29ce00fffe017941597901fe"
+   }
+  },
+  {
+   "table_index": 8,
+   "play_order": 8,
+   "fields": {
+    "movement_length": 16,
+    "movement_data_lo": 235,
+    "movement_data_hi": 21,
+    "animation_speed": 8,
+    "firing_speed": 4,
+    "multi_colour_1": 75,
+    "multi_colour_2": 113,
+    "alien_attribute": 76,
+    "movement_speed": 8,
+    "glyph_data_lo": 40,
+    "glyph_data_hi": 22,
+    "positions_lo": 251,
+    "positions_hi": 21,
+    "alien_count": 15,
+    "bomb_speed": 4,
+    "spare": 0
+   },
+   "entry_hex": "10eb1508044b714c082816fb150f0400",
+   "movement": {
+    "address": 5611,
+    "directions": [
+     4,
+     4,
+     4,
+     3,
+     3,
+     3,
+     3,
+     3,
+     4,
+     4,
+     4,
+     5,
+     5,
+     5,
+     5,
+     5
+    ]
+   },
+   "initial_positions": {
+    "address": 5627,
+    "triples": [
+     [
+      1,
+      2,
+      1
+     ],
+     [
+      7,
+      2,
+      1
+     ],
+     [
+      13,
+      2,
+      1
+     ],
+     [
+      19,
+      2,
+      1
+     ],
+     [
+      25,
+      2,
+      1
+     ],
+     [
+      4,
+      4,
+      8
+     ],
+     [
+      10,
+      4,
+      8
+     ],
+     [
+      16,
+      4,
+      8
+     ],
+     [
+      22,
+      4,
+      8
+     ],
+     [
+      28,
+      4,
+      8
+     ],
+     [
+      1,
+      6,
+      1
+     ],
+     [
+      7,
+      6,
+      1
+     ],
+     [
+      13,
+      6,
+      1
+     ],
+     [
+      19,
+      6,
+      1
+     ],
+     [
+      25,
+      6,
+      1
+     ]
+    ]
+   },
+   "alien_glyphs": {
+    "address": 5672,
+    "bytes": 72,
+    "hex": "000000181f00000000003cffff3c0000ff818181818181ff00003c27243c000000003cffff3c000000003c24e43c0000ff818181818181ff00003cffff3c0000000000f818000000"
+   }
+  },
+  {
+   "table_index": 9,
+   "play_order": 3,
+   "fields": {
+    "movement_length": 26,
+    "movement_data_lo": 112,
+    "movement_data_hi": 22,
+    "animation_speed": 8,
+    "firing_speed": 4,
+    "multi_colour_1": 75,
+    "multi_colour_2": 113,
+    "alien_attribute": 76,
+    "movement_speed": 8,
+    "glyph_data_lo": 183,
+    "glyph_data_hi": 22,
+    "positions_lo": 138,
+    "positions_hi": 22,
+    "alien_count": 15,
+    "bomb_speed": 4,
+    "spare": 0
+   },
+   "entry_hex": "1a701608044b714c08b7168a160f0400",
+   "movement": {
+    "address": 5744,
+    "directions": [
+     2,
+     2,
+     3,
+     2,
+     2,
+     3,
+     2,
+     2,
+     3,
+     2,
+     2,
+     3,
+     2,
+     2,
+     3,
+     2,
+     2,
+     1,
+     2,
+     2,
+     1,
+     2,
+     2,
+     1,
+     2,
+     2
+    ]
+   },
+   "initial_positions": {
+    "address": 5770,
+    "triples": [
+     [
+      1,
+      3,
+      1
+     ],
+     [
+      7,
+      5,
+      7
+     ],
+     [
+      13,
+      7,
+      13
+     ],
+     [
+      19,
+      7,
+      19
+     ],
+     [
+      25,
+      5,
+      25
+     ],
+     [
+      1,
+      6,
+      1
+     ],
+     [
+      7,
+      8,
+      7
+     ],
+     [
+      13,
+      10,
+      13
+     ],
+     [
+      19,
+      10,
+      19
+     ],
+     [
+      25,
+      8,
+      25
+     ],
+     [
+      1,
+      9,
+      1
+     ],
+     [
+      7,
+      11,
+      7
+     ],
+     [
+      13,
+      13,
+      13
+     ],
+     [
+      19,
+      14,
+      19
+     ],
+     [
+      25,
+      11,
+      25
+     ]
+    ]
+   },
+   "alien_glyphs": {
+    "address": 5815,
+    "bytes": 72,
+    "hex": "000000001f017e200c122121e1c13e0000000018ffe0000000000007010e702000007ec3ff3e0000000018ffe000000000001f610618602000ffebf52b351a0c0018ffe000000000"
+   }
+  },
+  {
+   "table_index": 10,
+   "play_order": 11,
+   "fields": {
+    "movement_length": 71,
+    "movement_data_lo": 255,
+    "movement_data_hi": 22,
+    "animation_speed": 15,
+    "firing_speed": 4,
+    "multi_colour_1": 17,
+    "multi_colour_2": 65,
+    "alien_attribute": 121,
+    "movement_speed": 6,
+    "glyph_data_lo": 115,
+    "glyph_data_hi": 23,
+    "positions_lo": 70,
+    "positions_hi": 23,
+    "alien_count": 15,
+    "bomb_speed": 4,
+    "spare": 0
+   },
+   "entry_hex": "47ff160f0411417906731746170f0400",
+   "movement": {
+    "address": 5887,
+    "directions": [
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     3,
+     3,
+     4,
+     4,
+     4,
+     4,
+     4,
+     4,
+     4,
+     4,
+     5,
+     5,
+     5,
+     5,
+     5,
+     4,
+     4,
+     4,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     0,
+     0,
+     0,
+     7,
+     7,
+     7,
+     7,
+     7,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     1,
+     1,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2
+    ]
+   },
+   "initial_positions": {
+    "address": 5958,
+    "triples": [
+     [
+      1,
+      2,
+      1
+     ],
+     [
+      7,
+      2,
+      7
+     ],
+     [
+      11,
+      6,
+      13
+     ],
+     [
+      11,
+      10,
+      17
+     ],
+     [
+      9,
+      14,
+      21
+     ],
+     [
+      6,
+      18,
+      25
+     ],
+     [
+      8,
+      20,
+      29
+     ],
+     [
+      14,
+      20,
+      35
+     ],
+     [
+      20,
+      20,
+      41
+     ],
+     [
+      24,
+      18,
+      47
+     ],
+     [
+      21,
+      14,
+      51
+     ],
+     [
+      19,
+      10,
+      55
+     ],
+     [
+      19,
+      6,
+      59
+     ],
+     [
+      21,
+      2,
+      63
+     ],
+     [
+      25,
+      2,
+      67
+     ]
+    ]
+   },
+   "alien_glyphs": {
+    "address": 6003,
+    "bytes": 72,
+    "hex": "7f40e0eaeaee407fff0402c9c88800ff806018fe0f0f0cf07f4ae0e0e0e04a7fffc800000000c8ffe0784e47474e78e07f40eeeaeae0407fff0088c8c90204fff00c0f0ffe186080"
+   }
+  },
+  {
+   "table_index": 11,
+   "play_order": 15,
+   "fields": {
+    "movement_length": 54,
+    "movement_data_lo": 187,
+    "movement_data_hi": 23,
+    "animation_speed": 8,
+    "firing_speed": 4,
+    "multi_colour_1": 85,
+    "multi_colour_2": 81,
+    "alien_attribute": 92,
+    "movement_speed": 6,
+    "glyph_data_lo": 30,
+    "glyph_data_hi": 24,
+    "positions_lo": 241,
+    "positions_hi": 23,
+    "alien_count": 15,
+    "bomb_speed": 4,
+    "spare": 0
+   },
+   "entry_hex": "36bb17080455515c061e18f1170f0400",
+   "movement": {
+    "address": 6075,
+    "directions": [
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     5,
+     5,
+     6,
+     6,
+     6,
+     6,
+     6,
+     6,
+     6,
+     6,
+     5,
+     6,
+     6,
+     6,
+     6,
+     6,
+     6,
+     6,
+     6,
+     5,
+     6,
+     6,
+     6,
+     6,
+     6,
+     5,
+     5
+    ]
+   },
+   "initial_positions": {
+    "address": 6129,
+    "triples": [
+     [
+      6,
+      1,
+      3
+     ],
+     [
+      11,
+      1,
+      8
+     ],
+     [
+      16,
+      1,
+      13
+     ],
+     [
+      21,
+      1,
+      18
+     ],
+     [
+      26,
+      1,
+      23
+     ],
+     [
+      6,
+      6,
+      3
+     ],
+     [
+      11,
+      6,
+      8
+     ],
+     [
+      16,
+      6,
+      13
+     ],
+     [
+      21,
+      6,
+      18
+     ],
+     [
+      26,
+      6,
+      23
+     ],
+     [
+      6,
+      11,
+      3
+     ],
+     [
+      11,
+      11,
+      8
+     ],
+     [
+      16,
+      11,
+      13
+     ],
+     [
+      21,
+      11,
+      18
+     ],
+     [
+      26,
+      11,
+      23
+     ]
+    ]
+   },
+   "alien_glyphs": {
+    "address": 6174,
+    "bytes": 72,
+    "hex": "aa505050505050aaaa000000000000aaaa0f0f0f0f0f0faaaa010101010101aaaa434343434343aaaac0c0c0c0c0c0aaaa000000000000aaaa3c3c3c3c3c3caaaa000000000000aa"
+   }
+  },
+  {
+   "table_index": 12,
+   "play_order": 2,
+   "fields": {
+    "movement_length": 16,
+    "movement_data_lo": 102,
+    "movement_data_hi": 24,
+    "animation_speed": 12,
+    "firing_speed": 4,
+    "multi_colour_1": 113,
+    "multi_colour_2": 114,
+    "alien_attribute": 119,
+    "movement_speed": 3,
+    "glyph_data_lo": 178,
+    "glyph_data_hi": 24,
+    "positions_lo": 118,
+    "positions_hi": 24,
+    "alien_count": 20,
+    "bomb_speed": 2,
+    "spare": 0
+   },
+   "entry_hex": "1066180c0471727703b2187618140200",
+   "movement": {
+    "address": 6246,
+    "directions": [
+     2,
+     2,
+     3,
+     3,
+     4,
+     4,
+     5,
+     5,
+     6,
+     6,
+     7,
+     7,
+     0,
+     0,
+     1,
+     1
+    ]
+   },
+   "initial_positions": {
+    "address": 6262,
+    "triples": [
+     [
+      6,
+      2,
+      2
+     ],
+     [
+      8,
+      5,
+      5
+     ],
+     [
+      6,
+      8,
+      8
+     ],
+     [
+      3,
+      7,
+      11
+     ],
+     [
+      2,
+      4,
+      14
+     ],
+     [
+      16,
+      2,
+      2
+     ],
+     [
+      18,
+      5,
+      5
+     ],
+     [
+      16,
+      8,
+      8
+     ],
+     [
+      13,
+      7,
+      11
+     ],
+     [
+      12,
+      4,
+      14
+     ],
+     [
+      26,
+      2,
+      2
+     ],
+     [
+      28,
+      5,
+      5
+     ],
+     [
+      26,
+      8,
+      8
+     ],
+     [
+      23,
+      7,
+      11
+     ],
+     [
+      22,
+      4,
+      14
+     ],
+     [
+      16,
+      12,
+      2
+     ],
+     [
+      18,
+      15,
+      5
+     ],
+     [
+      16,
+      18,
+      8
+     ],
+     [
+      13,
+      17,
+      11
+     ],
+     [
+      12,
+      14,
+      14
+     ]
+    ]
+   },
+   "alien_glyphs": {
+    "address": 6322,
+    "bytes": 72,
+    "hex": "000000031f7ce08042a5bde7ff3c66c3000000c0f83e07010000007fff00000042a5bde7ff3c3c7e000000feff00000080e07c1f0300000042a5bde7ff3c181801073ef8c0000000"
+   }
+  },
+  {
+   "table_index": 13,
+   "play_order": 6,
+   "fields": {
+    "movement_length": 102,
+    "movement_data_lo": 250,
+    "movement_data_hi": 24,
+    "animation_speed": 4,
+    "firing_speed": 4,
+    "multi_colour_1": 18,
+    "multi_colour_2": 103,
+    "alien_attribute": 62,
+    "movement_speed": 8,
+    "glyph_data_lo": 147,
+    "glyph_data_hi": 25,
+    "positions_lo": 96,
+    "positions_hi": 25,
+    "alien_count": 17,
+    "bomb_speed": 4,
+    "spare": 0
+   },
+   "entry_hex": "66fa18040412673e0893196019110400",
+   "movement": {
+    "address": 6394,
+    "directions": [
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     4,
+     4,
+     4,
+     4,
+     4,
+     4,
+     4,
+     4,
+     4,
+     4,
+     4,
+     4,
+     4,
+     4,
+     4,
+     4,
+     4,
+     6,
+     6,
+     6,
+     6,
+     6,
+     6,
+     6,
+     6,
+     6,
+     0,
+     6,
+     6,
+     6,
+     0,
+     0,
+     0,
+     0,
+     6,
+     6,
+     6,
+     6,
+     6,
+     4,
+     4,
+     4,
+     4,
+     4,
+     4,
+     6,
+     6,
+     6,
+     6,
+     6,
+     6,
+     6,
+     6,
+     6,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     6,
+     6,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "initial_positions": {
+    "address": 6496,
+    "triples": [
+     [
+      3,
+      2,
+      1
+     ],
+     [
+      9,
+      2,
+      7
+     ],
+     [
+      15,
+      2,
+      13
+     ],
+     [
+      21,
+      2,
+      19
+     ],
+     [
+      27,
+      2,
+      25
+     ],
+     [
+      32,
+      6,
+      31
+     ],
+     [
+      32,
+      11,
+      36
+     ],
+     [
+      32,
+      16,
+      41
+     ],
+     [
+      27,
+      19,
+      46
+     ],
+     [
+      22,
+      19,
+      51
+     ],
+     [
+      18,
+      18,
+      56
+     ],
+     [
+      17,
+      14,
+      61
+     ],
+     [
+      12,
+      14,
+      66
+     ],
+     [
+      1,
+      7,
+      96
+     ],
+     [
+      3,
+      11,
+      90
+     ],
+     [
+      3,
+      16,
+      85
+     ],
+     [
+      4,
+      20,
+      80
+     ]
+    ]
+   },
+   "alien_glyphs": {
+    "address": 6547,
+    "bytes": 72,
+    "hex": "0001374b95a54b30ffffff00000000000080ecd2a9a5d20c0001374ba5954b30ff0000ffff0000000080ecd2a5a9d20c0001374b95a54b30ff00000000ffff000080ecd2a9a5920c"
+   }
+  },
+  {
+   "table_index": 14,
+   "play_order": 13,
+   "fields": {
+    "movement_length": 45,
+    "movement_data_lo": 219,
+    "movement_data_hi": 25,
+    "animation_speed": 16,
+    "firing_speed": 4,
+    "multi_colour_1": 113,
+    "multi_colour_2": 114,
+    "alien_attribute": 86,
+    "movement_speed": 3,
+    "glyph_data_lo": 41,
+    "glyph_data_hi": 26,
+    "positions_lo": 8,
+    "positions_hi": 26,
+    "alien_count": 11,
+    "bomb_speed": 4,
+    "spare": 0
+   },
+   "entry_hex": "2ddb19100471725603291a081a0b0400",
+   "movement": {
+    "address": 6619,
+    "directions": [
+     2,
+     2,
+     2,
+     3,
+     3,
+     3,
+     4,
+     3,
+     3,
+     3,
+     4,
+     3,
+     3,
+     3,
+     4,
+     3,
+     3,
+     3,
+     4,
+     3,
+     3,
+     3,
+     2,
+     2,
+     1,
+     1,
+     1,
+     0,
+     1,
+     1,
+     1,
+     0,
+     1,
+     1,
+     1,
+     0,
+     1,
+     1,
+     1,
+     0,
+     1,
+     1,
+     1,
+     2,
+     2
+    ]
+   },
+   "initial_positions": {
+    "address": 6664,
+    "triples": [
+     [
+      4,
+      3,
+      3
+     ],
+     [
+      6,
+      6,
+      6
+     ],
+     [
+      9,
+      9,
+      9
+     ],
+     [
+      11,
+      12,
+      12
+     ],
+     [
+      13,
+      15,
+      15
+     ],
+     [
+      15,
+      18,
+      18
+     ],
+     [
+      18,
+      21,
+      21
+     ],
+     [
+      21,
+      20,
+      24
+     ],
+     [
+      23,
+      17,
+      27
+     ],
+     [
+      26,
+      14,
+      30
+     ],
+     [
+      28,
+      11,
+      33
+     ]
+    ]
+   },
+   "alien_glyphs": {
+    "address": 6697,
+    "bytes": 72,
+    "hex": "00030f1f7fff7d03e79cffff000055ff00c0f0f806017ec000030f1f60807e03e75affffffffaaff00c0f0f80601bec000030f1f60807d03e739ffff000055ff00c0f0f8feff7ec0"
+   }
+  },
+  {
+   "table_index": 15,
+   "play_order": 16,
+   "fields": {
+    "movement_length": 1,
+    "movement_data_lo": 113,
+    "movement_data_hi": 26,
+    "animation_speed": 10,
+    "firing_speed": 2,
+    "multi_colour_1": 18,
+    "multi_colour_2": 103,
+    "alien_attribute": 62,
+    "movement_speed": 3,
+    "glyph_data_lo": 186,
+    "glyph_data_hi": 26,
+    "positions_lo": 114,
+    "positions_hi": 26,
+    "alien_count": 24,
+    "bomb_speed": 2,
+    "spare": 0
+   },
+   "entry_hex": "01711a0a0212673e03ba1a721a180200",
+   "movement": {
+    "address": 6769,
+    "directions": [
+     4
+    ]
+   },
+   "initial_positions": {
+    "address": 6770,
+    "triples": [
+     [
+      1,
+      2,
+      0
+     ],
+     [
+      2,
+      4,
+      0
+     ],
+     [
+      3,
+      6,
+      0
+     ],
+     [
+      4,
+      8,
+      0
+     ],
+     [
+      5,
+      10,
+      0
+     ],
+     [
+      6,
+      12,
+      0
+     ],
+     [
+      7,
+      14,
+      0
+     ],
+     [
+      8,
+      16,
+      0
+     ],
+     [
+      9,
+      18,
+      0
+     ],
+     [
+      10,
+      20,
+      0
+     ],
+     [
+      11,
+      22,
+      0
+     ],
+     [
+      29,
+      2,
+      0
+     ],
+     [
+      28,
+      4,
+      0
+     ],
+     [
+      27,
+      6,
+      0
+     ],
+     [
+      26,
+      8,
+      0
+     ],
+     [
+      25,
+      10,
+      0
+     ],
+     [
+      24,
+      12,
+      0
+     ],
+     [
+      23,
+      14,
+      0
+     ],
+     [
+      22,
+      16,
+      0
+     ],
+     [
+      21,
+      18,
+      0
+     ],
+     [
+      20,
+      20,
+      0
+     ],
+     [
+      19,
+      22,
+      0
+     ],
+     [
+      15,
+      8,
+      0
+     ],
+     [
+      15,
+      11,
+      0
+     ]
+    ]
+   },
+   "alien_glyphs": {
+    "address": 6842,
+    "bytes": 72,
+    "hex": "051f1f1f1f1d1d0655d9d96a6aaaaaaa54fdfd7d7d9d9da40001071f1f1d1d0655d9d96a6aa2800040d0f47d7d9d9d2400000107071d1d061559d96a628000000040d074749d1d24"
+   }
+  }
+ ],
+ "tables": {
+  "CONSHT": {
+   "symbol": "CONSHT",
+   "address": 10931,
+   "bytes": 16,
+   "hex": "000c0903020d060804050a010e070b0f"
+  },
+  "XTBL": {
+   "symbol": "XTBL",
+   "address": 11715,
+   "bytes": 9,
+   "hex": "0001010100ffffff00"
+  },
+  "YTBL": {
+   "symbol": "YTBL",
+   "address": 11706,
+   "bytes": 9,
+   "hex": "ffff0001010100ff00"
+  },
+  "SCRPTR": {
+   "symbol": "SCRPTR",
+   "address": 8194,
+   "bytes": 50,
+   "hex": "000c280c500c780ca00cc80cf00c180d400d680d900db80de00d080e300e580e800ea80ed00ef80e200f480f700f980fc00f"
+  },
+  "YCOL": {
+   "symbol": "YCOL",
+   "address": 8244,
+   "bytes": 7,
+   "hex": "00285078a0c8f0"
+  },
+  "TIME24": {
+   "symbol": "TIME24",
+   "address": 11831,
+   "bytes": 4,
+   "hex": "00183018"
+  },
+  "FICHAR": {
+   "symbol": "FICHAR",
+   "address": 8251,
+   "bytes": 16,
+   "hex": "300c3018342c34180c300c182c342c18"
+  },
+  "EXPLAN": {
+   "symbol": "EXPLAN",
+   "address": 8267,
+   "bytes": 72,
+   "hex": "0718608080601807ff000000000000ffc0180601010618c00000030404030000007e810000817e000000c02020c00000000000000000000000003c24243c00000000000000000000"
+  },
+  "LACHAR": {
+   "symbol": "LACHAR",
+   "address": 8339,
+   "bytes": 16,
+   "hex": "182c2c2c181824241834343418181818"
+  },
+  "TTB": {
+   "symbol": "TTB",
+   "address": 8355,
+   "bytes": 44,
+   "hex": "0802cf200f04d72115041b211b0441212104f92027026321300493213604d7213c041b214204b721ffffffff"
+  },
+  "SHDAY": {
+   "symbol": "SHDAY",
+   "address": 10052,
+   "bytes": 7,
+   "hex": "0128292a505152"
+  },
+  "STCOL": {
+   "symbol": "STCOL",
+   "address": 7319,
+   "bytes": 4,
+   "hex": "7b7d7e7f"
+  },
+  "SPPIX": {
+   "symbol": "SPPIX",
+   "address": 7323,
+   "bytes": 4,
+   "hex": "04020201"
+  },
+  "STOP": {
+   "symbol": "STOP",
+   "address": 7327,
+   "bytes": 4,
+   "hex": "01010101"
+  },
+  "GACOUL": {
+   "symbol": "GACOUL",
+   "address": 9137,
+   "bytes": 12,
+   "hex": "454545454545676767676712"
+  },
+  "PLOXEL": {
+   "symbol": "PLOXEL",
+   "address": 12662,
+   "bytes": 4,
+   "hex": "41424448"
+  },
+  "BOXTBL": {
+   "symbol": "BOXTBL",
+   "address": 13284,
+   "bytes": 29,
+   "hex": "01081102010b110c00071311150811021407130d1415130200002706ff"
+  },
+  "HISTBL": {
+   "symbol": "HISTBL",
+   "address": 14112,
+   "bytes": 99,
+   "hex": "303130303000004d2e502e4c2e003030373530000042454156455200303035303000004d4f4e545920003030323530000053414d2020200030303130300000504f5454592000303030353000004752554d5059005448495320495320412044554d4d59"
+  },
+  "BANNER": {
+   "symbol": "BANNER",
+   "address": 14211,
+   "bytes": 15,
+   "hex": "584152474f4e20204845524f455300"
+  },
+  "MENTBL": {
+   "symbol": "MENTBL",
+   "address": 12829,
+   "bytes": 85,
+   "hex": "1609202a2a2a2a2d4d454e552d2a2a2a2a2000180c504c41592047414d452000180e534849505320202020332020001810534f554e442020204f4e202000181244454d4f204d4f444500151840204752454d4c494e"
+  },
+  "TEXT": {
+   "symbol": "TEXT",
+   "address": 8934,
+   "bytes": 65,
+   "hex": "220153434f5245002202303030303000220352414e4b2a0022044c495645530022052020302020002206534845455400220720303031200022164c4153455200ff"
+  },
+  "CLRMES": {
+   "symbol": "CLRMES",
+   "address": 11119,
+   "bytes": 19,
+   "hex": "584152474f4e2030312044455354524f594544"
+  },
+  "GAMMES": {
+   "symbol": "GAMMES",
+   "address": 8002,
+   "bytes": 32,
+   "hex": "20202020202020202020202047414d45204f5645522020202020202020202020"
+  },
+  "SROLBF": {
+   "symbol": "SROLBF",
+   "address": 7331,
+   "bytes": 255,
+   "hex": "205752495454454e20425920544845205349585445454e204449564953494f4e204f46204d4943524f2050524f4a45435453204c544420204c4f4f4b204f555420464f522054484520504554414c53204f4620444f4f4d20414c534f2046524f4d204752454d4c494e20202020205448414e4b5320544f204d41545448455720464f522054484520475241504849435320414e44204849532048454c5020414e4420414e5420464f522048495320494e56414c5541424c452048454c5020202048454c4c4f20544f205649434b49204b415448204348524953204a4f484e204d41524b204a41534f4e2053414e44524120414c49534f4e20455420414c4c20"
+  },
+  "TESCO": {
+   "symbol": "TESCO",
+   "address": 7698,
+   "bytes": 44,
+   "hex": "202020204152452020202020202020594f552020202020205245414459203f2020474f20464f522049542021"
+  },
+  "TIM11": {
+   "symbol": "TIM11",
+   "address": 7742,
+   "bytes": 4,
+   "hex": "21160b00"
+  },
+  "BTD": {
+   "symbol": "BTD",
+   "address": 14959,
+   "bytes": 5,
+   "hex": "1001400810"
+  },
+  "RWD": {
+   "symbol": "RWD",
+   "address": 14964,
+   "bytes": 5,
+   "hex": "bf7ffefefe"
+  },
+  "MVEPAT": {
+   "symbol": "MVEPAT",
+   "address": 12474,
+   "bytes": 2,
+   "hex": "0804"
+  },
+  "SNTB": {
+   "symbol": "SNTB",
+   "address": 13377,
+   "bytes": 7,
+   "hex": "4f46462a204f4e"
+  },
+  "KST": {
+   "symbol": "KST",
+   "address": 15062,
+   "bytes": 8,
+   "hex": "4b4559424f415244"
+  },
+  "JST": {
+   "symbol": "JST",
+   "address": 15070,
+   "bytes": 8,
+   "hex": "4a4f59535449434b"
+  },
+  "EXCHR": {
+   "symbol": "EXCHR",
+   "address": 11479,
+   "bytes": 3,
+   "hex": "696c6f"
+  },
+  "HOFSET": {
+   "symbol": "HOFSET",
+   "address": 13844,
+   "bytes": 6,
+   "hex": "000e1c2a3846"
+  },
+  "SCROFT": {
+   "symbol": "SCROFT",
+   "address": 13850,
+   "bytes": 12,
+   "hex": "ec0d3c0e8c0edc0e2c0f7c0f"
+  },
+  "STRIN": {
+   "symbol": "STRIN",
+   "address": 14106,
+   "bytes": 6,
+   "hex": "303132333435"
+  },
+  "SCRBUF": {
+   "symbol": "SCRBUF",
+   "address": 13770,
+   "bytes": 5,
+   "hex": "3030303030"
+  }
+ },
+ "title_letters": {
+  "XDATA": {
+   "address": 8399,
+   "points": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     3,
+     4
+    ],
+    [
+     4,
+     5
+    ],
+    [
+     5,
+     6
+    ],
+    [
+     5,
+     7
+    ],
+    [
+     5,
+     8
+    ],
+    [
+     5,
+     0
+    ],
+    [
+     5,
+     1
+    ],
+    [
+     5,
+     2
+    ],
+    [
+     4,
+     3
+    ],
+    [
+     3,
+     4
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     1,
+     5
+    ],
+    [
+     0,
+     6
+    ],
+    [
+     0,
+     7
+    ],
+    [
+     0,
+     8
+    ]
+   ]
+  },
+  "ADATA": {
+   "address": 8663,
+   "points": [
+    [
+     0,
+     6
+    ],
+    [
+     0,
+     5
+    ],
+    [
+     0,
+     4
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     3,
+     1
+    ],
+    [
+     4,
+     2
+    ],
+    [
+     4,
+     3
+    ],
+    [
+     4,
+     4
+    ],
+    [
+     4,
+     5
+    ],
+    [
+     4,
+     6
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     3,
+     3
+    ]
+   ]
+  },
+  "RDATA": {
+   "address": 8475,
+   "points": [
+    [
+     0,
+     6
+    ],
+    [
+     0,
+     5
+    ],
+    [
+     0,
+     4
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     3,
+     0
+    ],
+    [
+     4,
+     1
+    ],
+    [
+     4,
+     2
+    ],
+    [
+     3,
+     3
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     3,
+     5
+    ],
+    [
+     4,
+     6
+    ]
+   ]
+  },
+  "GDATA": {
+   "address": 8513,
+   "points": [
+    [
+     4,
+     1
+    ],
+    [
+     3,
+     0
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     4
+    ],
+    [
+     0,
+     5
+    ],
+    [
+     1,
+     6
+    ],
+    [
+     2,
+     6
+    ],
+    [
+     3,
+     6
+    ],
+    [
+     4,
+     5
+    ],
+    [
+     4,
+     4
+    ],
+    [
+     4,
+     3
+    ],
+    [
+     3,
+     3
+    ]
+   ]
+  },
+  "ODATA": {
+   "address": 8441,
+   "points": [
+    [
+     3,
+     0
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     4
+    ],
+    [
+     0,
+     5
+    ],
+    [
+     1,
+     6
+    ],
+    [
+     2,
+     6
+    ],
+    [
+     3,
+     6
+    ],
+    [
+     4,
+     5
+    ],
+    [
+     4,
+     4
+    ],
+    [
+     4,
+     3
+    ],
+    [
+     4,
+     2
+    ],
+    [
+     4,
+     1
+    ]
+   ]
+  },
+  "NDATA": {
+   "address": 8547,
+   "points": [
+    [
+     0,
+     8
+    ],
+    [
+     0,
+     7
+    ],
+    [
+     0,
+     6
+    ],
+    [
+     0,
+     5
+    ],
+    [
+     0,
+     4
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     3,
+     5
+    ],
+    [
+     3,
+     6
+    ],
+    [
+     4,
+     6
+    ],
+    [
+     4,
+     7
+    ],
+    [
+     4,
+     8
+    ],
+    [
+     4,
+     5
+    ],
+    [
+     4,
+     4
+    ],
+    [
+     4,
+     3
+    ],
+    [
+     4,
+     2
+    ],
+    [
+     4,
+     1
+    ],
+    [
+     4,
+     0
+    ]
+   ]
+  },
+  "WDATA": {
+   "address": 8595,
+   "points": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     4
+    ],
+    [
+     0,
+     5
+    ],
+    [
+     0,
+     6
+    ],
+    [
+     1,
+     5
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     3,
+     5
+    ],
+    [
+     4,
+     6
+    ],
+    [
+     4,
+     5
+    ],
+    [
+     4,
+     4
+    ],
+    [
+     4,
+     3
+    ],
+    [
+     4,
+     2
+    ],
+    [
+     4,
+     1
+    ],
+    [
+     4,
+     0
+    ]
+   ]
+  },
+  "SDATA": {
+   "address": 8631,
+   "points": [
+    [
+     4,
+     1
+    ],
+    [
+     3,
+     0
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     3,
+     3
+    ],
+    [
+     4,
+     4
+    ],
+    [
+     4,
+     5
+    ],
+    [
+     3,
+     6
+    ],
+    [
+     2,
+     6
+    ],
+    [
+     1,
+     6
+    ],
+    [
+     0,
+     5
+    ]
+   ]
+  }
+ },
+ "runtime_glyph_addresses": {
+  "ALCHAR": 16168,
+  "EXCHAR": 16200,
+  "ALBULC": 16192,
+  "LAXCHR": 16096,
+  "CHARS": 16000,
+  "CHARX": 16144
+ }
+}

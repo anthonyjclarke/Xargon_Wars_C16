@@ -1,0 +1,68 @@
+{
+  "method": "Original glyph bits and tables decoded with TED character rules; nearest-neighbour enlargement; layout diagrams drawn on the verified screenshot.",
+  "inputs": {
+    "asset-data.json": "8b205cc2f5dfb94a99c05e217411fc8682d49f07a6c276fc9f0e178cc17e5d0c",
+    "ted-palette.json": "f23939dc7336e46bf55b4b42b68c42cef90e0fc2a7a1529967074692da7d0d6a",
+    "restored-gameplay.png": "90e35544d5f14142ca916b83d9e0a431d45e97cc8efd6dc80bf7781ab8dbd928"
+  },
+  "palette": "VICE 3.10 xplus4 default palette, captured from a screenshot",
+  "alien_frame_order": [
+    0,
+    1,
+    2,
+    1
+  ],
+  "gif_frame_duration_ms": 160,
+  "gif_timing": "Illustration only. In the game ANICHR advances a frame every ANISPD timer-2 interrupts (4 to 14 depending on the sheet).",
+  "images": {
+    "alien-sheets.png": {
+      "size": [
+        1200,
+        1016
+      ],
+      "sha256": "19f060b3eabc26978ebb15a01c8e22457eeb74f4b100a229c434f54fd1ce68de"
+    },
+    "sheet-formations.png": {
+      "size": [
+        1200,
+        1168
+      ],
+      "sha256": "88d5f0ce32323f91e91dde6e6b4011a288a41e7b77ef30b688a1db2f16ec2fbe"
+    },
+    "ship-and-effects.png": {
+      "size": [
+        1200,
+        980
+      ],
+      "sha256": "e955718b5867ef370f53bbbdd966b8e2b52e7ea87743f5e4e7a1c7ba8595c0d3"
+    },
+    "title-lettering.png": {
+      "size": [
+        1200,
+        380
+      ],
+      "sha256": "04d71615242cc4695bd0502b178a395670dbb4f1cd9537aa896c31f5a160aa61"
+    },
+    "screen-composition.png": {
+      "size": [
+        1200,
+        736
+      ],
+      "sha256": "ce7017efb3431517b211f3c456388ff4a0467718de1dbb271eac0756fa44ed04"
+    },
+    "alien-animation.gif": {
+      "size": [
+        192,
+        64
+      ],
+      "sha256": "e4f6b60afbe0569506a9b18f93ce21ab15a14b39653763b304bfc32e36687d3e"
+    },
+    "explosion-animation.gif": {
+      "size": [
+        192,
+        64
+      ],
+      "sha256": "00d0f4f9ff903cdd5c70ab4500a33c2c5b905ccadf3f6ef25ef5caf0e901ed9b"
+    }
+  }
+}

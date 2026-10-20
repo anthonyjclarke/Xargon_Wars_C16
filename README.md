@@ -2,6 +2,8 @@
 
 This project reassembles the surviving **Xargon Wars** source for the Commodore 16 and Plus/4 with PlatformIO, VS Code and the cc65 toolchain. I wrote the game at Micro Projects, and Gremlin Graphics published it on cassette. The source carries the notice `(C) MICRO-PROJECTS LTD. 1985`, and the label on my source disk reads "completed 22/1/85".
 
+Open the [complete HTML handbook](docs/XARGON_WARS.html) for the history, artwork, build guides, validation, code analysis, decoded graphics and reference in one offline document. It's generated from the Markdown files, which stay the source of truth. [Maintaining the HTML Documentation](docs/HTML_DOCUMENTATION.md) explains how to regenerate it.
+
 ![Xargon Wars cassette inlay](Original%20Artifacts/xargon_wars.jpg)
 
 ## Verified Build
@@ -54,6 +56,14 @@ All generated files go into `build/`. The original inputs stay exactly as they w
 The source header says the program was written by A.J. Clarke "with kind permission from John B Marshall". The title scroller thanks Matthew for the graphics and his help. See [History and Credits](docs/HISTORY_AND_CREDITS.md).
 
 My companion [Dorks Dilemma C16 repository](https://github.com/anthonyjclarke/Dorks_Dilemma_C16) has the recovery story, my original development setup and the acknowledgements for the recovery tools, especially in its [Development History](https://github.com/anthonyjclarke/Dorks_Dilemma_C16/blob/main/docs/DEVELOPMENT_HISTORY.md). This project reuses the build approach from that restoration and from Tycoon Tex, so I haven't repeated the story here.
+
+---
+
+## Learning, Modification, and Ports
+
+The [Codebase Analysis](CODEBASE_ANALYSIS.md) explains how the game works: its states, the two interrupts, the 16 sheets and their patterns, collisions, scoring, sound and graphics, plus the two revision differences. Probes in VICE confirm its key rules. The [Porting Guide](docs/PORTING_GUIDE.md) separates the original behaviour from my proposals for derivatives and ports. The [generated code reference](docs/analysis/CODE_REFERENCE.md), [asset data](docs/analysis/asset-data.json) and decoded [graphics](docs/analysis/README.md) help with finding your way around the source.
+
+![Aliens on all sixteen sheets](docs/analysis/graphics/alien-sheets.png)
 
 ---
 

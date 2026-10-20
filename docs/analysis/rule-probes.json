@@ -1,0 +1,266 @@
+{
+  "method": "isolated routine calls from a caller at $1B80 (SEI, CLD) with controlled RAM, plus breakpoint observations of the running game; no game instruction changed",
+  "prg_sha256": "6b766dcd2c6abbcd47e29ed005d72c0f1c28dc1f95aa1186c11ffe972a1e5daf",
+  "emulator": "VICE xplus4, PAL C16, 16 KB",
+  "scope": "seven focused observations; not full gameplay, collision, sound, concurrency or hardware verification",
+  "checks": [
+    {
+      "probe": "points-per-alien",
+      "routine": "SCORE",
+      "start_score": "00000",
+      "points": {
+        "level 0 sheet 1": 1,
+        "level 0 sheet 2": 2,
+        "level 0 sheet 3": 3,
+        "level 0 sheet 4": 4,
+        "level 0 sheet 5": 5,
+        "level 0 sheet 6": 6,
+        "level 0 sheet 7": 7,
+        "level 0 sheet 8": 8,
+        "level 0 sheet 9": 10,
+        "level 0 sheet 10": 10,
+        "level 0 sheet 11": 10,
+        "level 0 sheet 12": 10,
+        "level 0 sheet 13": 10,
+        "level 0 sheet 14": 10,
+        "level 0 sheet 15": 10,
+        "level 0 sheet 16": 10,
+        "level 1 sheet 1": 10,
+        "level 1 sheet 16": 10
+      }
+    },
+    {
+      "probe": "extra-life-after-1000",
+      "routine": "SCORE twice, sheet 1, level 0",
+      "start_score": "00999",
+      "sequence": [
+        {
+          "call": "first",
+          "score_after": "01000",
+          "GLIVES": 3,
+          "XTROB": 0,
+          "lives_digit": "3"
+        },
+        {
+          "call": "second",
+          "score_after": "01001",
+          "GLIVES": 4,
+          "XTROB": 1,
+          "lives_digit": "4"
+        }
+      ]
+    },
+    {
+      "probe": "score-overflow",
+      "routine": "SCORE at level 1 (+10)",
+      "start_score": "99999",
+      "score_after": "00009",
+      "stray_store": {
+        "address": "$0D71",
+        "row": 9,
+        "column": 9,
+        "value": "$01"
+      },
+      "GLIVES": 3
+    },
+    {
+      "probe": "level-speed-reduction",
+      "routine": "LEVINC",
+      "start": {
+        "FRESPD": 8,
+        "MVESPD": 4,
+        "BOMSPD": 4
+      },
+      "results": [
+        {
+          "LEVEL": 0,
+          "FRESPD": 8,
+          "MVESPD": 4,
+          "BOMSPD": 4
+        },
+        {
+          "LEVEL": 1,
+          "FRESPD": 7,
+          "MVESPD": 3,
+          "BOMSPD": 3
+        },
+        {
+          "LEVEL": 3,
+          "FRESPD": 5,
+          "MVESPD": 1,
+          "BOMSPD": 1
+        },
+        {
+          "LEVEL": 4,
+          "FRESPD": 4,
+          "MVESPD": 1,
+          "BOMSPD": 1
+        },
+        {
+          "LEVEL": 7,
+          "FRESPD": 1,
+          "MVESPD": 1,
+          "BOMSPD": 1
+        },
+        {
+          "LEVEL": 8,
+          "FRESPD": 1,
+          "MVESPD": 1,
+          "BOMSPD": 1
+        },
+        {
+          "LEVEL": 20,
+          "FRESPD": 1,
+          "MVESPD": 1,
+          "BOMSPD": 1
+        }
+      ]
+    },
+    {
+      "probe": "chsel-keyboard-row",
+      "routine": "CHSEL first JSR KEYIT (J test)",
+      "source": "CHSEL loads X=#$EF; KEYIT writes Y to $FD30 and $FF08",
+      "observed_registers": [
+        {
+          "address": "$3ABA",
+          "A": "$04",
+          "X": "$EF",
+          "Y": "$80"
+        },
+        {
+          "address": "$3ABA",
+          "A": "$04",
+          "X": "$EF",
+          "Y": "$F7"
+        },
+        {
+          "address": "$3ABA",
+          "A": "$04",
+          "X": "$EF",
+          "Y": "$E1"
+        },
+        {
+          "address": "$3ABA",
+          "A": "$04",
+          "X": "$EF",
+          "Y": "$AD"
+        },
+        {
+          "address": "$3ABA",
+          "A": "$04",
+          "X": "$EF",
+          "Y": "$9D"
+        },
+        {
+          "address": "$3ABA",
+          "A": "$04",
+          "X": "$EF",
+          "Y": "$69"
+        }
+      ]
+    },
+    {
+      "probe": "interrupt-periods",
+      "unit": "VICE CPU clock as printed by the monitor",
+      "raster_entries_PRSTAR": [
+        19839937,
+        19875558,
+        19911176,
+        19946626,
+        19981705,
+        20017335,
+        20052949,
+        20089665,
+        20124322,
+        20160038,
+        20195661,
+        20231119
+      ],
+      "timer2_entries_TIMER2": [
+        19833877,
+        19868625,
+        19904247,
+        19939863,
+        19975313,
+        20010391,
+        20046031,
+        20081633,
+        20118421,
+        20153081,
+        20188727,
+        20224349
+      ],
+      "raster_gaps": [
+        35621,
+        35618,
+        35450,
+        35079,
+        35630,
+        35614,
+        36716,
+        34657,
+        35716,
+        35623,
+        35458
+      ],
+      "timer2_gaps": [
+        34748,
+        35622,
+        35616,
+        35450,
+        35078,
+        35640,
+        35602,
+        36788,
+        34660,
+        35646,
+        35622
+      ],
+      "mean_raster_gap": 35562,
+      "mean_timer2_gap": 35497,
+      "timer2_before_raster": [
+        6060,
+        6933,
+        6929,
+        6763,
+        6392,
+        6944,
+        6918,
+        8032,
+        5901,
+        6957,
+        6934,
+        6770
+      ],
+      "note": "emulated time does not advance while the monitor is stopped; the mechanism that keeps the two services in step is not established"
+    },
+    {
+      "probe": "main-loop-period",
+      "unit": "VICE CPU clock as printed by the monitor",
+      "START_entries": [
+        20327102,
+        20432601,
+        20568911,
+        20681717,
+        20786911,
+        20890035,
+        21027137,
+        21138295,
+        21245606
+      ],
+      "gaps": [
+        105499,
+        136310,
+        112806,
+        105194,
+        103124,
+        137102,
+        111158,
+        107311
+      ],
+      "mean_gap": 114813,
+      "frames_per_pass": 3.23,
+      "note": "early in sheet 1 with no input; the pass length depends on the work done"
+    }
+  ]
+}

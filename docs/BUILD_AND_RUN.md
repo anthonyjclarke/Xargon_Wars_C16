@@ -80,6 +80,12 @@ The default build task calls PlatformIO. The other tasks cover the debug build, 
 | `make test`         | Regression tests                       |
 | `make compare`      | Explain the running PRG differences    |
 | `make verify`       | Comparison plus the VICE checks        |
+| `make probes`       | Rule probes in VICE                    |
+| `make docs`         | Build, analysis and HTML handbook      |
+| `make docs-html`    | HTML handbook from current Markdown    |
+| `make docs-watch`   | Regenerate the handbook on every edit  |
+| `make docs-check`   | Fail if the handbook is stale          |
+| `make test-docs`    | Documentation tests                    |
 | `make clean`        | Remove `build/` and `.pio/`            |
 
 ---
@@ -110,4 +116,4 @@ I took these mappings from the source, and the cassette instruction card agrees 
 
 `make clean` removes `build/` and `.pio/` and leaves the original source, artwork and documentation alone.
 
-The historical inputs are the build's source of truth. Read `build/xargon.s` to see the expanded assembly, but don't edit it: any change there is lost on the next build. A deliberate source change will also fail the strict object-listing check. Keep experiments on a separate branch, so the preservation build stays as it is.
+The historical inputs are the build's source of truth. Read `build/xargon.s` to see the expanded assembly, but don't edit it: any change there is lost on the next build. A deliberate source change will also fail the strict object-listing check. Keep experiments on a separate branch, and see the [Porting Guide](PORTING_GUIDE.md#protect-the-preservation-build) for how to add a derivative build without disturbing this one.

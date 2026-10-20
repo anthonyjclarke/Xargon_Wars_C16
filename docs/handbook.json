@@ -1,0 +1,34 @@
+{
+    "output": "docs/XARGON_WARS.html",
+    "groups": [
+        {
+            "id": "guide",
+            "label": "Project guide",
+            "sources": [
+                "README.md",
+                "docs/HISTORY_AND_CREDITS.md",
+                "docs/ARTIFACTS.md",
+                "QUICKSTART.md",
+                "docs/BUILD_AND_RUN.md",
+                "TESTING.md",
+                "docs/SOURCE_AND_VALIDATION.md",
+                "CODEBASE_ANALYSIS.md",
+                "docs/PORTING_GUIDE.md"
+            ]
+        },
+        {
+            "id": "reference",
+            "label": "Reference and maintenance",
+            "sources": [
+                "docs/SOURCE_INVENTORY.md",
+                "RIGHTS.md",
+                "CHANGELOG.md",
+                "docs/SHARING_ON_GITHUB.md",
+                "src/README.md",
+                "docs/analysis/README.md",
+                "docs/HTML_DOCUMENTATION.md",
+                "docs/analysis/CODE_REFERENCE.md"
+            ]
+        }
+    ]
+}

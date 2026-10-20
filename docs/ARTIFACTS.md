@@ -44,7 +44,7 @@ The card gives the loading steps (`LOAD`, then `RUN`), the joystick and keyboard
 | Up     | `F3`   |
 | Down   | `HELP` |
 
-They match `KEY-SCAN` in the source. The card lists "16 alien space attackers", laser bombs and the laser temperature gauge. Its scoring table gives 1 to 8 points per alien for sheets 1 to 8, and 10 points from sheet 9 to 16. It promises 200 bonus points for clearing a level and an extra life every 1,000 points and at the end of each level. Checking those rules against the code is planned for the codebase analysis.
+They match `KEY-SCAN` in the source. The card lists "16 alien space attackers", laser bombs and the laser temperature gauge. Its scoring table gives 1 to 8 points per alien for sheets 1 to 8, and 10 points from sheet 9 to 16. It promises 200 bonus points for clearing a level and an extra life every 1,000 points and at the end of each level. The [codebase analysis](../CODEBASE_ANALYSIS.md#scoring-extra-lives-rank-and-high-scores) checks those rules against the code.
 
 ---
 

@@ -116,7 +116,7 @@ The 3,442 raw code differences come from two small source changes in `ALIENS`, p
 
 That's the evidence that the running PRG was saved from memory after the game had started. VICE confirms it: when the running PRG is autostarted and stopped at its title loop, 19 of those 21 bytes already hold the snapshot's values. The other two are a random delay and a cycling colour, which change on every pass.
 
-In both revisions, the two `ALIENS` changes strip flag bits from the high byte of an alien's screen address. `ALIPRT` stores that byte with bit 7 marking an explosion. `RUSTIC` only produces addresses from `$0C00` to `$0FE7`, so the high byte is always `$0C`–`$0F` plus that flag. For those values, `AND #$0F` and `AND #$7F` give the same result, and the extra `GIDO` mask changes nothing. I've worked that out by reading the code, and haven't probed it. I can't tell from the evidence which revision is later. The source carries the stricter masks, and it's the revision the `OBJ` listing records, so that's the one the default build reproduces.
+In both revisions, the two `ALIENS` changes strip flag bits from the high byte of an alien's screen address. `ALIPRT` stores that byte with bit 7 marking an explosion. `RUSTIC` only produces addresses from `$0C00` to `$0FE7`, so the high byte is always `$0C`–`$0F` plus that flag. For those values, `AND #$0F` and `AND #$7F` give the same result, and the extra `GIDO` mask changes nothing. I've worked that out by reading the code, and haven't probed it. The [codebase analysis](../CODEBASE_ANALYSIS.md#revision-differences) explains the address format. I can't tell from the evidence which revision is later. The source carries the stricter masks, and it's the revision the `OBJ` listing records, so that's the one the default build reproduces.
 
 ### Bytes After the Code
 
@@ -141,6 +141,12 @@ The running PRG, autostarted with LOAD and RUN, reaches the same title:
 ![Running PRG title screen](images/reference-title.png)
 
 I've checked the screenshots by eye against the archived gameplay screenshot and the cassette inlay. The tests show that the game renders and starts gameplay from scripted input. I haven't verified manual keyboard mapping, joystick operation, sound, collisions, scoring over a full game, wave transitions, death, high-score entry or a complete play-through, and I haven't run it on a physical C16 or Plus/4.
+
+---
+
+## Continuous Integration
+
+GitHub Actions runs the workflow on Ubuntu with the distribution's cc65 package. For the `v1.0.0` commit `a75d53c`, run [39391718258](https://github.com/anthonyjclarke/Xargon_Wars_C16/actions/runs/39391718258) on `main` and the tag's own run both passed. That covered the build, the running-version comparison, the regression tests, both PlatformIO environments and the byte comparison. CI doesn't run VICE, so the emulator evidence above comes from my local runs only. Later results are on the [Actions page](https://github.com/anthonyjclarke/Xargon_Wars_C16/actions).
 
 ---
 
