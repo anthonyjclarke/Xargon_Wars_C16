@@ -6,7 +6,7 @@ All notable changes to the Xargon Wars C16 preservation project. Dates are DD-MM
 
 ## [1.2.0] 22-10-2026
 
-Documentation release: the Gremlin Archive reference. The game build and its output are unchanged (PRG SHA-256 `6b766dcd…`).
+Documentation release: the Gremlin Archive reference (tag `v1.2.0`). The game build and its output are unchanged (PRG SHA-256 `6b766dcd…`).
 
 ### Added
 
@@ -18,7 +18,9 @@ Documentation release: the Gremlin Archive reference. The game build and its out
 
 ### Changed
 
-- Documentation brought into line with Tycoon Tex: README header and handbook paragraph, `docs/HTML_DOCUMENTATION.md` section layout, and handbook chapter groups (the changelog is no longer a handbook chapter, matching Tycoon Tex).
+- Documentation brought into line with Tycoon Tex: README header and handbook paragraph, `docs/HTML_DOCUMENTATION.md` section layout, and handbook chapter groups.
+- The changelog is a chapter in the HTML handbook's reference group, after Rights and Preservation, as in my other restorations.
+- README release badge updated to `v1.2.0`.
 - Plainer wording in the README, Quick Start, Testing, Rights, Build and Run and the codebase analysis.
 
 ---

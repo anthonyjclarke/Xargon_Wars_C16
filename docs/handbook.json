@@ -23,6 +23,7 @@
             "sources": [
                 "docs/SOURCE_INVENTORY.md",
                 "RIGHTS.md",
+                "CHANGELOG.md",
                 "docs/SHARING_ON_GITHUB.md",
                 "src/README.md",
                 "docs/analysis/README.md",

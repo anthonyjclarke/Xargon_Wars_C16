@@ -2,7 +2,7 @@
 
 ## Repository
 
-The public repository is [anthonyjclarke/Xargon_Wars_C16](https://github.com/anthonyjclarke/Xargon_Wars_C16). I work on `main`. The annotated tag `v1.0.0` marks the verified preservation build, and `v1.1.0` adds the codebase analysis, porting guide, decoded graphics and HTML handbook without changing the game bytes.
+The public repository is [anthonyjclarke/Xargon_Wars_C16](https://github.com/anthonyjclarke/Xargon_Wars_C16). I work on `main`. The annotated tag `v1.0.0` marks the verified preservation build, `v1.1.0` adds the codebase analysis, porting guide, decoded graphics and HTML handbook, and `v1.2.0` adds the Gremlin Archive chapter and the documentation alignment with my other restorations. Neither changes the game bytes.
 
 `.gitignore` leaves out generated output, PlatformIO caches, Python caches and macOS metadata. It deliberately keeps the D64 image, the extracted `.seq` and `.prg` files, the 1992 export and its ZIP, the running PRG and the artwork. `.gitattributes` turns off text conversion, whitespace handling and diffs for both preserved input folders. That protects the CR-only disk text and the CRLF 1992 export.
 
@@ -39,7 +39,7 @@ python3 scripts/publish_evidence.py --tests-passed 11 --date 2026-10-20
 ```sh
 git clone https://github.com/anthonyjclarke/Xargon_Wars_C16.git
 cd Xargon_Wars_C16
-git switch --detach v1.1.0
+git switch --detach v1.2.0
 ```
 
 For later work, go back to `main`, review the changes, run the relevant checks, then commit and push:
@@ -58,4 +58,4 @@ On every push and pull request, GitHub Actions runs the source build, the runnin
 
 ## Version Tags
 
-`v1.0.0` is the verified preservation build and `v1.1.0` the documentation and analysis release. Later verified checkpoints get new annotated tags. Leave published tags alone, so that their source, documentation and recorded evidence can still be reproduced.
+`v1.0.0` is the verified preservation build, `v1.1.0` the documentation and analysis release and `v1.2.0` the Gremlin Archive and documentation alignment release. Later verified checkpoints get new annotated tags. Leave published tags alone, so that their source, documentation and recorded evidence can still be reproduced.

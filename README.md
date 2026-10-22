@@ -1,6 +1,6 @@
 # Xargon Wars C16
 
-![Release v1.1.0](docs/images/badges/release.svg)
+![Release v1.2.0](docs/images/badges/release.svg)
 ![Platform Commodore 16 / Plus/4](docs/images/badges/platform.svg)
 ![Byte match 10,747 of 10,747](docs/images/badges/byte-match.svg)
 ![Toolchain cc65](docs/images/badges/toolchain.svg)
