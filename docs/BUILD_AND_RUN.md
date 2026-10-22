@@ -76,7 +76,7 @@ The default build task calls PlatformIO. The other tasks cover the debug build, 
 |:--------------------|:---------------------------------------|
 | `make`              | Direct build                           |
 | `make run`          | Build, then launch the rebuild in VICE |
-| `make run-original` | LOAD and RUN the supplied running PRG  |
+| `make run-original` | LOAD and RUN the running PRG           |
 | `make test`         | Regression tests                       |
 | `make compare`      | Explain the running PRG differences    |
 | `make verify`       | Comparison plus the VICE checks        |
@@ -100,7 +100,7 @@ python3 scripts/run_vice.py --original
 
 The rebuilt PRG loads at `$1010` and starts at `$1C80`. It begins with attack-wave tables, not BASIC text, so BASIC `RUN` won't work. The launcher waits for the reset to finish, then uses the monitor to load the file at its saved address and jump to the entry point.
 
-The supplied running PRG is a one-line BASIC program, `1 SYS7296`, followed by the game's memory from `$1010` to `$3FFE`. `--original` hands it to VICE autostart, which LOADs and RUNs it just as a user would. Neither launcher changes the original file.
+The running PRG is a one-line BASIC program, `1 SYS7296`, followed by the game's memory from `$1010` to `$3FFE`. `--original` hands it to VICE autostart, which LOADs and RUNs it just as a user would. Neither launcher changes the original file.
 
 The source also has `SAVER`, the routine that wrote the original cassette auto-run loader. That isn't part of this build. See the [Source Inventory](SOURCE_INVENTORY.md).
 

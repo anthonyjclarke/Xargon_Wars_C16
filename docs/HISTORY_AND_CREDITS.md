@@ -49,6 +49,12 @@ The 1985 notices and the disk label's "COMPLETED 22/1/85" date the source to Jan
 
 ---
 
+## The Gremlin Archive and the Book
+
+Mark Hardisty's book *A Gremlin in the Works* (Bitmap Books), the officially endorsed history of Gremlin Graphics, tells the Micro Projects story, and I contributed to it. His [Gremlin Graphics Archive](https://www.gremlinarchive.com/) publishes my 1992 export of the development disks, including this game's `DISK7A` and the hack version on `DISK7B`, and has a [Xargon Wars – Trade Promotion](https://www.gremlinarchive.com/index.php/2016/05/24/xargon-wars-trade-promotion/) post. [Gremlin Archive and the Book](GREMLIN_ARCHIVE.md) has the references, the archive's disk list and how this project's files match it.
+
+---
+
 ## Recovery Background and Build Template
 
 My original C64/1541 development setup and the later source recovery are written up in my [Dorks Dilemma C16 repository](https://github.com/anthonyjclarke/Dorks_Dilemma_C16). Its [Development History](https://github.com/anthonyjclarke/Dorks_Dilemma_C16/blob/main/docs/DEVELOPMENT_HISTORY.md) has my recollections and the acknowledgements for the recovery tools. The C64 editor, DOS wedge, fast loader and assembler on this disk come from that same setup.

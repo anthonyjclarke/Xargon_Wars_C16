@@ -48,7 +48,7 @@ All three matched at the recorded checkpoint. The GitHub Actions workflow instal
 python3 scripts/compare_reference.py
 ```
 
-Both the rebuild and the supplied running PRG are uncompressed saved-address images, so the script compares their memory directly, region by region. It then reassembles the source with the edits listed in `RUNNING_REVISION_EDITS` into `build/running-variant/`. Every remaining code difference must be a location that the program writes with a store or read-modify-write instruction, and the script names the instruction for each one. The result goes to `build/reference-comparison.json`. The `running-variant` build exists only for this comparison. It isn't a supported build target.
+Both the rebuild and the running PRG are uncompressed saved-address images, so the script compares their memory directly, region by region. It then reassembles the source with the edits listed in `RUNNING_REVISION_EDITS` into `build/running-variant/`. Every remaining code difference must be a location that the program writes with a store or read-modify-write instruction, and the script names the instruction for each one. The result goes to `build/reference-comparison.json`. The `running-variant` build exists only for this comparison. It isn't a supported build target.
 
 ---
 
@@ -71,7 +71,7 @@ The gameplay check works like this:
 
 No instruction is patched, and nothing jumps past the original control flow.
 
-The reference check autostarts the supplied PRG. VICE LOADs it from a virtual disk and RUNs its `SYS 7296`. The check stops at that version's title loop, `$310C`, and saves memory. Of the 21 bytes that differ only because of runtime state, 19 already hold the snapshot's values at that point. The other two are the title's random delay operand and its cycling colour, which change on every pass.
+The reference check autostarts the running PRG. VICE LOADs it from a virtual disk and RUNs its `SYS 7296`. The check stops at that version's title loop, `$310C`, and saves memory. Of the 21 bytes that differ only because of runtime state, 19 already hold the snapshot's values at that point. The other two are the title's random delay operand and its cycling colour, which change on every pass.
 
 On one run during development, the reference step exited with an error after reaching its breakpoint. A VICE window I'd launched by hand was still closing at the time. The next three runs passed. If it happens to you, close any other VICE windows and run it again.
 

@@ -187,7 +187,7 @@ The score itself is never held in RAM variables. The five ASCII digits on screen
 | `PRSHIP` ship, hit test       | reload timer `$3800`        |
 | `UPDEAD` death sequence       |                             |
 
-The [interrupt probe](docs/analysis/rule-probes.json) recorded 12 consecutive frames in VICE. Raster entries averaged 35,562 clock units apart and timer-2 entries 35,497. Each timer entry came about 5,900 to 8,000 units before the next raster entry. In that sample, then, the timer work ran once per frame, just ahead of the drawing. The source doesn't explain why the two stay in step, and I haven't established the mechanism. A port should treat "once per frame, logic before drawing" as the observed behaviour, not as a guarantee in the code.
+The [interrupt probe](docs/analysis/rule-probes.json) recorded 12 consecutive frames in VICE. Raster entries averaged 35,562 clock units apart and timer-2 entries 35,497. Each timer entry came about 5,900 to 8,000 units before the next raster entry. In that sample, then, the timer work ran once per frame, just ahead of the drawing. The source doesn't explain why the two stay in step, and I don't know why yet. A port should treat "once per frame, logic before drawing" as the observed behaviour, not as a guarantee in the code.
 
 ### Foreground Pacing
 

@@ -9,7 +9,7 @@ Install Python 3.9+, cc65 and VICE. From the project folder:
 python3 scripts/run_vice.py
 ```
 
-The output is `build/xargon-wars.prg`. It loads at `$1010` and starts at `$1C80` (`SYS 7296`). Use the launcher, because the rebuilt PRG has no BASIC stub. To run the supplied original instead:
+The output is `build/xargon-wars.prg`. It loads at `$1010` and starts at `$1C80` (`SYS 7296`). Use the launcher, because the rebuilt PRG has no BASIC stub. To run my original copy of the game instead:
 
 ```sh
 python3 scripts/run_vice.py --original

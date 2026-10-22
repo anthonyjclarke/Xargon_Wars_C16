@@ -4,9 +4,28 @@ All notable changes to the Xargon Wars C16 preservation project. Dates are DD-MM
 
 ---
 
+## [1.2.0] 22-10-2026
+
+Documentation release: the Gremlin Archive reference. The game build and its output are unchanged (PRG SHA-256 `6b766dcd…`).
+
+### Added
+
+- `docs/GREMLIN_ARCHIVE.md`: Mark Hardisty's book *A Gremlin in the Works* and his Gremlin Graphics Archive, the 1992 disk list from the archive's `READ.ME`, and how to cite them. The first five sections are shared with my other Micro Projects reconstructions. Its project section shows that the 1992 ZIP and all 78 files are the archive's `DISK7A`. It also covers `DISK7B`, the hack version, whose `ALIENS` holds the running revision's two edits, and `DISK10`'s `XARGONWA.BIN`, the `DISK7A` revision saved after it had run.
+- History: a section on the Gremlin Archive and the book.
+- `docs/handbook.json`: the new chapter, after History and Credits.
+- README status badges (release, platform, byte match, toolchain, PlatformIO, emulator, status) as local SVGs in `docs/images/badges/`, so the offline HTML handbook still builds.
+- Badges in the HTML handbook render inline in a row, as small images that don't open the image viewer (`img.badge` in `scripts/build_docs.mjs` and `scripts/docs/handbook.css`, matching Tycoon Tex).
+
+### Changed
+
+- Documentation brought into line with Tycoon Tex: README header and handbook paragraph, `docs/HTML_DOCUMENTATION.md` section layout, and handbook chapter groups (the changelog is no longer a handbook chapter, matching Tycoon Tex).
+- Plainer wording in the README, Quick Start, Testing, Rights, Build and Run and the codebase analysis.
+
+---
+
 ## [1.1.0] 20-10-2026
 
-Documentation and analysis release. The game build and its output are unchanged (PRG SHA-256 `6b766dcd…`).
+Documentation and analysis release (commit `8dec6f5`, tag `v1.1.0`). The game build and its output are unchanged (PRG SHA-256 `6b766dcd…`).
 
 ### Added
 

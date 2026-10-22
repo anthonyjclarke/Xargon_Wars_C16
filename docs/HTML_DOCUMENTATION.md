@@ -12,29 +12,48 @@ The handbook has a contents sidebar, chapter search, image enlargement (click an
 
 ## Regeneration
 
-The generator needs Node.js 20 or later. Its Markdown parser and diagram renderer are vendored in `scripts/vendor/` with their licences. It doesn't use npm or download anything.
+The generator needs **Node.js 20 or later**. Its Markdown parser and diagram renderer live in `scripts/vendor/` with their licences. Generating the HTML doesn't use npm, install packages or download anything.
 
-| Command           | What it does                                |
-|:------------------|:--------------------------------------------|
-| `make docs`       | Build, refresh the analysis, write HTML     |
-| `make docs-html`  | Write HTML from current Markdown and images |
-| `make docs-watch` | Rewrite HTML whenever an input changes      |
-| `make docs-check` | Fail if the saved HTML is missing or stale  |
-| `make test-docs`  | Run the documentation tests                 |
+To rebuild the verified game, refresh the generated code analysis and generate the HTML:
 
-`node scripts/build_docs.mjs` is the direct equivalent of `make docs-html`, and accepts `--check` or `--watch`. If Node isn't on the normal path, use `make docs-html NODE=/path/to/node`.
+```sh
+make docs
+```
 
-The output is `docs/XARGON_WARS.html`. Commit it together with the Markdown and asset changes, so the published copy is always current.
+This full refresh also needs the Python and cc65 build tools. If you're only changing documentation, use the current images and generated reference without rebuilding the game:
 
-`make docs` doesn't redraw the graphics figures, recapture the palette or rerun the VICE probes, because those need Pillow or VICE. After changing the asset data, run `python3 scripts/render_game_graphics.py` and then `make docs-html`. The [analysis README](analysis/README.md) explains each generator.
+```sh
+make docs-html
+```
+
+The direct equivalent is:
+
+```sh
+node scripts/build_docs.mjs
+```
+
+The output is `docs/XARGON_WARS.html`. Commit the updated HTML together with the Markdown and asset changes, so readers can open it right away. The root README and the other guides link to it.
+
+`make docs` doesn't redraw the graphics figures, recapture the palette or rerun the VICE probes, because those need Pillow or VICE. After changes to the asset data, run `python3 scripts/render_game_graphics.py` first, then `make docs-html`. The [analysis README](analysis/README.md) explains each generator.
 
 ### Watching Edits
 
-`make docs-watch` polls the Markdown, images, configuration and templates, and regenerates the HTML when any of them change. Refresh the browser to see the result, and press Ctrl+C to stop. It doesn't rebuild the game or the analysis. Restart it after changing the chapter list.
+```sh
+make docs-watch
+```
+
+The watcher regenerates the HTML whenever Markdown, images, configuration or presentation templates change. Refresh the browser to see the result, and press Ctrl+C to stop. It doesn't rebuild the game or regenerate the code-analysis assets, so run `make docs` after changes that affect those inputs. Restart the watcher after adding a new source directory or changing the chapter configuration.
 
 ### Checking Freshness
 
-`make docs-check` regenerates the HTML in memory and compares it with the saved file without overwriting it. It catches any change to the Markdown, embedded images, templates, configuration or renderer files. `make test-docs` checks link rewriting, duplicate headings, embedded images, failure on broken links and remote images, HTML escaping, determinism, freshness of the saved handbook and watch mode.
+```sh
+make docs-check
+make test-docs
+```
+
+The freshness check regenerates the expected output in memory and fails if the saved HTML is missing or stale. It compares source text, embedded image bytes, templates, configuration and renderer files, and it never overwrites the HTML. The documentation tests cover link rewriting, duplicate headings, embedded images and diagrams, failure on broken links and remote images, HTML escaping, determinism, freshness of the saved handbook and watch mode. The game regression checks are still available through `make test`.
+
+If Node isn't on the normal executable path, pass its location to Make as `NODE`, for example `make docs-html NODE=/path/to/node`.
 
 ---
 
