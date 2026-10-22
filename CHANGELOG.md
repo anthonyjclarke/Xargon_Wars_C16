@@ -21,6 +21,7 @@ Documentation release: the Gremlin Archive reference (tag `v1.2.0`). The game bu
 - Documentation brought into line with Tycoon Tex: README header and handbook paragraph, `docs/HTML_DOCUMENTATION.md` section layout, and handbook chapter groups.
 - The changelog is a chapter in the HTML handbook's reference group, after Rights and Preservation, as in my other restorations.
 - README release badge updated to `v1.2.0`.
+- Source Inventory: the 1992 ZIP is also the archive's `DISK7A.ZIP`.
 - Plainer wording in the README, Quick Start, Testing, Rights, Build and Run and the codebase analysis.
 
 ---

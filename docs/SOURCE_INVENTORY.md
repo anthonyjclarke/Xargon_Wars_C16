@@ -13,6 +13,8 @@
 
 The disk image is 175,531 bytes: a 35-track D64 with an error map, and the map flags no sectors. Its SHA-256 is `5d400d85…5588cd`, and it matches the `source_sha256` recorded in the extraction manifest. The disk header reads `PEUGEOT 205 GTI`, ID `85`. The directory holds 77 files and shows 11 blocks free.
 
+`DISK7A - Xargon Wars C16.ZIP` is also published as `DISK7A.ZIP` in Mark Hardisty's Gremlin Graphics Archive, with the same CRC-32 and size, and its 78 files match the archive's `DISK7A/` folder ([Gremlin Archive and the Book](GREMLIN_ARCHIVE.md#in-this-project)).
+
 The 1992 export uses shortened PC filenames, lower-case text and CRLF line endings. Its `INDEX` file maps each PC name back to the Commodore filename, with block counts and export times. The build reads `INDEX` and compares every file with its disk counterpart. Text files match after case and line-ending normalization, and binary `.BIN` files are identical. The `.BAS` files are detokenized listings, so they can't be compared byte for byte, but they're readable.
 
 `.DS_Store` files are macOS metadata. The build and the hash checks ignore them, and Git doesn't track them.
