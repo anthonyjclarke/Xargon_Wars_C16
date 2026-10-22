@@ -24,7 +24,7 @@ class RestorationTests(unittest.TestCase):
         cls.temp = tempfile.TemporaryDirectory(prefix='xargon-test-')
         cls.build = Path(cls.temp.name)
         cls.before = {p: hashlib.sha256(p.read_bytes()).hexdigest()
-                      for folder in ('Recovered Source', 'Original Artifacts')
+                      for folder in ('Original Source Recovered', 'Original Artifacts')
                       for p in (ROOT / folder).rglob('*') if p.is_file() and p.name != '.DS_Store'}
         with contextlib.redirect_stdout(io.StringIO()):
             cls.output = build_game(cls.build).read_bytes()

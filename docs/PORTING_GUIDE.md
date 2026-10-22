@@ -4,7 +4,7 @@
 
 This guide is for anyone who wants to change Xargon Wars or rebuild it on another platform. It separates what the original actually does, as described in the [codebase analysis](../CODEBASE_ANALYSIS.md), from what I'm proposing for a new version. None of the architecture, interfaces, build targets or command-line options proposed here exists in this repository yet. The only supported build is the preservation build, which reproduces the `OBJ` listing.
 
-The raw material for a port is already exported: [asset-data.json](analysis/asset-data.json) holds the character set, tune, sheet tables, patterns, formations and named tables; [codebase-index.json](analysis/codebase-index.json) holds symbols, byte ownership and write sites; and [rule-probes.json](analysis/rule-probes.json) records the confirmed arithmetic.
+The raw material for a port is already exported: [asset-data.json](analysis/asset-data.json) holds the character set, tune, sheet tables, patterns, formations and named tables; [codebase-index.json](analysis/codebase-index.json) holds symbols, byte ownership and write sites; and [rule-probes.json](verification/rule-probes.json) records the confirmed arithmetic.
 
 ---
 
@@ -31,7 +31,7 @@ A **native reimplementation** rewrites the game, for example in C, Python or for
 Keep the historical build exactly as it is. `scripts/restore_c16.py` must keep reproducing all 10,747 `OBJ` bytes and the PRG hash in `test/test_restoration.py`. Here's how I'd introduce a variant without disturbing that (all of this is proposed, none of it exists yet):
 
 1. Work on a branch, and keep `main` and the published tags as the preservation baseline.
-2. Put derivative source changes in a new folder, for example `variants/<name>/`, as edited copies or patch files. Never edit `Recovered Source/`.
+2. Put derivative source changes in a new folder, for example `variants/<name>/`, as edited copies or patch files. Never edit `Original Source Recovered/`.
 3. Give the variant its own build entry point and output name, for example `build/variants/<name>/xargon-<name>.prg`. Its own tests should say exactly how it differs from the source revision.
 4. Reuse the comparison approach in [compare_reference.py](../scripts/compare_reference.py): list each edit as module, line, original text and replacement, and check that the edit list explains every byte difference.
 5. Add a PlatformIO environment or Make target for the variant only once it exists and has been tested.
@@ -77,7 +77,7 @@ The original runs three kinds of work at different rates, and a port that update
 | Logic tick | Timer 2, measured 1/frame     | Input, ship, laser, stars, heat |
 | Main pass  | Busy loop, about 3.2 frames   | Aliens, explosions, bombs, rank |
 
-The measured figures come from [rule-probes.json](analysis/rule-probes.json): one VICE sample early in sheet 1. Interrupt load makes the main-pass length vary, so measure more before choosing a fixed rate. A conceptual scheduler (a proposal):
+The measured figures come from [rule-probes.json](verification/rule-probes.json): one VICE sample early in sheet 1. Interrupt load makes the main-pass length vary, so measure more before choosing a fixed rate. A conceptual scheduler (a proposal):
 
 ```text
 each 1/50 s frame:

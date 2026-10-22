@@ -96,7 +96,7 @@ The probe script uses VICE. It calls original routines from a small caller at `$
 - the raster and timer-2 periods;
 - the main-loop period.
 
-The results go to `build/rule-probes/`. The reviewed copy is [docs/analysis/rule-probes.json](docs/analysis/rule-probes.json). No game instruction is changed. These are focused observations, not a play-through.
+The results go to `build/rule-probes/`. The reviewed copy is [docs/verification/rule-probes.json](docs/verification/rule-probes.json). No game instruction is changed. These are focused observations, not a play-through.
 
 The analysis script checks that the listing accounts for every assembled byte before it writes the [generated references](docs/analysis/README.md).
 

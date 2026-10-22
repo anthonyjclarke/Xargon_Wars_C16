@@ -1,6 +1,6 @@
 {
   "format": "both are uncompressed saved-address PRG images; compared as memory",
-  "reference": "Recovered Source/xargon_wars.prg",
+  "reference": "Original Artifacts/xargon_wars.prg",
   "reference_sha256": "835d26e3b92c91f720b0bf3444c0127f9e66e896608d72ef32cf2b186fb69cec",
   "reference_load": "$1001",
   "reference_end": "$3FFE",

@@ -1,4 +1,5 @@
-# Preserve historical input bytes, including CR-only disk text and CRLF 1992 exports.
+# Preserve historical input bytes, including the 1992 CRLF text exports
+# and the CR-terminated 2026 SEQ extractions.
 *.py text eol=lf
 *.sh text eol=lf
 *.md text eol=lf
@@ -10,17 +11,25 @@
 *.js text eol=lf
 *.css text eol=lf
 *.html text eol=lf
-*.svg text eol=lf
 Makefile text eol=lf
 *.png binary
 *.gif binary
 *.jpg binary
-*.JPG binary
+*.pdf binary
 *.prg binary
-*.d64 binary
+*.BIN binary
+*.PRG binary
 *.ZIP binary
+*.d64 binary
 *.seq binary
+*.tap binary
+*.vsf binary
 
-# These override generic rules for every preserved input.
-"/Recovered Source/**" -text -whitespace -diff
-"/Original Artifacts/**" -text -whitespace -diff
+# These override generic rules for every preserved input and reference.
+"/Original Source Recovered/**" -text -whitespace -diff
+"/Original Artifacts/**" -text -whitespace
+"/Other Versions/**" -text -whitespace -diff
+
+# Keep pinned library text and the generated handbook intact.
+/scripts/vendor/** -whitespace
+/docs/*.html -whitespace

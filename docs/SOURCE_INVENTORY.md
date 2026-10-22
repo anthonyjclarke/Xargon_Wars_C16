@@ -4,11 +4,11 @@
 
 | Path                                    | Content                                |
 |:----------------------------------------|:---------------------------------------|
-| `Recovered Source/2026/*.d64`           | 2026 capture of my source disk         |
-| `Recovered Source/2026/XargonWars-C16/` | Extraction, `manifest.json`, c1541 log |
-| `Recovered Source/1992/DISK7A/`         | 1992 PC export, 77 files plus `INDEX`  |
-| `Recovered Source/1992/*.ZIP`           | Original PKZIP 1.0 archive of `DISK7A` |
-| `Recovered Source/xargon_wars.prg`      | Running game, `1 SYS7296` single file  |
+| `Original Source Recovered/2026/*.d64`           | 2026 capture of my source disk         |
+| `Original Source Recovered/2026/XargonWars-C16/` | Extraction, `manifest.json`, c1541 log |
+| `Original Source Recovered/1992/DISK7A/`         | 1992 PC export, 77 files plus `INDEX`  |
+| `Original Source Recovered/1992/*.ZIP`           | Original PKZIP 1.0 archive of `DISK7A` |
+| `Original Artifacts/xargon_wars.prg`      | Running game, `1 SYS7296` single file  |
 | `Original Artifacts/`                   | Inlay, card, screenshot, disk photo    |
 
 The disk image is 175,531 bytes: a 35-track D64 with an error map, and the map flags no sectors. Its SHA-256 is `5d400d85…5588cd`, and it matches the `source_sha256` recorded in the extraction manifest. The disk header reads `PEUGEOT 205 GTI`, ID `85`. The directory holds 77 files and shows 11 blocks free.
@@ -81,12 +81,12 @@ Two separately loaded disk files complete the game:
 | `HYPRA-LOAD OBJ`       | `$0801` | C64 fast-loader program                    |
 | `ASM.C64`              | `$0801` | C64 assembler                              |
 
-The C64 programs show that the disk was used on my C64 development machine. The source was assembled there, and the object code went to the C16. [Dorks Dilemma's Development History](https://github.com/anthonyjclarke/Dorks_Dilemma_C16/blob/main/docs/DEVELOPMENT_HISTORY.md) describes that setup. I've identified these files from their load addresses, embedded text and the 1992 BASIC listings. Apart from `FRAK!` and `MUSIC/CODE`, none of them are used by the build.
+The C64 programs show that the disk was used on my C64 development machine. The source was assembled there, and the object code went to the C16. [Dorks Dilemma's History and Credits](https://github.com/anthonyjclarke/Dorks_Dilemma_C16/blob/main/docs/HISTORY_AND_CREDITS.md) describes that setup. I've identified these files from their load addresses, embedded text and the 1992 BASIC listings. Apart from `FRAK!` and `MUSIC/CODE`, none of them are used by the build.
 
 ---
 
 ## Running Version
 
-`Recovered Source/xargon_wars.prg` is 12,288 bytes. It loads at `$1001` and ends at `$3FFE`, and its SHA-256 is `835d26e3…69cec`. A BASIC line `1 SYS7296` starts it at `$1C80`. It isn't compressed. Its file date is 10 August 2014, and I don't know who made the single-file version. [Source and Validation](SOURCE_AND_VALIDATION.md) compares it in full.
+`Original Artifacts/xargon_wars.prg` is 12,288 bytes. It loads at `$1001` and ends at `$3FFE`, and its SHA-256 is `835d26e3…69cec`. A BASIC line `1 SYS7296` starts it at `$1C80`. It isn't compressed. Its file date is 10 August 2014, and I don't know who made the single-file version. [Source and Validation](SOURCE_AND_VALIDATION.md) compares it in full.
 
 The complete per-file record, including every hash and directory index, is generated as `build/recovery-manifest.json`. The checked copy is in [verification/source-manifest.json](verification/source-manifest.json).

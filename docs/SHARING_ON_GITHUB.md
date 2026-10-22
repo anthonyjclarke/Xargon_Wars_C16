@@ -2,7 +2,7 @@
 
 ## Repository
 
-The public repository is [anthonyjclarke/Xargon_Wars_C16](https://github.com/anthonyjclarke/Xargon_Wars_C16). I work on `main`. The annotated tag `v1.0.0` marks the verified preservation build, `v1.1.0` adds the codebase analysis, porting guide, decoded graphics and HTML handbook, and `v1.2.0` adds the Gremlin Archive chapter and the documentation alignment with my other restorations. Neither changes the game bytes.
+The public repository is [anthonyjclarke/Xargon_Wars_C16](https://github.com/anthonyjclarke/Xargon_Wars_C16). I work on `dev` and merge verified checkpoints into `main`. The annotated tag `v1.0.0` marks the verified preservation build, `v1.1.0` adds the codebase analysis, porting guide, decoded graphics and HTML handbook, and `v1.2.0` adds the Gremlin Archive chapter and the documentation alignment with my other restorations. Neither changes the game bytes.
 
 `.gitignore` leaves out generated output, PlatformIO caches, Python caches and macOS metadata. It deliberately keeps the D64 image, the extracted `.seq` and `.prg` files, the 1992 export and its ZIP, the running PRG and the artwork. `.gitattributes` turns off text conversion, whitespace handling and diffs for both preserved input folders. That protects the CR-only disk text and the CRLF 1992 export.
 
@@ -42,14 +42,14 @@ cd Xargon_Wars_C16
 git switch --detach v1.2.0
 ```
 
-For later work, go back to `main`, review the changes, run the relevant checks, then commit and push:
+For later work, use `dev`, review the changes, run the relevant checks, then commit. Merge into `main` only when a checkpoint is verified:
 
 ```sh
-git switch main
+git switch dev
 git add .
 git diff --cached --stat
 git commit -m "type(scope): describe the change"
-git push origin main
+git push origin dev
 ```
 
 On every push and pull request, GitHub Actions runs the source build, the running-version comparison, the regression tests, both PlatformIO environments, the output agreement check, the handbook freshness check and the documentation tests. It uploads the rebuilt PRG and reports as a workflow artifact. It doesn't run a graphical emulator. Results are on the repository's [Actions page](https://github.com/anthonyjclarke/Xargon_Wars_C16/actions).

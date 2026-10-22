@@ -1,6 +1,6 @@
 # Xargon Wars C16
 
-![Release v1.2.0](docs/images/badges/release.svg)
+![Release v1.3.0](docs/images/badges/release.svg)
 ![Platform Commodore 16 / Plus/4](docs/images/badges/platform.svg)
 ![Byte match 10,747 of 10,747](docs/images/badges/byte-match.svg)
 ![Toolchain cc65](docs/images/badges/toolchain.svg)
@@ -51,7 +51,7 @@ On the title screen, `J` selects the joystick (either port) and `K` the keyboard
 
 ## Preserved Inputs
 
-`Recovered Source/2026/` holds the D64 image I captured in 2026 and its file-by-file extraction. Everything the build needs is on that disk. The build reads the D64 directly and checks each file against the extraction and its hashes. `Recovered Source/1992/` is an older PC export of the same disk, both as files and as the original PKZIP archive. It agrees with the D64 apart from letter case and line endings, so it acts as a cross-check rather than a fallback. `Recovered Source/xargon_wars.prg` is the running game.
+`Original Source Recovered/2026/` holds the D64 image I captured in 2026 and its file-by-file extraction. Everything the build needs is on that disk. The build reads the D64 directly and checks each file against the extraction and its hashes. `Original Source Recovered/1992/` is an older PC export of the same disk, both as files and as the original PKZIP archive. It agrees with the D64 apart from letter case and line endings, so it acts as a cross-check rather than a fallback. `Original Artifacts/xargon_wars.prg` is the running game.
 
 `Original Artifacts/` has the cassette inlay, the instruction card, a gameplay screenshot and a photo of my source disk. The [Artifact Catalogue](docs/ARTIFACTS.md) describes each one.
 
@@ -63,13 +63,13 @@ All generated files go into `build/`. The original inputs stay exactly as they w
 
 The source header says the program was written by A.J. Clarke "with kind permission from John B Marshall". The title scroller thanks Matthew for the graphics and his help. See [History and Credits](docs/HISTORY_AND_CREDITS.md).
 
-My companion [Dorks Dilemma C16 repository](https://github.com/anthonyjclarke/Dorks_Dilemma_C16) has the recovery story, my original development setup and the acknowledgements for the recovery tools, especially in its [Development History](https://github.com/anthonyjclarke/Dorks_Dilemma_C16/blob/main/docs/DEVELOPMENT_HISTORY.md). This project reuses the build approach from that restoration and from Tycoon Tex, so I haven't repeated the story here.
+My companion [Dorks Dilemma C16 repository](https://github.com/anthonyjclarke/Dorks_Dilemma_C16) has the recovery story, my original development setup and the acknowledgements for the recovery tools, especially in its [History and Credits](https://github.com/anthonyjclarke/Dorks_Dilemma_C16/blob/main/docs/HISTORY_AND_CREDITS.md). This project reuses the build approach from that restoration and from Tycoon Tex, so I haven't repeated the story here.
 
 ---
 
 ## Learning, Modification, and Ports
 
-The [Codebase Analysis](CODEBASE_ANALYSIS.md) explains how the game works: its states, the two interrupts, the 16 sheets and their patterns, collisions, scoring, sound and graphics, plus the two revision differences. Probes in VICE confirm its key rules. The [Porting Guide](docs/PORTING_GUIDE.md) separates the original behaviour from my proposals for derivatives and ports. The [generated code reference](docs/analysis/CODE_REFERENCE.md), [asset data](docs/analysis/asset-data.json) and decoded [graphics](docs/analysis/README.md) help with finding your way around the source.
+The [Codebase Analysis](CODEBASE_ANALYSIS.md) explains how the game works: its states, the two interrupts, the 16 sheets and their patterns, collisions, scoring, sound and graphics, plus the two revision differences. Probes in VICE confirm its key rules. [Illustrated Graphics](docs/GRAPHICS.md) shows the aliens, formations, ship and title decoded from the original bytes. The [Porting Guide](docs/PORTING_GUIDE.md) separates the original behaviour from my proposals for derivatives and ports. The [generated code reference](docs/analysis/CODE_REFERENCE.md), [asset data](docs/analysis/asset-data.json) and decoded [graphics](docs/analysis/README.md) help with finding your way around the source.
 
 ![Aliens on all sixteen sheets](docs/analysis/graphics/alien-sheets.png)
 

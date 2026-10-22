@@ -1,8 +1,10 @@
-# Generated output only. Original PRGs, disk images, archives and art are preserved.
+# Generated output only. Original PRGs, BINs, disk images, archives and art are preserved.
 /build/
 /.pio/
 /.pioenvs/
 /.piolibdeps/
+/.venv/
+node_modules/
 __pycache__/
 *.py[cod]
 .DS_Store
@@ -10,4 +12,6 @@ __pycache__/
 *.swp
 *~
 .vscode/*.log
-node_modules/
+
+# VICE may create this before its explicit log path is applied.
+/monitor.log

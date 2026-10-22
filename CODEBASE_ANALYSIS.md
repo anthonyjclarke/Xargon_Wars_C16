@@ -4,7 +4,7 @@
 
 This document explains how the surviving Xargon Wars implementation works, so that it can be studied, modified, and used as a specification for new versions on other platforms. It follows the shape of my Dorks Dilemma and Tycoon Tex analyses, but everything here was worked out from Xargon Wars' own disk sources, assembled bytes, running game, and packaging.
 
-It describes the **source revision** that the default build reproduces and that the original `OBJ` listing records. Where I call something source behaviour, it comes from the instructions or data, not from comments alone. Comments that disagree with the code are pointed out. Probe results come from [rule-probes.json](docs/analysis/rule-probes.json), which records controlled VICE runs of the original routines. Proposals and inferences are labelled as such. The emulator evidence covers start-up, gameplay entry, and the focused probes. It doesn't cover a complete play-through.
+It describes the **source revision** that the default build reproduces and that the original `OBJ` listing records. Where I call something source behaviour, it comes from the instructions or data, not from comments alone. Comments that disagree with the code are pointed out. Probe results come from [rule-probes.json](docs/verification/rule-probes.json), which records controlled VICE runs of the original routines. Proposals and inferences are labelled as such. The emulator evidence covers start-up, gameplay entry, and the focused probes. It doesn't cover a complete play-through.
 
 Use this alongside the [generated code reference](docs/analysis/CODE_REFERENCE.md), the [machine-readable index](docs/analysis/codebase-index.json), the [asset data](docs/analysis/asset-data.json), and the [porting guide](docs/PORTING_GUIDE.md). The recovery story is in [Dorks Dilemma C16](https://github.com/anthonyjclarke/Dorks_Dilemma_C16), and the [validation document](docs/SOURCE_AND_VALIDATION.md) records the restoration evidence.
 
@@ -187,7 +187,7 @@ The score itself is never held in RAM variables. The five ASCII digits on screen
 | `PRSHIP` ship, hit test       | reload timer `$3800`        |
 | `UPDEAD` death sequence       |                             |
 
-The [interrupt probe](docs/analysis/rule-probes.json) recorded 12 consecutive frames in VICE. Raster entries averaged 35,562 clock units apart and timer-2 entries 35,497. Each timer entry came about 5,900 to 8,000 units before the next raster entry. In that sample, then, the timer work ran once per frame, just ahead of the drawing. The source doesn't explain why the two stay in step, and I don't know why yet. A port should treat "once per frame, logic before drawing" as the observed behaviour, not as a guarantee in the code.
+The [interrupt probe](docs/verification/rule-probes.json) recorded 12 consecutive frames in VICE. Raster entries averaged 35,562 clock units apart and timer-2 entries 35,497. Each timer entry came about 5,900 to 8,000 units before the next raster entry. In that sample, then, the timer work ran once per frame, just ahead of the drawing. The source doesn't explain why the two stay in step, and I don't know why yet. A port should treat "once per frame, logic before drawing" as the observed behaviour, not as a guarantee in the code.
 
 ### Foreground Pacing
 
@@ -200,7 +200,7 @@ The [interrupt probe](docs/analysis/rule-probes.json) recorded 12 consecutive fr
 5. Bomb movement, every `BOMSPD` passes.
 6. Checks for game over and sheet clear.
 
-The [main-loop probe](docs/analysis/rule-probes.json) measured 8 passes early on sheet 1, averaging 114,813 clock units, or about 3.2 frames per pass. Pass length depends on the interrupt load, so alien and bomb speed is tied to that loop rather than to the frame rate.
+The [main-loop probe](docs/verification/rule-probes.json) measured 8 passes early on sheet 1, averaging 114,813 clock units, or about 3.2 frames per pass. Pass length depends on the interrupt load, so alien and bomb speed is tied to that loop rather than to the frame rate.
 
 ### Concurrency Contracts
 
@@ -347,7 +347,7 @@ Every collision is a test of what glyph is on screen at that moment, so glyph nu
 
 ## Scoring, Extra Lives, Rank, and High Scores
 
-`SCORE` runs from `ALIHIT`, inside the raster interrupt. It calls `XTRALI` first and only then adds the points. The [probes](docs/analysis/rule-probes.json) confirmed these results:
+`SCORE` runs from `ALIHIT`, inside the raster interrupt. It calls `XTRALI` first and only then adds the points. The [probes](docs/verification/rule-probes.json) confirmed these results:
 
 | Rule              | Probe result                                  |
 |:------------------|:----------------------------------------------|
@@ -380,7 +380,7 @@ A sheet is cleared when `NUMHIT` reaches `NUMALI`. `SHTOVR` then:
 
 `NXLEVL` resets `SHEETN`, plays the long tune (`TNOTE = 9`), increments `LEVEL`, flashes the border, adds 200 points, adds a life, and busy-waits for the tune to end.
 
-`LEVINC` subtracts `LEVEL` from each sheet's firing, movement and bomb speeds and stops at a minimum of 1. The [probe](docs/analysis/rule-probes.json) confirmed that starting from 8, 4 and 4, level 1 gives 7, 3, 3 and level 4 gives 4, 1, 1. Because `INITSR` reloads the table values for every sheet, the reduction doesn't build up from sheet to sheet. It depends only on `LEVEL`. Alien count, pattern and animation speed never change.
+`LEVINC` subtracts `LEVEL` from each sheet's firing, movement and bomb speeds and stops at a minimum of 1. The [probe](docs/verification/rule-probes.json) confirmed that starting from 8, 4 and 4, level 1 gives 7, 3, 3 and level 4 gives 4, 1, 1. Because `INITSR` reloads the table values for every sheet, the reduction doesn't build up from sheet to sheet. It depends only on `LEVEL`. Alien count, pattern and animation speed never change.
 
 ---
 
@@ -417,7 +417,7 @@ When `GLIVES` reaches 0, `DEADRI` copies the score into `SCRBUF` and sets `FINIT
 | `HELP` | `$FE`   | `$08`    | `JDOWN`  |
 | `F1`   | `$FE`   | `$10`    | `JFIRE`  |
 
-**J/K selection.** `CHSEL` is meant to test `J` (mask `$04`) and `K` (mask `$20`) on row `$EF`, but it loads the row into X, and `KEYIT` reads Y. The [probe](docs/analysis/rule-probes.json) caught Y at `$80`, `$F7`, `$E1`, `$AD`, `$9D` and `$69` on successive calls. The scanned rows therefore change all the time. `J` and `K` only register when Y happens to include row 4, and other keys in the same column can trigger them too. I haven't tested this by hand. A faithful port should keep it, and a corrected derivative should say that it fixes it.
+**J/K selection.** `CHSEL` is meant to test `J` (mask `$04`) and `K` (mask `$20`) on row `$EF`, but it loads the row into X, and `KEYIT` reads Y. The [probe](docs/verification/rule-probes.json) caught Y at `$80`, `$F7`, `$E1`, `$AD`, `$9D` and `$69` on successive calls. The scanned rows therefore change all the time. `J` and `K` only register when Y happens to include row 4, and other keys in the same column can trigger them too. I haven't tested this by hand. A faithful port should keep it, and a corrected derivative should say that it fixes it.
 
 There is no pause key.
 
@@ -439,45 +439,7 @@ Effects run only while `CFLAG` = 1. The source comment at `CSOUND` says "1 = SOU
 
 ## Graphics: Glyphs, Frames, and Screen Assembly
 
-All the graphics are 8×8 glyphs in the 128-character `FRAK!` set at `$3C00`. Some glyphs are rewritten while the game runs. The figures below are decoded deterministically from the exported bytes by [render_game_graphics.py](scripts/render_game_graphics.py). Colours use the palette captured from VICE 3.10 ([ted-palette.json](docs/analysis/graphics/ted-palette.json)), and the inputs and outputs are hashed in the [graphics manifest](docs/analysis/graphics/graphics-manifest.json).
-
-### Aliens on Every Sheet
-
-![Aliens on all sixteen sheets](docs/analysis/graphics/alien-sheets.png)
-
-Each sheet's 72 bytes of glyph data hold three frames of three glyphs. They're shown with that sheet's `MULTI1`, `MULTI2` and attribute. Sheet 14's first frame spells "ZARG", a detail that only shows up once the data is decoded. The animation below shows sheet 1 in the game's 0-1-2-1 order. The GIF timing is illustrative: in the game a frame lasts `ANISPD` timer ticks.
-
-![Sheet 1 alien animation](docs/analysis/graphics/alien-animation.gif) ![Explosion frames](docs/analysis/graphics/explosion-animation.gif)
-
-### Formations and Patterns
-
-![Sheet formations and movement](docs/analysis/graphics/sheet-formations.png)
-
-Each panel places the sheet's aliens at their initial positions. It traces one pass of the movement pattern from the first alien, with the same wrap rules as `MVEALL`. The traces show where each formation travels, not the timing.
-
-### Ship and Effects
-
-![Ship, laser, bombs, explosions, stars and gauge](docs/analysis/graphics/ship-and-effects.png)
-
-The ship and the gauge use fixed glyphs. The laser and the bomb each alternate between two frames. Each star glyph has one lit pixel pair in a different row, and the star's Y position within its cell picks the glyph. The gauge examples show the fill at several `HEAT` values.
-
-### Title Lettering
-
-![Title lettering](docs/analysis/graphics/title-lettering.png)
-
-`FUNKIT` plots each letter's point list from `TTB` onto an 80×50 grid. Each point ORs one `PLOXEL` bit into the cell's glyph code, so glyphs `$40`–`$4F` are the 16 combinations of four quarter-blocks. A short `DELAY` between points makes the title draw itself on screen. The reconstruction matches the verified title screenshot.
-
-### How the Screen Is Built
-
-![Screen composition](docs/analysis/graphics/screen-composition.png)
-
-`SETSCR` fills the screen with spaces, frames the play field and the side panel with `PRBOX`, prints `TEXT` and draws the gauge. During play, every object is drawn by writing screen codes and colours into cells. There are no sprites, and nothing scrolls during play.
-
-### Reference Atlases
-
-The [one-bit](docs/analysis/font-hires.svg) and [two-bit](docs/analysis/font-multicolor.svg) atlases show every glyph of `FRAK!` with its code and address, in neutral index colours.
-
-![FRAK! character set, one bit per pixel](docs/analysis/font-hires.svg) The [alien glyph atlas](docs/analysis/alien-glyphs.svg) shows all 16 sheets' raw glyph data. [asset-data.json](docs/analysis/asset-data.json) has the raw bytes of the character set, the tune, every sheet entry, pattern, formation and glyph block, and the named tables.
+[Illustrated Graphics](docs/GRAPHICS.md) decodes the aliens on every sheet, the formations, the ship and effects, the title lettering and the screen assembly from the original bytes, with the reference atlases.
 
 ---
 
@@ -491,7 +453,7 @@ The title scroller in `SMOOTH-SCROLL` borrows glyphs 80–98 as a 152-pixel bitm
 
 ## Original and Modern Development Tools
 
-The disk shows the 1985 workflow. The source was assembled on a C64: there's an assembler (`ASM.C64`), the Commodore editor (`EDITOR`), the DOS 5.2 wedge and a fast loader, with `BOOT ALL` loading the editor and DOS. The C64 produced the MOS hex listing `OBJ`, and `SUPER-LOAD` on the C16 loaded such files. `SAVER` wrote the cassette auto-run loader, whose own listing is `OBJ.ANT`. The sound was tried out first in C16 BASIC (`JINGLE1`, `JINGLE2`, `MUSIC-MAKER`, `WASAL`). `HAK/SCREEN` and `HEXER` were test aids. [Dorks Dilemma's history](https://github.com/anthonyjclarke/Dorks_Dilemma_C16/blob/main/docs/DEVELOPMENT_HISTORY.md) describes the development setup.
+The disk shows the 1985 workflow. The source was assembled on a C64: there's an assembler (`ASM.C64`), the Commodore editor (`EDITOR`), the DOS 5.2 wedge and a fast loader, with `BOOT ALL` loading the editor and DOS. The C64 produced the MOS hex listing `OBJ`, and `SUPER-LOAD` on the C16 loaded such files. `SAVER` wrote the cassette auto-run loader, whose own listing is `OBJ.ANT`. The sound was tried out first in C16 BASIC (`JINGLE1`, `JINGLE2`, `MUSIC-MAKER`, `WASAL`). `HAK/SCREEN` and `HEXER` were test aids. [Dorks Dilemma's history](https://github.com/anthonyjclarke/Dorks_Dilemma_C16/blob/main/docs/HISTORY_AND_CREDITS.md) describes the development setup.
 
 The modern pipeline reads the D64 directly, converts the MOS syntax to ca65, assembles it at the original fixed addresses and checks it against `OBJ`. See [Build and Run](docs/BUILD_AND_RUN.md).
 

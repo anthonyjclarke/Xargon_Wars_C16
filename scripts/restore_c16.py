@@ -15,12 +15,12 @@ from d64_image import D64Image
 from source_converter import convert, flatten
 
 ROOT = Path(__file__).resolve().parents[1]
-INPUTS = ROOT / 'Recovered Source'
+INPUTS = ROOT / 'Original Source Recovered'
 IMAGE = INPUTS / '2026/XargonWars-C16-d64copy.d64'
 EXTRACTED = INPUTS / '2026/XargonWars-C16'
 OLDER = INPUTS / '1992/DISK7A'
 OLDER_ZIP = INPUTS / '1992/DISK7A - Xargon Wars C16.ZIP'
-REFERENCE = INPUTS / 'xargon_wars.prg'
+REFERENCE = ROOT / 'Original Artifacts/xargon_wars.prg'
 
 ROOT_MODULE = 'ULTRA'
 LOAD_ADDRESS = 0x1010

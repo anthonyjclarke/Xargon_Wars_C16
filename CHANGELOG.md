@@ -4,6 +4,24 @@ All notable changes to the Xargon Wars C16 preservation project. Dates are DD-MM
 
 ---
 
+## [1.3.0] 23-10-2026
+
+Structure and documentation release that aligns this repository with my Dork's Dilemma, Tycoon Tex and Xargon's Revenge restorations. The game build is unchanged (PRG SHA-256 `6b766dcd…`).
+
+### Added
+
+- `docs/GRAPHICS.md`, the "Graphics: Glyphs, Frames, and Screen Assembly" section moved out of `CODEBASE_ANALYSIS.md` unchanged apart from links, and added to the handbook after the codebase analysis.
+
+### Changed
+
+- `Recovered Source/` renamed to `Original Source Recovered/`, the folder name my other restorations use. The running copy `xargon_wars.prg` moved to `Original Artifacts/`, as in Tycoon Tex. File contents are unchanged; scripts, tests, `.gitattributes`, `.editorconfig`, docs and the recorded evidence use the new paths.
+- `rule-probes.json` moved from `docs/analysis/` to `docs/verification/`, with the other reviewed evidence.
+- Links to Dork's Dilemma's history now point at its renamed `docs/HISTORY_AND_CREDITS.md`.
+- Work happens on `dev`, with verified checkpoints merged into `main`; `docs/SHARING_ON_GITHUB.md` describes it.
+- Common `.gitignore` across the restorations (`.venv/` is local). Release badge updated to `v1.3.0`.
+
+---
+
 ## [1.2.0] 22-10-2026
 
 Documentation release: the Gremlin Archive reference (tag `v1.2.0`). The game build and its output are unchanged (PRG SHA-256 `6b766dcd…`).
@@ -45,7 +63,6 @@ Documentation and analysis release (commit `8dec6f5`, tag `v1.1.0`). The game bu
 ### Changed
 
 - `README.md`, `TESTING.md`, `src/README.md` and the guides in `docs/` now link to the handbook, analysis, porting guide and probes.
-- `CLAUDE.md` now covers the analysis and documentation tools.
 
 ---
 
@@ -67,7 +84,7 @@ Initial preservation checkpoint (commit `a75d53c`, tag `v1.0.0`): the surviving 
 - `test/test_restoration.py`: 11 regression tests.
 - GitHub Actions workflow: build, running-version comparison, tests, both PlatformIO environments and an output agreement check.
 - Documentation: `README.md`, `QUICKSTART.md`, `TESTING.md`, `RIGHTS.md`, `src/README.md`, and in `docs/` the Artifacts, Build and Run, History and Credits, Sharing on GitHub, Source and Validation and Source Inventory guides, with the verification evidence and screenshots.
-- Repository housekeeping: `.gitignore`, `.gitattributes` (no text, whitespace or diff handling for either preserved folder), `.editorconfig` and a concise `CLAUDE.md`.
+- Repository housekeeping: `.gitignore`, `.gitattributes` (no text, whitespace or diff handling for either preserved folder), and `.editorconfig`.
 
 ### Known limits
 

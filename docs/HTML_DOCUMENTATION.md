@@ -59,7 +59,7 @@ If Node isn't on the normal executable path, pass its location to Make as `NODE`
 
 ## Chapter Selection and Presentation
 
-`docs/handbook.json` sets the reading order: the project guide first (history, artifacts, building, testing, validation, analysis, porting), then reference and maintenance material. A new Markdown guide only appears once it's added there. `CLAUDE.md` is deliberately left out, because it's guidance for coding assistants rather than documentation.
+`docs/handbook.json` sets the reading order: the project guide first (history, artifacts, building, testing, validation, analysis, porting), then reference and maintenance material. A new Markdown guide only appears once it's added there.
 
 `scripts/build_docs.mjs` does the conversion. It namespaces headings by document, rewrites links, embeds local images as data URIs, and fails on a broken link or missing section. Raw HTML in Markdown is escaped. The page layout and controls are in `scripts/docs/handbook.html`, `handbook.css` and `handbook.js`. Mermaid code blocks render in the browser from the embedded library, and the diagram source stays available under each diagram.
 

@@ -1,5 +1,12 @@
 {
     "output": "docs/XARGON_WARS.html",
+    "title": "Xargon Wars",
+    "brand": [
+        "XARGON",
+        "WARS"
+    ],
+    "description": "Xargon Wars C16 restoration: history, packaging, build instructions, validation, source analysis, graphics, porting and reference.",
+    "includes": "the cassette artwork, decoded graphics, diagrams and code reference",
     "groups": [
         {
             "id": "guide",
@@ -14,6 +21,7 @@
                 "TESTING.md",
                 "docs/SOURCE_AND_VALIDATION.md",
                 "CODEBASE_ANALYSIS.md",
+                "docs/GRAPHICS.md",
                 "docs/PORTING_GUIDE.md"
             ]
         },

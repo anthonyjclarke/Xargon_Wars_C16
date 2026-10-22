@@ -57,7 +57,7 @@ Mark Hardisty's book *A Gremlin in the Works* (Bitmap Books), the officially end
 
 ## Recovery Background and Build Template
 
-My original C64/1541 development setup and the later source recovery are written up in my [Dorks Dilemma C16 repository](https://github.com/anthonyjclarke/Dorks_Dilemma_C16). Its [Development History](https://github.com/anthonyjclarke/Dorks_Dilemma_C16/blob/main/docs/DEVELOPMENT_HISTORY.md) has my recollections and the acknowledgements for the recovery tools. The C64 editor, DOS wedge, fast loader and assembler on this disk come from that same setup.
+My original C64/1541 development setup and the later source recovery are written up in my [Dorks Dilemma C16 repository](https://github.com/anthonyjclarke/Dorks_Dilemma_C16). Its [History and Credits](https://github.com/anthonyjclarke/Dorks_Dilemma_C16/blob/main/docs/HISTORY_AND_CREDITS.md) has my recollections and the acknowledgements for the recovery tools. The C64 editor, DOS wedge, fast loader and assembler on this disk come from that same setup.
 
 This project adapts the disk reader, source conversion, ca65/ld65 build, PlatformIO integration and VICE monitor approach from Dorks Dilemma and Tycoon Tex. Xargon Wars' sources, memory layout, object listing and running-version comparison have all been validated separately here.
 

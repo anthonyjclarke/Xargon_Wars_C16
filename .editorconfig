@@ -14,13 +14,20 @@ trim_trailing_whitespace = false
 [Makefile]
 indent_style = tab
 
-[Recovered Source/**]
+# Preserved inputs: editors must never change their bytes.
+[Original Source Recovered/**]
 charset = unset
 end_of_line = unset
 insert_final_newline = unset
 trim_trailing_whitespace = unset
 
 [Original Artifacts/**]
+charset = unset
+end_of_line = unset
+insert_final_newline = unset
+trim_trailing_whitespace = unset
+
+[Other Versions/**]
 charset = unset
 end_of_line = unset
 insert_final_newline = unset

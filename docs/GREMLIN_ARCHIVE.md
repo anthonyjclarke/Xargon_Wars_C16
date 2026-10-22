@@ -74,7 +74,7 @@ Each disk ZIP includes an `INDEX` listing the original Commodore directory next 
 
 ## In This Project
 
-The 1992 source in `Recovered Source/1992/` is the archive's `DISK7A`. `DISK7A - Xargon Wars C16.ZIP` has the same CRC-32 (`c543700d`) and size (88,351 bytes) as `Disk 7-11/DISK7A.ZIP` in the archive. All 78 extracted files in `Recovered Source/1992/DISK7A/` (77 plus `INDEX`) match the archive's `DISK7A/` folder by CRC-32 and size, so this disk doesn't have the empty-file problem noted above.
+The 1992 source in `Original Source Recovered/1992/` is the archive's `DISK7A`. `DISK7A - Xargon Wars C16.ZIP` has the same CRC-32 (`c543700d`) and size (88,351 bytes) as `Disk 7-11/DISK7A.ZIP` in the archive. All 78 extracted files in `Original Source Recovered/1992/DISK7A/` (77 plus `INDEX`) match the archive's `DISK7A/` folder by CRC-32 and size, so this disk doesn't have the empty-file problem noted above.
 
 The ten machine-code programs in the 2026 extraction also match the archive's `DISK7A` `.BIN` files, which is expected because the 1992 `.BIN` files are identical to the disk. Some are on other disks too: `DOS5.2` is on nine, `EDITOR` on seven, and `SUPER-LOAD` and `MEGA-SUPER` on six. The D64 image, the extracted text and BASIC files, the running `xargon_wars.prg` and `Original Artifacts/` match nothing in the archive.
 

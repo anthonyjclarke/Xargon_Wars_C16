@@ -58,7 +58,7 @@
   "modules": [
     {
       "name": "ALIENS",
-      "extracted_copy": "Recovered Source/2026/XargonWars-C16/001_ALIENS.seq",
+      "extracted_copy": "Original Source Recovered/2026/XargonWars-C16/001_ALIENS.seq",
       "disk_bytes": 4771,
       "sha256": "cfe799dee8a6d23c23410567bba595b1beb2ac961dfab4ea78a25907572359d8",
       "logical_lines": 463,
@@ -69,7 +69,7 @@
     },
     {
       "name": "ANIMATE",
-      "extracted_copy": "Recovered Source/2026/XargonWars-C16/002_ANIMATE.seq",
+      "extracted_copy": "Original Source Recovered/2026/XargonWars-C16/002_ANIMATE.seq",
       "disk_bytes": 884,
       "sha256": "e73c842f450679981ccc1c36914013bc955b018a3b7321e1961a2d5e9e0045c3",
       "logical_lines": 99,
@@ -80,7 +80,7 @@
     },
     {
       "name": "ASSEM-SHEETS",
-      "extracted_copy": "Recovered Source/2026/XargonWars-C16/004_ASSEM-SHEETS.seq",
+      "extracted_copy": "Original Source Recovered/2026/XargonWars-C16/004_ASSEM-SHEETS.seq",
       "disk_bytes": 254,
       "sha256": "c321e0951310a84ec8da73f412e37dd11cd34e3b3e3c801ea4689f4c5bf731da",
       "logical_lines": 26,
@@ -91,7 +91,7 @@
     },
     {
       "name": "BOMBS",
-      "extracted_copy": "Recovered Source/2026/XargonWars-C16/005_BOMBS.seq",
+      "extracted_copy": "Original Source Recovered/2026/XargonWars-C16/005_BOMBS.seq",
       "disk_bytes": 2604,
       "sha256": "cb82691aa9743b9eee5448e9d26e9a81007e7ac1fbff01c0ebb1f122569434a0",
       "logical_lines": 318,
@@ -102,7 +102,7 @@
     },
     {
       "name": "CHARS",
-      "extracted_copy": "Recovered Source/2026/XargonWars-C16/006_CHARS.seq",
+      "extracted_copy": "Original Source Recovered/2026/XargonWars-C16/006_CHARS.seq",
       "disk_bytes": 1788,
       "sha256": "93f18e7fba1bfb0564dde67fef671fdb6222667c82a69fa2b4083b4d46bb5d2a",
       "logical_lines": 116,
@@ -113,7 +113,7 @@
     },
     {
       "name": "DEATH-MARCH",
-      "extracted_copy": "Recovered Source/2026/XargonWars-C16/007_DEATH-MARCH.seq",
+      "extracted_copy": "Original Source Recovered/2026/XargonWars-C16/007_DEATH-MARCH.seq",
       "disk_bytes": 1598,
       "sha256": "067414aa4a686809f33a8ad07a7546b16063b595959354dc32f99e250ad4cd70",
       "logical_lines": 223,
@@ -124,7 +124,7 @@
     },
     {
       "name": "EXTRA-MEMORY",
-      "extracted_copy": "Recovered Source/2026/XargonWars-C16/008_EXTRA-MEMORY.seq",
+      "extracted_copy": "Original Source Recovered/2026/XargonWars-C16/008_EXTRA-MEMORY.seq",
       "disk_bytes": 531,
       "sha256": "7b3d51315aa2fd429a011f466e40bcd2dc30fe537ebe7e0633a4d4affc7a1907",
       "logical_lines": 80,
@@ -135,7 +135,7 @@
     },
     {
       "name": "GAME-OVER",
-      "extracted_copy": "Recovered Source/2026/XargonWars-C16/009_GAME-OVER.seq",
+      "extracted_copy": "Original Source Recovered/2026/XargonWars-C16/009_GAME-OVER.seq",
       "disk_bytes": 1634,
       "sha256": "4f869f17680b88c5c552f97791d3e6931d3737afca81919f8cf0cbfb2668eeff",
       "logical_lines": 284,
@@ -146,7 +146,7 @@
     },
     {
       "name": "GAUGE",
-      "extracted_copy": "Recovered Source/2026/XargonWars-C16/010_GAUGE.seq",
+      "extracted_copy": "Original Source Recovered/2026/XargonWars-C16/010_GAUGE.seq",
       "disk_bytes": 997,
       "sha256": "292fe7e3564b514e5a6b522d7709bd12f31bd9b94623ebf6ad4cf12db09597ba",
       "logical_lines": 153,
@@ -157,7 +157,7 @@
     },
     {
       "name": "HAK/SCREEN",
-      "extracted_copy": "Recovered Source/2026/XargonWars-C16/011_HAK~2FSCREEN.seq",
+      "extracted_copy": "Original Source Recovered/2026/XargonWars-C16/011_HAK~2FSCREEN.seq",
       "disk_bytes": 629,
       "sha256": "ad71d3c9b2907b9245b6aaec40c2040db9c564231338856b267879e954db8f58",
       "logical_lines": 92,
@@ -168,7 +168,7 @@
     },
     {
       "name": "HEXER",
-      "extracted_copy": "Recovered Source/2026/XargonWars-C16/012_HEXER.seq",
+      "extracted_copy": "Original Source Recovered/2026/XargonWars-C16/012_HEXER.seq",
       "disk_bytes": 195,
       "sha256": "6bd453929e577c68f45557c19bf7546169fd968566f3d90a3fdff239f2511449",
       "logical_lines": 41,
@@ -179,7 +179,7 @@
     },
     {
       "name": "HIGH-STUFF",
-      "extracted_copy": "Recovered Source/2026/XargonWars-C16/013_HIGH-STUFF.seq",
+      "extracted_copy": "Original Source Recovered/2026/XargonWars-C16/013_HIGH-STUFF.seq",
       "disk_bytes": 4242,
       "sha256": "73d413f90fa0ec93bf0da41ddb4ea86b1a8b07e8576174ba8a6f7b510640078c",
       "logical_lines": 559,
@@ -190,7 +190,7 @@
     },
     {
       "name": "IRQ",
-      "extracted_copy": "Recovered Source/2026/XargonWars-C16/014_IRQ.seq",
+      "extracted_copy": "Original Source Recovered/2026/XargonWars-C16/014_IRQ.seq",
       "disk_bytes": 2222,
       "sha256": "e6ab969efc6194e9b02c4e0fd685104c07a554a207d5a597a8f94f04819ef45d",
       "logical_lines": 226,
@@ -201,7 +201,7 @@
     },
     {
       "name": "JO/KE SELECTION",
-      "extracted_copy": "Recovered Source/2026/XargonWars-C16/015_JO~2FKE_SELECTION.seq",
+      "extracted_copy": "Original Source Recovered/2026/XargonWars-C16/015_JO~2FKE_SELECTION.seq",
       "disk_bytes": 634,
       "sha256": "292d0fd2a12bbb032f9b155913185c99144e5391c3a535bf92fe0dd0c884b674",
       "logical_lines": 111,
@@ -212,7 +212,7 @@
     },
     {
       "name": "JOYSTIK",
-      "extracted_copy": "Recovered Source/2026/XargonWars-C16/016_JOYSTIK.seq",
+      "extracted_copy": "Original Source Recovered/2026/XargonWars-C16/016_JOYSTIK.seq",
       "disk_bytes": 1007,
       "sha256": "98bf0d821884d939cda727f6bd65cd68c8e786b9a191f3ac4236e8d395fc7edb",
       "logical_lines": 136,
@@ -223,7 +223,7 @@
     },
     {
       "name": "KEY-SCAN",
-      "extracted_copy": "Recovered Source/2026/XargonWars-C16/017_KEY-SCAN.seq",
+      "extracted_copy": "Original Source Recovered/2026/XargonWars-C16/017_KEY-SCAN.seq",
       "disk_bytes": 654,
       "sha256": "bcadcb892d80712faa8344c89ee6d1e95cfaf4b9ef40a2b6d395fe2403197783",
       "logical_lines": 74,
@@ -234,7 +234,7 @@
     },
     {
       "name": "KILLER",
-      "extracted_copy": "Recovered Source/2026/XargonWars-C16/018_KILLER.seq",
+      "extracted_copy": "Original Source Recovered/2026/XargonWars-C16/018_KILLER.seq",
       "disk_bytes": 2392,
       "sha256": "f5a9cbbcb393b10fcf11e11c9ece4f15a7d908c96c303fb489f0d1470e8569b0",
       "logical_lines": 229,
@@ -245,7 +245,7 @@
     },
     {
       "name": "LISTER",
-      "extracted_copy": "Recovered Source/2026/XargonWars-C16/056_LISTER.seq",
+      "extracted_copy": "Original Source Recovered/2026/XargonWars-C16/056_LISTER.seq",
       "disk_bytes": 2096,
       "sha256": "58dfa9f906c0dd40eb9b244ba6b6c92a5736dc0d16ad99767e2f7049bc50b92d",
       "logical_lines": 114,
@@ -256,7 +256,7 @@
     },
     {
       "name": "MACROS",
-      "extracted_copy": "Recovered Source/2026/XargonWars-C16/019_MACROS.seq",
+      "extracted_copy": "Original Source Recovered/2026/XargonWars-C16/019_MACROS.seq",
       "disk_bytes": 274,
       "sha256": "e4f63399cc608aea899c555ad9b2c4ef89e349c85b8a9c16a1d4ebc7bc6bbb24",
       "logical_lines": 36,
@@ -267,7 +267,7 @@
     },
     {
       "name": "MAGNIFICENT",
-      "extracted_copy": "Recovered Source/2026/XargonWars-C16/020_MAGNIFICENT.seq",
+      "extracted_copy": "Original Source Recovered/2026/XargonWars-C16/020_MAGNIFICENT.seq",
       "disk_bytes": 1040,
       "sha256": "3e3be21696cb5f9091ff6d51eb34c120d1e4f4aec817b9a87f90ecbcc78691ce",
       "logical_lines": 116,
@@ -278,7 +278,7 @@
     },
     {
       "name": "MAIN-VARS",
-      "extracted_copy": "Recovered Source/2026/XargonWars-C16/021_MAIN-VARS.seq",
+      "extracted_copy": "Original Source Recovered/2026/XargonWars-C16/021_MAIN-VARS.seq",
       "disk_bytes": 676,
       "sha256": "ecd42b7ea28c235e33c3abc809bf84e43ac60cf665eb864a6b04ebdea7164870",
       "logical_lines": 72,
@@ -289,7 +289,7 @@
     },
     {
       "name": "MUFF",
-      "extracted_copy": "Recovered Source/2026/XargonWars-C16/022_MUFF.seq",
+      "extracted_copy": "Original Source Recovered/2026/XargonWars-C16/022_MUFF.seq",
       "disk_bytes": 270,
       "sha256": "91e6cafb71bc958116d5f93d16449a0bd580bec111d0d4bedf5d684504bbe76f",
       "logical_lines": 16,
@@ -300,7 +300,7 @@
     },
     {
       "name": "OBJ",
-      "extracted_copy": "Recovered Source/2026/XargonWars-C16/003_OBJ.seq",
+      "extracted_copy": "Original Source Recovered/2026/XargonWars-C16/003_OBJ.seq",
       "disk_bytes": 26894,
       "sha256": "309a4f34f24e8e70804fca0739ab660628d0db01fbe726dec823c558f9e4107f",
       "logical_lines": 450,
@@ -311,7 +311,7 @@
     },
     {
       "name": "OBJ.ANT",
-      "extracted_copy": "Recovered Source/2026/XargonWars-C16/057_OBJ~2EANT.seq",
+      "extracted_copy": "Original Source Recovered/2026/XargonWars-C16/057_OBJ~2EANT.seq",
       "disk_bytes": 492,
       "sha256": "1187d1b0a89c7fea9fa9e3dfb4df96295d0ae3f2cfa2029004fa92e1334e5847",
       "logical_lines": 9,
@@ -322,7 +322,7 @@
     },
     {
       "name": "PLAY-GAME",
-      "extracted_copy": "Recovered Source/2026/XargonWars-C16/023_PLAY-GAME.seq",
+      "extracted_copy": "Original Source Recovered/2026/XargonWars-C16/023_PLAY-GAME.seq",
       "disk_bytes": 1897,
       "sha256": "f2181d1595726d20c8b8b94de21b5cf9b2ba56ac19ae931d9e00d74bd2c693ff",
       "logical_lines": 183,
@@ -333,7 +333,7 @@
     },
     {
       "name": "RANK-MASTER",
-      "extracted_copy": "Recovered Source/2026/XargonWars-C16/024_RANK-MASTER.seq",
+      "extracted_copy": "Original Source Recovered/2026/XargonWars-C16/024_RANK-MASTER.seq",
       "disk_bytes": 358,
       "sha256": "5625e92248366f8d293345a616fa1319940ce2de772f3941365d83e7196bb50f",
       "logical_lines": 61,
@@ -344,7 +344,7 @@
     },
     {
       "name": "SAVER",
-      "extracted_copy": "Recovered Source/2026/XargonWars-C16/025_SAVER.seq",
+      "extracted_copy": "Original Source Recovered/2026/XargonWars-C16/025_SAVER.seq",
       "disk_bytes": 1413,
       "sha256": "53badeb7f194dfb28a7d72ebdbdec34215b7e293f2877148e8c0b15f0508b36a",
       "logical_lines": 177,
@@ -355,7 +355,7 @@
     },
     {
       "name": "SCORE-ROUTINES",
-      "extracted_copy": "Recovered Source/2026/XargonWars-C16/026_SCORE-ROUTINES.seq",
+      "extracted_copy": "Original Source Recovered/2026/XargonWars-C16/026_SCORE-ROUTINES.seq",
       "disk_bytes": 1046,
       "sha256": "90e8080193dde3f3c4ed849da9bc984cecb9fca2ea537c8b6971e93e9e620de0",
       "logical_lines": 123,
@@ -366,7 +366,7 @@
     },
     {
       "name": "SCREEN",
-      "extracted_copy": "Recovered Source/2026/XargonWars-C16/027_SCREEN.seq",
+      "extracted_copy": "Original Source Recovered/2026/XargonWars-C16/027_SCREEN.seq",
       "disk_bytes": 2036,
       "sha256": "c68ec4d8ff062a5c6adacce6a5e7aa2ebe0d222602fc55f9e0129f477d27bc27",
       "logical_lines": 276,
@@ -377,7 +377,7 @@
     },
     {
       "name": "SCROLL-BUFFER",
-      "extracted_copy": "Recovered Source/2026/XargonWars-C16/028_SCROLL-BUFFER.seq",
+      "extracted_copy": "Original Source Recovered/2026/XargonWars-C16/028_SCROLL-BUFFER.seq",
       "disk_bytes": 395,
       "sha256": "a2fca1826bef5ee6afd78474f9c86709d365aaa426753ca859756d575140f0d1",
       "logical_lines": 23,
@@ -388,7 +388,7 @@
     },
     {
       "name": "SETSHEET",
-      "extracted_copy": "Recovered Source/2026/XargonWars-C16/075_SETSHEET.seq",
+      "extracted_copy": "Original Source Recovered/2026/XargonWars-C16/075_SETSHEET.seq",
       "disk_bytes": 4861,
       "sha256": "3d235ef68cdb80bad45745bbbb73c0cc52b9a7fc2ede1a6cb2dacd42e56f2f4b",
       "logical_lines": 493,
@@ -399,7 +399,7 @@
     },
     {
       "name": "SETUP",
-      "extracted_copy": "Recovered Source/2026/XargonWars-C16/029_SETUP.seq",
+      "extracted_copy": "Original Source Recovered/2026/XargonWars-C16/029_SETUP.seq",
       "disk_bytes": 642,
       "sha256": "099def25cc6c28c0546e1bd88dbc69498efb271e37a88a4d12f4b12ecd31861c",
       "logical_lines": 52,
@@ -410,7 +410,7 @@
     },
     {
       "name": "SHEET1",
-      "extracted_copy": "Recovered Source/2026/XargonWars-C16/030_SHEET1.seq",
+      "extracted_copy": "Original Source Recovered/2026/XargonWars-C16/030_SHEET1.seq",
       "disk_bytes": 756,
       "sha256": "c1ebf6dc5cf3d8a545efa02e53997251ea63151c698f933641c0e8b58dd1930f",
       "logical_lines": 58,
@@ -421,7 +421,7 @@
     },
     {
       "name": "SHEET2",
-      "extracted_copy": "Recovered Source/2026/XargonWars-C16/031_SHEET2.seq",
+      "extracted_copy": "Original Source Recovered/2026/XargonWars-C16/031_SHEET2.seq",
       "disk_bytes": 1757,
       "sha256": "7228a6257463f8c8382cf623d48af8b5820dc545f2cfea0b51cf3892aa4506bc",
       "logical_lines": 139,
@@ -432,7 +432,7 @@
     },
     {
       "name": "SHEET3",
-      "extracted_copy": "Recovered Source/2026/XargonWars-C16/032_SHEET3.seq",
+      "extracted_copy": "Original Source Recovered/2026/XargonWars-C16/032_SHEET3.seq",
       "disk_bytes": 981,
       "sha256": "bee4347f06d79855d81bf564022becb43e713fcfa42f9a85b0907c7f31de7bca",
       "logical_lines": 82,
@@ -443,7 +443,7 @@
     },
     {
       "name": "SHEET4",
-      "extracted_copy": "Recovered Source/2026/XargonWars-C16/033_SHEET4.seq",
+      "extracted_copy": "Original Source Recovered/2026/XargonWars-C16/033_SHEET4.seq",
       "disk_bytes": 1689,
       "sha256": "066d85a45aeb76f3005c2527d9ea6b3097d2754588d5d32efac1d6a1813fff04",
       "logical_lines": 131,
@@ -454,7 +454,7 @@
     },
     {
       "name": "SHEET5",
-      "extracted_copy": "Recovered Source/2026/XargonWars-C16/034_SHEET5.seq",
+      "extracted_copy": "Original Source Recovered/2026/XargonWars-C16/034_SHEET5.seq",
       "disk_bytes": 855,
       "sha256": "f5b5feffaec81bec11f9dc3f171484437e365b98cad151f40b605fa8f99d81b5",
       "logical_lines": 67,
@@ -465,7 +465,7 @@
     },
     {
       "name": "SHEET6",
-      "extracted_copy": "Recovered Source/2026/XargonWars-C16/035_SHEET6.seq",
+      "extracted_copy": "Original Source Recovered/2026/XargonWars-C16/035_SHEET6.seq",
       "disk_bytes": 1731,
       "sha256": "4d035e7cb9a97da70f4eb0fce00f28f3beafe03a1567244dfe99aa97bf985d28",
       "logical_lines": 142,
@@ -476,7 +476,7 @@
     },
     {
       "name": "SHEET7",
-      "extracted_copy": "Recovered Source/2026/XargonWars-C16/036_SHEET7.seq",
+      "extracted_copy": "Original Source Recovered/2026/XargonWars-C16/036_SHEET7.seq",
       "disk_bytes": 1763,
       "sha256": "3f8e92e60beccc30078fcff0064ccf5fae9af04278a00c23bc2a1981df6beaf9",
       "logical_lines": 144,
@@ -487,7 +487,7 @@
     },
     {
       "name": "SHEET8",
-      "extracted_copy": "Recovered Source/2026/XargonWars-C16/037_SHEET8.seq",
+      "extracted_copy": "Original Source Recovered/2026/XargonWars-C16/037_SHEET8.seq",
       "disk_bytes": 1689,
       "sha256": "b185e6a8645d08fcece5059cd35fb0795932cbea685e3936f85b941563a6d374",
       "logical_lines": 140,
@@ -498,7 +498,7 @@
     },
     {
       "name": "SHEET9",
-      "extracted_copy": "Recovered Source/2026/XargonWars-C16/038_SHEET9.seq",
+      "extracted_copy": "Original Source Recovered/2026/XargonWars-C16/038_SHEET9.seq",
       "disk_bytes": 1712,
       "sha256": "901fd5a568f53307af895a2d07d9b38f4375102198a7862e3e53e16946c0a533",
       "logical_lines": 140,
@@ -509,7 +509,7 @@
     },
     {
       "name": "SHEETA",
-      "extracted_copy": "Recovered Source/2026/XargonWars-C16/039_SHEETA.seq",
+      "extracted_copy": "Original Source Recovered/2026/XargonWars-C16/039_SHEETA.seq",
       "disk_bytes": 1736,
       "sha256": "ae63f1eb28f33a7c7e66944e316bc7d65d0a48936f775a67991dd988a2edfe24",
       "logical_lines": 140,
@@ -520,7 +520,7 @@
     },
     {
       "name": "SHEETB",
-      "extracted_copy": "Recovered Source/2026/XargonWars-C16/040_SHEETB.seq",
+      "extracted_copy": "Original Source Recovered/2026/XargonWars-C16/040_SHEETB.seq",
       "disk_bytes": 1848,
       "sha256": "90271da5463a47fec23b19807cf96144d28b90e4bc6e55b9c4c65a1dccf60f94",
       "logical_lines": 143,
@@ -531,7 +531,7 @@
     },
     {
       "name": "SHEETC",
-      "extracted_copy": "Recovered Source/2026/XargonWars-C16/041_SHEETC.seq",
+      "extracted_copy": "Original Source Recovered/2026/XargonWars-C16/041_SHEETC.seq",
       "disk_bytes": 890,
       "sha256": "486b6ff6edddf647ac2ced86bd0f8d44e35d955626d45130dc4e5b29c070bc8e",
       "logical_lines": 70,
@@ -542,7 +542,7 @@
     },
     {
       "name": "SHEETD",
-      "extracted_copy": "Recovered Source/2026/XargonWars-C16/042_SHEETD.seq",
+      "extracted_copy": "Original Source Recovered/2026/XargonWars-C16/042_SHEETD.seq",
       "disk_bytes": 846,
       "sha256": "53c734e3a580218e2a7f7edf8c1191e6d81bf0e142d280a87a8587e4446fa75a",
       "logical_lines": 67,
@@ -553,7 +553,7 @@
     },
     {
       "name": "SHEETE",
-      "extracted_copy": "Recovered Source/2026/XargonWars-C16/043_SHEETE.seq",
+      "extracted_copy": "Original Source Recovered/2026/XargonWars-C16/043_SHEETE.seq",
       "disk_bytes": 1991,
       "sha256": "d97c0be0055636ece4a800070d353b58282782b2ae0305ba529cf9759a60e3ac",
       "logical_lines": 154,
@@ -564,7 +564,7 @@
     },
     {
       "name": "SHEETF",
-      "extracted_copy": "Recovered Source/2026/XargonWars-C16/044_SHEETF.seq",
+      "extracted_copy": "Original Source Recovered/2026/XargonWars-C16/044_SHEETF.seq",
       "disk_bytes": 1756,
       "sha256": "b12d1be93b9704c03d4ae8b6c00060dca01ab483e657499a60e924066ff3b4b5",
       "logical_lines": 141,
@@ -575,7 +575,7 @@
     },
     {
       "name": "SHEETG",
-      "extracted_copy": "Recovered Source/2026/XargonWars-C16/045_SHEETG.seq",
+      "extracted_copy": "Original Source Recovered/2026/XargonWars-C16/045_SHEETG.seq",
       "disk_bytes": 903,
       "sha256": "4f593d1a51f40dc7ad83f9ae2f1998ade887918a3cceb7a1a85cb320cc3d93bf",
       "logical_lines": 73,
@@ -586,7 +586,7 @@
     },
     {
       "name": "SHIP",
-      "extracted_copy": "Recovered Source/2026/XargonWars-C16/046_SHIP.seq",
+      "extracted_copy": "Original Source Recovered/2026/XargonWars-C16/046_SHIP.seq",
       "disk_bytes": 3499,
       "sha256": "7989a2225c19c62230e6a65b9c55ea10b72874909ba57e93732639f871360daf",
       "logical_lines": 419,
@@ -597,7 +597,7 @@
     },
     {
       "name": "SHTABLE",
-      "extracted_copy": "Recovered Source/2026/XargonWars-C16/047_SHTABLE.seq",
+      "extracted_copy": "Original Source Recovered/2026/XargonWars-C16/047_SHTABLE.seq",
       "disk_bytes": 7952,
       "sha256": "7284ee76e5700d756f3d6b987dcafbf79a05d22fe2945d4f8f9b78f88c99977e",
       "logical_lines": 345,
@@ -608,7 +608,7 @@
     },
     {
       "name": "SMOOTH-SCROLL",
-      "extracted_copy": "Recovered Source/2026/XargonWars-C16/048_SMOOTH-SCROLL.seq",
+      "extracted_copy": "Original Source Recovered/2026/XargonWars-C16/048_SMOOTH-SCROLL.seq",
       "disk_bytes": 1397,
       "sha256": "45f26e87eb8ac0a986bd56b9a280959bcbc4f8cd3bc3c038a6b4c9224611c450",
       "logical_lines": 181,
@@ -619,7 +619,7 @@
     },
     {
       "name": "SOUND",
-      "extracted_copy": "Recovered Source/2026/XargonWars-C16/049_SOUND.seq",
+      "extracted_copy": "Original Source Recovered/2026/XargonWars-C16/049_SOUND.seq",
       "disk_bytes": 2531,
       "sha256": "ddaa2fcc4c37148e29c05686cb2fdd131ad7a76d2133e5197fd9dc0c7ebf3c91",
       "logical_lines": 327,
@@ -630,7 +630,7 @@
     },
     {
       "name": "STARS",
-      "extracted_copy": "Recovered Source/2026/XargonWars-C16/050_STARS.seq",
+      "extracted_copy": "Original Source Recovered/2026/XargonWars-C16/050_STARS.seq",
       "disk_bytes": 2791,
       "sha256": "03a4f7bb00693c6ba09d485d6ceebed9900d79863d27318ba457d59d88615cdf",
       "logical_lines": 333,
@@ -641,7 +641,7 @@
     },
     {
       "name": "STARTER",
-      "extracted_copy": "Recovered Source/2026/XargonWars-C16/051_STARTER.seq",
+      "extracted_copy": "Original Source Recovered/2026/XargonWars-C16/051_STARTER.seq",
       "disk_bytes": 918,
       "sha256": "8fe83a6c566b6f92cc90071999e6dd7dd2cf26cb2b324a06e3bee1bf2d271992",
       "logical_lines": 144,
@@ -652,7 +652,7 @@
     },
     {
       "name": "TABLES",
-      "extracted_copy": "Recovered Source/2026/XargonWars-C16/052_TABLES.seq",
+      "extracted_copy": "Original Source Recovered/2026/XargonWars-C16/052_TABLES.seq",
       "disk_bytes": 2189,
       "sha256": "1d348bcb90ca15f5539168ebb37d2ac82d478502d9b8978fb6cf71727a053275",
       "logical_lines": 164,
@@ -663,7 +663,7 @@
     },
     {
       "name": "TITLE-WORKS",
-      "extracted_copy": "Recovered Source/2026/XargonWars-C16/076_TITLE-WORKS.seq",
+      "extracted_copy": "Original Source Recovered/2026/XargonWars-C16/076_TITLE-WORKS.seq",
       "disk_bytes": 7149,
       "sha256": "2e99cb40a6f291c0206400022d543736bc4971d69f0c803bbaecb95bc50964d6",
       "logical_lines": 985,
@@ -674,7 +674,7 @@
     },
     {
       "name": "TUNE",
-      "extracted_copy": "Recovered Source/2026/XargonWars-C16/053_TUNE.seq",
+      "extracted_copy": "Original Source Recovered/2026/XargonWars-C16/053_TUNE.seq",
       "disk_bytes": 1026,
       "sha256": "37f8418d0ad96f3456b3454c6499683dd7edaffcef52c4cae53ffdb74550a70c",
       "logical_lines": 118,
@@ -685,7 +685,7 @@
     },
     {
       "name": "ULTRA",
-      "extracted_copy": "Recovered Source/2026/XargonWars-C16/054_ULTRA.seq",
+      "extracted_copy": "Original Source Recovered/2026/XargonWars-C16/054_ULTRA.seq",
       "disk_bytes": 2095,
       "sha256": "0dff9d448a4f88c7e8c0e0a43ff6c564f1f7398189711f1ad0a78ede374614b2",
       "logical_lines": 114,
@@ -696,7 +696,7 @@
     },
     {
       "name": "UTILS",
-      "extracted_copy": "Recovered Source/2026/XargonWars-C16/055_UTILS.seq",
+      "extracted_copy": "Original Source Recovered/2026/XargonWars-C16/055_UTILS.seq",
       "disk_bytes": 787,
       "sha256": "7cd8ebdefe5d84d12f6bd9e5eb4ce1af0be0e989f30309859d2c7680030c5f05",
       "logical_lines": 117,
@@ -707,7 +707,7 @@
     },
     {
       "name": "VARS",
-      "extracted_copy": "Recovered Source/2026/XargonWars-C16/077_VARS.seq",
+      "extracted_copy": "Original Source Recovered/2026/XargonWars-C16/077_VARS.seq",
       "disk_bytes": 4179,
       "sha256": "9dfa9460470f21c63ee71871c5419c523b9fe2b9cd6f16e30f85fdeccba78eae",
       "logical_lines": 193,

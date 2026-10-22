@@ -27,7 +27,7 @@ python3 scripts/restore_c16.py
 
 The build follows these steps:
 
-1. It reads `Recovered Source/2026/XargonWars-C16-d64copy.d64` directly. It requires all 77 directory entries to match the 2026 extraction byte for byte and pass the extraction manifest's hashes.
+1. It reads `Original Source Recovered/2026/XargonWars-C16-d64copy.d64` directly. It requires all 77 directory entries to match the 2026 extraction byte for byte and pass the extraction manifest's hashes.
 2. It cross-checks the 1992 export. Every source text file must match after case and line-ending normalization, every binary must be identical, and the PKZIP directory's CRC-32 and size must agree with the extracted folder.
 3. It expands `.LIB` includes from the root module `ULTRA` in their original order. That's 51 modules in all.
 4. It translates the MOS assembler syntax into ca65 and assembles the fixed-origin layout in [config/c16.cfg](../config/c16.cfg).

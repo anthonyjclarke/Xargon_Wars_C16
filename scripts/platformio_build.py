@@ -10,7 +10,7 @@ env = DefaultEnvironment()
 root = Path(env.subst('$PROJECT_DIR'))
 build = Path(env.subst('$BUILD_DIR'))
 dependencies = list((root / 'scripts').glob('*.py')) + list((root / 'config').glob('*'))
-dependencies += [p for p in (root / 'Recovered Source').rglob('*')
+dependencies += [p for p in (root / 'Original Source Recovered').rglob('*')
                  if p.is_file() and p.suffix.lower() not in ('.jpg', '.log') and p.name != '.DS_Store']
 
 

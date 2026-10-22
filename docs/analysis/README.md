@@ -7,11 +7,12 @@
 | [CODE_REFERENCE.md](CODE_REFERENCE.md)     | Modules, variables, write sites, symbols |
 | [codebase-index.json](codebase-index.json) | The same catalogue plus transfers        |
 | [asset-data.json](asset-data.json)         | Font, tune, sheets and named tables      |
-| [rule-probes.json](rule-probes.json)       | Seven controlled VICE observations       |
 | [font-hires.svg](font-hires.svg)           | `FRAK!` glyphs, one bit per pixel        |
 | [font-multicolor.svg](font-multicolor.svg) | `FRAK!` glyphs, two bits per pixel       |
 | [alien-glyphs.svg](alien-glyphs.svg)       | All 16 sheets' alien glyph data          |
 | `graphics/`                                | Figures, GIFs, palette and manifest      |
+
+The reviewed [rule-probes.json](../verification/rule-probes.json), seven controlled VICE observations, sits with the other evidence in `docs/verification/`.
 
 The [codebase analysis](../../CODEBASE_ANALYSIS.md) explains and illustrates all of this. The SVG atlases use neutral index colours. The figures in `graphics/` use the TED palette captured from VICE.
 
@@ -60,7 +61,7 @@ The figures, palette and probes need extra tools:
 python3 scripts/capture_palette.py
 python3 scripts/render_game_graphics.py
 python3 scripts/probe_gameplay_rules.py
-cp build/rule-probes/rule-probes.json docs/analysis/
+cp build/rule-probes/rule-probes.json docs/verification/
 ```
 
 `capture_palette.py` and `probe_gameplay_rules.py` need VICE and a graphical desktop. `render_game_graphics.py` needs Pillow 10.1 or later. [graphics-manifest.json](graphics/graphics-manifest.json) records the SHA-256 of the renderer's three inputs and of every image it writes. The GIF frame time (160 ms) is for illustration only. The probes and the palette are reviewed snapshots: rerun them only when you mean to, and review the results before copying them in.

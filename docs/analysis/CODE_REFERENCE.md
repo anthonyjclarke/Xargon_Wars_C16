@@ -68,125 +68,125 @@ Other disk source files, not assembled into the game: `ASSEM-SHEETS`, `CHARS`, `
 
 ## Source Locations
 
-`ALIENS` – [disk file](../../Recovered%20Source/2026/XargonWars-C16/001_ALIENS.seq); 4771 bytes, 463 logical lines.
+`ALIENS` – [disk file](../../Original%20Source%20Recovered/2026/XargonWars-C16/001_ALIENS.seq); 4771 bytes, 463 logical lines.
 
-`ANIMATE` – [disk file](../../Recovered%20Source/2026/XargonWars-C16/002_ANIMATE.seq); 884 bytes, 99 logical lines.
+`ANIMATE` – [disk file](../../Original%20Source%20Recovered/2026/XargonWars-C16/002_ANIMATE.seq); 884 bytes, 99 logical lines.
 
-`ASSEM-SHEETS` – [disk file](../../Recovered%20Source/2026/XargonWars-C16/004_ASSEM-SHEETS.seq); 254 bytes, 26 logical lines.
+`ASSEM-SHEETS` – [disk file](../../Original%20Source%20Recovered/2026/XargonWars-C16/004_ASSEM-SHEETS.seq); 254 bytes, 26 logical lines.
 
-`BOMBS` – [disk file](../../Recovered%20Source/2026/XargonWars-C16/005_BOMBS.seq); 2604 bytes, 318 logical lines.
+`BOMBS` – [disk file](../../Original%20Source%20Recovered/2026/XargonWars-C16/005_BOMBS.seq); 2604 bytes, 318 logical lines.
 
-`CHARS` – [disk file](../../Recovered%20Source/2026/XargonWars-C16/006_CHARS.seq); 1788 bytes, 116 logical lines.
+`CHARS` – [disk file](../../Original%20Source%20Recovered/2026/XargonWars-C16/006_CHARS.seq); 1788 bytes, 116 logical lines.
 
-`DEATH-MARCH` – [disk file](../../Recovered%20Source/2026/XargonWars-C16/007_DEATH-MARCH.seq); 1598 bytes, 223 logical lines.
+`DEATH-MARCH` – [disk file](../../Original%20Source%20Recovered/2026/XargonWars-C16/007_DEATH-MARCH.seq); 1598 bytes, 223 logical lines.
 
-`EXTRA-MEMORY` – [disk file](../../Recovered%20Source/2026/XargonWars-C16/008_EXTRA-MEMORY.seq); 531 bytes, 80 logical lines.
+`EXTRA-MEMORY` – [disk file](../../Original%20Source%20Recovered/2026/XargonWars-C16/008_EXTRA-MEMORY.seq); 531 bytes, 80 logical lines.
 
-`GAME-OVER` – [disk file](../../Recovered%20Source/2026/XargonWars-C16/009_GAME-OVER.seq); 1634 bytes, 284 logical lines.
+`GAME-OVER` – [disk file](../../Original%20Source%20Recovered/2026/XargonWars-C16/009_GAME-OVER.seq); 1634 bytes, 284 logical lines.
 
-`GAUGE` – [disk file](../../Recovered%20Source/2026/XargonWars-C16/010_GAUGE.seq); 997 bytes, 153 logical lines.
+`GAUGE` – [disk file](../../Original%20Source%20Recovered/2026/XargonWars-C16/010_GAUGE.seq); 997 bytes, 153 logical lines.
 
-`HAK/SCREEN` – [disk file](../../Recovered%20Source/2026/XargonWars-C16/011_HAK~2FSCREEN.seq); 629 bytes, 92 logical lines.
+`HAK/SCREEN` – [disk file](../../Original%20Source%20Recovered/2026/XargonWars-C16/011_HAK~2FSCREEN.seq); 629 bytes, 92 logical lines.
 
-`HEXER` – [disk file](../../Recovered%20Source/2026/XargonWars-C16/012_HEXER.seq); 195 bytes, 41 logical lines.
+`HEXER` – [disk file](../../Original%20Source%20Recovered/2026/XargonWars-C16/012_HEXER.seq); 195 bytes, 41 logical lines.
 
-`HIGH-STUFF` – [disk file](../../Recovered%20Source/2026/XargonWars-C16/013_HIGH-STUFF.seq); 4242 bytes, 559 logical lines.
+`HIGH-STUFF` – [disk file](../../Original%20Source%20Recovered/2026/XargonWars-C16/013_HIGH-STUFF.seq); 4242 bytes, 559 logical lines.
 
-`IRQ` – [disk file](../../Recovered%20Source/2026/XargonWars-C16/014_IRQ.seq); 2222 bytes, 226 logical lines.
+`IRQ` – [disk file](../../Original%20Source%20Recovered/2026/XargonWars-C16/014_IRQ.seq); 2222 bytes, 226 logical lines.
 
-`JO/KE SELECTION` – [disk file](../../Recovered%20Source/2026/XargonWars-C16/015_JO~2FKE_SELECTION.seq); 634 bytes, 111 logical lines.
+`JO/KE SELECTION` – [disk file](../../Original%20Source%20Recovered/2026/XargonWars-C16/015_JO~2FKE_SELECTION.seq); 634 bytes, 111 logical lines.
 
-`JOYSTIK` – [disk file](../../Recovered%20Source/2026/XargonWars-C16/016_JOYSTIK.seq); 1007 bytes, 136 logical lines.
+`JOYSTIK` – [disk file](../../Original%20Source%20Recovered/2026/XargonWars-C16/016_JOYSTIK.seq); 1007 bytes, 136 logical lines.
 
-`KEY-SCAN` – [disk file](../../Recovered%20Source/2026/XargonWars-C16/017_KEY-SCAN.seq); 654 bytes, 74 logical lines.
+`KEY-SCAN` – [disk file](../../Original%20Source%20Recovered/2026/XargonWars-C16/017_KEY-SCAN.seq); 654 bytes, 74 logical lines.
 
-`KILLER` – [disk file](../../Recovered%20Source/2026/XargonWars-C16/018_KILLER.seq); 2392 bytes, 229 logical lines.
+`KILLER` – [disk file](../../Original%20Source%20Recovered/2026/XargonWars-C16/018_KILLER.seq); 2392 bytes, 229 logical lines.
 
-`LISTER` – [disk file](../../Recovered%20Source/2026/XargonWars-C16/056_LISTER.seq); 2096 bytes, 114 logical lines.
+`LISTER` – [disk file](../../Original%20Source%20Recovered/2026/XargonWars-C16/056_LISTER.seq); 2096 bytes, 114 logical lines.
 
-`MACROS` – [disk file](../../Recovered%20Source/2026/XargonWars-C16/019_MACROS.seq); 274 bytes, 36 logical lines.
+`MACROS` – [disk file](../../Original%20Source%20Recovered/2026/XargonWars-C16/019_MACROS.seq); 274 bytes, 36 logical lines.
 
-`MAGNIFICENT` – [disk file](../../Recovered%20Source/2026/XargonWars-C16/020_MAGNIFICENT.seq); 1040 bytes, 116 logical lines.
+`MAGNIFICENT` – [disk file](../../Original%20Source%20Recovered/2026/XargonWars-C16/020_MAGNIFICENT.seq); 1040 bytes, 116 logical lines.
 
-`MAIN-VARS` – [disk file](../../Recovered%20Source/2026/XargonWars-C16/021_MAIN-VARS.seq); 676 bytes, 72 logical lines.
+`MAIN-VARS` – [disk file](../../Original%20Source%20Recovered/2026/XargonWars-C16/021_MAIN-VARS.seq); 676 bytes, 72 logical lines.
 
-`MUFF` – [disk file](../../Recovered%20Source/2026/XargonWars-C16/022_MUFF.seq); 270 bytes, 16 logical lines.
+`MUFF` – [disk file](../../Original%20Source%20Recovered/2026/XargonWars-C16/022_MUFF.seq); 270 bytes, 16 logical lines.
 
-`OBJ` – [disk file](../../Recovered%20Source/2026/XargonWars-C16/003_OBJ.seq); 26894 bytes, 450 logical lines.
+`OBJ` – [disk file](../../Original%20Source%20Recovered/2026/XargonWars-C16/003_OBJ.seq); 26894 bytes, 450 logical lines.
 
-`OBJ.ANT` – [disk file](../../Recovered%20Source/2026/XargonWars-C16/057_OBJ~2EANT.seq); 492 bytes, 9 logical lines.
+`OBJ.ANT` – [disk file](../../Original%20Source%20Recovered/2026/XargonWars-C16/057_OBJ~2EANT.seq); 492 bytes, 9 logical lines.
 
-`PLAY-GAME` – [disk file](../../Recovered%20Source/2026/XargonWars-C16/023_PLAY-GAME.seq); 1897 bytes, 183 logical lines.
+`PLAY-GAME` – [disk file](../../Original%20Source%20Recovered/2026/XargonWars-C16/023_PLAY-GAME.seq); 1897 bytes, 183 logical lines.
 
-`RANK-MASTER` – [disk file](../../Recovered%20Source/2026/XargonWars-C16/024_RANK-MASTER.seq); 358 bytes, 61 logical lines.
+`RANK-MASTER` – [disk file](../../Original%20Source%20Recovered/2026/XargonWars-C16/024_RANK-MASTER.seq); 358 bytes, 61 logical lines.
 
-`SAVER` – [disk file](../../Recovered%20Source/2026/XargonWars-C16/025_SAVER.seq); 1413 bytes, 177 logical lines.
+`SAVER` – [disk file](../../Original%20Source%20Recovered/2026/XargonWars-C16/025_SAVER.seq); 1413 bytes, 177 logical lines.
 
-`SCORE-ROUTINES` – [disk file](../../Recovered%20Source/2026/XargonWars-C16/026_SCORE-ROUTINES.seq); 1046 bytes, 123 logical lines.
+`SCORE-ROUTINES` – [disk file](../../Original%20Source%20Recovered/2026/XargonWars-C16/026_SCORE-ROUTINES.seq); 1046 bytes, 123 logical lines.
 
-`SCREEN` – [disk file](../../Recovered%20Source/2026/XargonWars-C16/027_SCREEN.seq); 2036 bytes, 276 logical lines.
+`SCREEN` – [disk file](../../Original%20Source%20Recovered/2026/XargonWars-C16/027_SCREEN.seq); 2036 bytes, 276 logical lines.
 
-`SCROLL-BUFFER` – [disk file](../../Recovered%20Source/2026/XargonWars-C16/028_SCROLL-BUFFER.seq); 395 bytes, 23 logical lines.
+`SCROLL-BUFFER` – [disk file](../../Original%20Source%20Recovered/2026/XargonWars-C16/028_SCROLL-BUFFER.seq); 395 bytes, 23 logical lines.
 
-`SETSHEET` – [disk file](../../Recovered%20Source/2026/XargonWars-C16/075_SETSHEET.seq); 4861 bytes, 493 logical lines.
+`SETSHEET` – [disk file](../../Original%20Source%20Recovered/2026/XargonWars-C16/075_SETSHEET.seq); 4861 bytes, 493 logical lines.
 
-`SETUP` – [disk file](../../Recovered%20Source/2026/XargonWars-C16/029_SETUP.seq); 642 bytes, 52 logical lines.
+`SETUP` – [disk file](../../Original%20Source%20Recovered/2026/XargonWars-C16/029_SETUP.seq); 642 bytes, 52 logical lines.
 
-`SHEET1` – [disk file](../../Recovered%20Source/2026/XargonWars-C16/030_SHEET1.seq); 756 bytes, 58 logical lines.
+`SHEET1` – [disk file](../../Original%20Source%20Recovered/2026/XargonWars-C16/030_SHEET1.seq); 756 bytes, 58 logical lines.
 
-`SHEET2` – [disk file](../../Recovered%20Source/2026/XargonWars-C16/031_SHEET2.seq); 1757 bytes, 139 logical lines.
+`SHEET2` – [disk file](../../Original%20Source%20Recovered/2026/XargonWars-C16/031_SHEET2.seq); 1757 bytes, 139 logical lines.
 
-`SHEET3` – [disk file](../../Recovered%20Source/2026/XargonWars-C16/032_SHEET3.seq); 981 bytes, 82 logical lines.
+`SHEET3` – [disk file](../../Original%20Source%20Recovered/2026/XargonWars-C16/032_SHEET3.seq); 981 bytes, 82 logical lines.
 
-`SHEET4` – [disk file](../../Recovered%20Source/2026/XargonWars-C16/033_SHEET4.seq); 1689 bytes, 131 logical lines.
+`SHEET4` – [disk file](../../Original%20Source%20Recovered/2026/XargonWars-C16/033_SHEET4.seq); 1689 bytes, 131 logical lines.
 
-`SHEET5` – [disk file](../../Recovered%20Source/2026/XargonWars-C16/034_SHEET5.seq); 855 bytes, 67 logical lines.
+`SHEET5` – [disk file](../../Original%20Source%20Recovered/2026/XargonWars-C16/034_SHEET5.seq); 855 bytes, 67 logical lines.
 
-`SHEET6` – [disk file](../../Recovered%20Source/2026/XargonWars-C16/035_SHEET6.seq); 1731 bytes, 142 logical lines.
+`SHEET6` – [disk file](../../Original%20Source%20Recovered/2026/XargonWars-C16/035_SHEET6.seq); 1731 bytes, 142 logical lines.
 
-`SHEET7` – [disk file](../../Recovered%20Source/2026/XargonWars-C16/036_SHEET7.seq); 1763 bytes, 144 logical lines.
+`SHEET7` – [disk file](../../Original%20Source%20Recovered/2026/XargonWars-C16/036_SHEET7.seq); 1763 bytes, 144 logical lines.
 
-`SHEET8` – [disk file](../../Recovered%20Source/2026/XargonWars-C16/037_SHEET8.seq); 1689 bytes, 140 logical lines.
+`SHEET8` – [disk file](../../Original%20Source%20Recovered/2026/XargonWars-C16/037_SHEET8.seq); 1689 bytes, 140 logical lines.
 
-`SHEET9` – [disk file](../../Recovered%20Source/2026/XargonWars-C16/038_SHEET9.seq); 1712 bytes, 140 logical lines.
+`SHEET9` – [disk file](../../Original%20Source%20Recovered/2026/XargonWars-C16/038_SHEET9.seq); 1712 bytes, 140 logical lines.
 
-`SHEETA` – [disk file](../../Recovered%20Source/2026/XargonWars-C16/039_SHEETA.seq); 1736 bytes, 140 logical lines.
+`SHEETA` – [disk file](../../Original%20Source%20Recovered/2026/XargonWars-C16/039_SHEETA.seq); 1736 bytes, 140 logical lines.
 
-`SHEETB` – [disk file](../../Recovered%20Source/2026/XargonWars-C16/040_SHEETB.seq); 1848 bytes, 143 logical lines.
+`SHEETB` – [disk file](../../Original%20Source%20Recovered/2026/XargonWars-C16/040_SHEETB.seq); 1848 bytes, 143 logical lines.
 
-`SHEETC` – [disk file](../../Recovered%20Source/2026/XargonWars-C16/041_SHEETC.seq); 890 bytes, 70 logical lines.
+`SHEETC` – [disk file](../../Original%20Source%20Recovered/2026/XargonWars-C16/041_SHEETC.seq); 890 bytes, 70 logical lines.
 
-`SHEETD` – [disk file](../../Recovered%20Source/2026/XargonWars-C16/042_SHEETD.seq); 846 bytes, 67 logical lines.
+`SHEETD` – [disk file](../../Original%20Source%20Recovered/2026/XargonWars-C16/042_SHEETD.seq); 846 bytes, 67 logical lines.
 
-`SHEETE` – [disk file](../../Recovered%20Source/2026/XargonWars-C16/043_SHEETE.seq); 1991 bytes, 154 logical lines.
+`SHEETE` – [disk file](../../Original%20Source%20Recovered/2026/XargonWars-C16/043_SHEETE.seq); 1991 bytes, 154 logical lines.
 
-`SHEETF` – [disk file](../../Recovered%20Source/2026/XargonWars-C16/044_SHEETF.seq); 1756 bytes, 141 logical lines.
+`SHEETF` – [disk file](../../Original%20Source%20Recovered/2026/XargonWars-C16/044_SHEETF.seq); 1756 bytes, 141 logical lines.
 
-`SHEETG` – [disk file](../../Recovered%20Source/2026/XargonWars-C16/045_SHEETG.seq); 903 bytes, 73 logical lines.
+`SHEETG` – [disk file](../../Original%20Source%20Recovered/2026/XargonWars-C16/045_SHEETG.seq); 903 bytes, 73 logical lines.
 
-`SHIP` – [disk file](../../Recovered%20Source/2026/XargonWars-C16/046_SHIP.seq); 3499 bytes, 419 logical lines.
+`SHIP` – [disk file](../../Original%20Source%20Recovered/2026/XargonWars-C16/046_SHIP.seq); 3499 bytes, 419 logical lines.
 
-`SHTABLE` – [disk file](../../Recovered%20Source/2026/XargonWars-C16/047_SHTABLE.seq); 7952 bytes, 345 logical lines.
+`SHTABLE` – [disk file](../../Original%20Source%20Recovered/2026/XargonWars-C16/047_SHTABLE.seq); 7952 bytes, 345 logical lines.
 
-`SMOOTH-SCROLL` – [disk file](../../Recovered%20Source/2026/XargonWars-C16/048_SMOOTH-SCROLL.seq); 1397 bytes, 181 logical lines.
+`SMOOTH-SCROLL` – [disk file](../../Original%20Source%20Recovered/2026/XargonWars-C16/048_SMOOTH-SCROLL.seq); 1397 bytes, 181 logical lines.
 
-`SOUND` – [disk file](../../Recovered%20Source/2026/XargonWars-C16/049_SOUND.seq); 2531 bytes, 327 logical lines.
+`SOUND` – [disk file](../../Original%20Source%20Recovered/2026/XargonWars-C16/049_SOUND.seq); 2531 bytes, 327 logical lines.
 
-`STARS` – [disk file](../../Recovered%20Source/2026/XargonWars-C16/050_STARS.seq); 2791 bytes, 333 logical lines.
+`STARS` – [disk file](../../Original%20Source%20Recovered/2026/XargonWars-C16/050_STARS.seq); 2791 bytes, 333 logical lines.
 
-`STARTER` – [disk file](../../Recovered%20Source/2026/XargonWars-C16/051_STARTER.seq); 918 bytes, 144 logical lines.
+`STARTER` – [disk file](../../Original%20Source%20Recovered/2026/XargonWars-C16/051_STARTER.seq); 918 bytes, 144 logical lines.
 
-`TABLES` – [disk file](../../Recovered%20Source/2026/XargonWars-C16/052_TABLES.seq); 2189 bytes, 164 logical lines.
+`TABLES` – [disk file](../../Original%20Source%20Recovered/2026/XargonWars-C16/052_TABLES.seq); 2189 bytes, 164 logical lines.
 
-`TITLE-WORKS` – [disk file](../../Recovered%20Source/2026/XargonWars-C16/076_TITLE-WORKS.seq); 7149 bytes, 985 logical lines.
+`TITLE-WORKS` – [disk file](../../Original%20Source%20Recovered/2026/XargonWars-C16/076_TITLE-WORKS.seq); 7149 bytes, 985 logical lines.
 
-`TUNE` – [disk file](../../Recovered%20Source/2026/XargonWars-C16/053_TUNE.seq); 1026 bytes, 118 logical lines.
+`TUNE` – [disk file](../../Original%20Source%20Recovered/2026/XargonWars-C16/053_TUNE.seq); 1026 bytes, 118 logical lines.
 
-`ULTRA` – [disk file](../../Recovered%20Source/2026/XargonWars-C16/054_ULTRA.seq); 2095 bytes, 114 logical lines.
+`ULTRA` – [disk file](../../Original%20Source%20Recovered/2026/XargonWars-C16/054_ULTRA.seq); 2095 bytes, 114 logical lines.
 
-`UTILS` – [disk file](../../Recovered%20Source/2026/XargonWars-C16/055_UTILS.seq); 787 bytes, 117 logical lines.
+`UTILS` – [disk file](../../Original%20Source%20Recovered/2026/XargonWars-C16/055_UTILS.seq); 787 bytes, 117 logical lines.
 
-`VARS` – [disk file](../../Recovered%20Source/2026/XargonWars-C16/077_VARS.seq); 4179 bytes, 193 logical lines.
+`VARS` – [disk file](../../Original%20Source%20Recovered/2026/XargonWars-C16/077_VARS.seq); 4179 bytes, 193 logical lines.
 
 ---
 
